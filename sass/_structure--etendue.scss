@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+
+/* ----------------------------- */
+/* ==Structure étendue // Design réactif */
+/* @note : utilisé pour étendre la structure d'origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em), etc....
+ * @see : http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
+ * @see : http://lanyrd.com/2013/parisweb/sckdfg/
+/* ----------------------------- */
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Largeurs
+    -- Largeurs du contenu
+    -- Largeurs fixes supplémentaires
+  == Pansement pour le viewport
+  == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
+  == Modification des classes
+    -- Palier "large"
+    -- Palier "small"
+    -- Palier "tiny"
+*/
+
+
+/* == @section Largeurs ==================== */
+
+/* -- @subsection Largeur du contenu -------------------- */
+.w--site { }
+
+.mw--site { }
+
+/* -- @subsection Largeurs fixes supplémentaires -------------------- */
+.w960p { width: 960px; }
+
+.mw960p { max-width: 960px; }
+
+
+/* == @section Pansement pour le viewport ==================== */
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-moz-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+
+/* == @section Ressources pour ordinateurs de bureau et écrans à haute densité de pixels ==================== */
+@media ( min-width: 40em ) {
+  /* Indiquer ici les ressources pour grands écrans : images d'arrière-plans, font-face, etc... */
+}
+
+@media ( -webkit-min-device-pixel-ratio: 2 ), ( min-resolution: 192dpi ), ( min-resolution: 2dppx ) {
+  /* Ajustement de styles pour les écrans à haute densité de pixels */
+}
+
+
+/* == @section Modification des classes ====================
+ * @note : premier palier :   "large"
+ * @note : deuxième palier :  "small"
+ * @note : troisième palier : "tiny"
+*/
+/* -- @subsection Palier "large" -------------------- */
+@media ( min-width: 80em ) {
+  .large-hidden,
+  .tablet-hidden { display: none !important; }
+
+  .large-visible { display: block !important; }
+
+  .large-no-float {float: none; }
+}
+
+
+@media ( max-width: 80em ) {
+  .w--site,
+  .mw--site { width: 60%; }
+}
+
+/* -- @subsection Palier "small" -------------------- */
+@media ( max-width: 48em ) {
+  .small-hidden,
+  .tablet-hidden { display: none !important; }
+
+  .small-visible { display: block !important; }
+
+  .small-no-float { float: none; }
+}
+
+/* -- @subsection Palier "tiny" -------------------- */
+@media ( max-width: 40em ) {
+  .tiny-hidden,
+  .phone-hidden { display: none !important; }
+
+  .tiny-visible { display: block !important; }
+
+  .tiny-no-float { float: none; }
+}

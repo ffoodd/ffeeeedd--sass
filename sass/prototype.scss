@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-27
+*/
+
+/* == Prototype */
+/* @note : Cette feuille de style doit être employée au moment de la conception des prototypes, afin de générer des prototypes dans une structure réelle.
+ * @note : Elle inclut une typographie spécifique (en masse) ainsi qu'un outil pour ajouter des images générées.
+ * @note : Utile pour prototyper le site : personnaliser le rythme vertical, les espacements, ajouter les classes issues de Knacss pour le positionnement etc...
+ * @note : Lorsque les prototypes sont terminés les valeurs personnalisées doivent être transférées vers "ffeeeedd--developpement".
+*/
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Typographie
+  == Images
+  == Fonds
+*/
+
+/* == @section Typographie ====================
+ * @see : http://blokkfont.com/
+*/
+@font-face {
+  font-family: 'BLOKKNeue-Regular';
+  src: url('../typo/BLOKKNeue-Regular.eot');
+  src: url('../typo/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../typo/BLOKKNeue-Regular.woff') format('woff'),
+       url('../typo/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  font-family: 'BLOKKNeue-Regular';
+}
+
+/* == @section Images ====================
+ * @see : http://dummyimages.com/
+*/
+
+
+/* == @section Fonds ====================
+ * @note L'idée est d'augmenter l'opacité en fonction du niveau d'imbrication des éléments, les valeurs du canal alpha se superposant à celles des parents respectifs.
+*/
+* {
+  background: rgba(0, 0, 0, .025);
+  color: rgba(0, 0, 0, .25);
+}

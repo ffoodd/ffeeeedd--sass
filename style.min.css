@@ -1,0 +1,1273 @@
+@charset "UTF-8";
+/**
+ * @author Gaël Poupard
+ * @site Thème ffeeeedd--sass
+ * @lastmodified 2013-10-29
+ */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Base */
+/* @note : Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+/* Soft reset */
+html,
+body,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+blockquote {
+  padding-left: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+
+code {
+  line-height: 1em;
+}
+
+table {
+  margin-bottom: 21px;
+}
+
+.m-reset {
+  margin: 0 !important;
+}
+
+.p-reset {
+  padding: 0 !important;
+}
+
+.b-reset {
+  border: 0 !important;
+}
+
+.ul-reset {
+  list-style: none !important;
+}
+
+/* Élude la fusion des marges pour les titrailles */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+/* Élude la fusion des marges pour les éléments imbriqués */
+li p,
+li ul,
+li ol {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Balises HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+/* Valeurs maximum */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Corrige un bug de max-width sur les images de Gmap3 */
+#map_canvas img,
+.gmnoprint img {
+  max-width: none;
+}
+
+/* Vous ne passerez pas ! */
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp,
+div {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+/* Éviter l'interlignage disgracieux */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: .5ex;
+}
+
+/* Parce que "les abbr c'est bon pour la planète" (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
+abbr[title] {
+  border-bottom: dotted 1px;
+  /* La couleur est héritée du texte */
+  cursor: help;
+}
+
+/* Images */
+img {
+  vertical-align: middle;
+}
+
+a img {
+  border: 0;
+}
+
+a:focus img {
+  outline: 4px solid;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Structure */
+/* @note : Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Modèle de boîte
+  == Structure flottante
+  == Structure en tableau
+  == Alignements ( blocs et en ligne )
+    -- Alignement horizontal
+    -- Alignement vertical
+  == Grilles
+    -- Grilles égales, marge 2%
+    -- Grilles inégales (1-2, 2-1, 1-3 et 3-1)
+  == Inline-block
+  == Largeurs
+    -- Largeurs en %
+  == Espacements
+    -- Marges externes
+    -- Marges internes
+  == Éléments masqués
+    -- Remplacement d'image
+  == Orientation
+*/
+/* == @section Modèle de boîte ==================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* == @section Structure flottante ==================== */
+/* Bloc capable de contenir plusieurs .mod, peut contenir des flottants */
+/* Module autonome - flottant, doit avoir une largeur */
+.mod {
+  overflow: hidden;
+  padding: 1em;
+}
+
+/* Généralement dans un .mod, peut contenir des .item */
+/* Fluide, contient des flottants, peut être placé à côté d'un flottant */
+.item {
+  overflow: hidden;
+}
+
+/* == @section Structure en tableau ==================== */
+.row {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.row > *,
+.col {
+  display: table-cell;
+  padding: 1em;
+  vertical-align: top;
+}
+
+/* Blocs qui peuvent suivre des flottants ( i.e. pour déclarer une nouvelle ligne ) */
+.clear,
+.line,
+.row,
+.clearfix:after,
+.line:after,
+.mod:after {
+  clear: both;
+}
+
+/* Blocs qui peuvent contenir des flottants */
+.clearfix:before,
+.clearfix:after,
+.line:before,
+.line:after,
+.mod:before,
+.mod:after {
+  content: "";
+  display: table;
+}
+
+/* == @section Alignements ( blocs et en ligne ) ==================== */
+/* -- @subsection Alignement horizontal -------------------- */
+/* À gauche */
+.left,
+.alignleft {
+  float: left;
+}
+
+img.left,
+img.alignleft {
+  margin-right: 2em;
+}
+
+/* À droite */
+.right,
+.alignright {
+  float: right;
+}
+
+img.right,
+img.alignright {
+  margin-left: 2em;
+}
+
+/* Centré */
+.aligncenter {
+  clear: both;
+  display: block;
+}
+
+/* Autorise les marges verticales spécifiques */
+.center,
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Alignement du texte */
+.txtleft {
+  text-align: left;
+}
+
+.txtright {
+  text-align: right;
+}
+
+.txtcenter {
+  text-align: center;
+}
+
+/* Une gouttière d'1em si le parent est un .gut */
+.row.gut > * + * {
+  border-left: 1em solid transparent;
+}
+
+.line.gut > .left {
+  margin-right: 1em;
+}
+
+.line.gut > .right {
+  margin-left: 1em;
+}
+
+/* "Multi-colonnes" avec des gouttières en % */
+.line.gut2 > * {
+  width: 49%;
+}
+
+.line.gut2 > * + * {
+  margin-left: 2%;
+}
+
+.line.gut3 > * {
+  width: 32.333%;
+}
+
+.line.gut3 > * + * {
+  margin-left: 1.5%;
+}
+
+.line.gut4 > * {
+  width: 24%;
+}
+
+.line.gut4 > * + * {
+  margin-left: 1.333%;
+}
+
+/* -- @subsection Alignement vertical -------------------- */
+.aligntop {
+  vertical-align: top;
+}
+
+.alignbottom {
+  vertical-align: bottom;
+}
+
+/* == @section Grilles ==================== */
+/* -- @subsection Grilles égales, marge 2% -------------------- */
+/* Les enfants directs sont flottants */
+[class*=grid] > * {
+  float: left;
+}
+
+/* Et voilà la gouttière */
+[class*=grid] > * + * {
+  margin-left: 2%;
+}
+
+.grid2 > * {
+  width: 49%;
+}
+
+.grid3 > * {
+  width: 32%;
+}
+
+.grid4 > * {
+  width: 23.5%;
+}
+
+.grid5 > * {
+  width: 18.4%;
+}
+
+.grid6 > * {
+  width: 15%;
+}
+
+/* -- @subsection Grilles inégales (1-2, 2-1, 1-3 et 3-1) -------------------- */
+.grid2-1 > *:first-child,
+.grid1-2 > * + * {
+  width: 66%;
+}
+
+.grid1-2 > *:first-child,
+.grid2-1 > * + * {
+  width: 32%;
+}
+
+.grid1-3 > *:first-child,
+.grid3-1 > * + * {
+  width: 23.5%;
+}
+
+.grid3-1 > *:first-child,
+.grid1-3 > * + * {
+  width: 74.5%;
+}
+
+/* == @section Inline-block ==================== */
+.inbl,
+.btn {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* == @section Largeurs ==================== */
+/* -- @subsection Largeurs en % -------------------- */
+.w10 {
+  width: 10%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w33 {
+  width: 33.333%;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w66 {
+  width: 66.666%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+/* == @section Espacements ====================
+ * @note : p, m = padding, margin
+ * @note : a, t, r, b, l = all, top, right, bottom, left
+*/
+/* -- @subsection Marges externes -------------------- */
+.ma1 {
+  margin: 1em;
+}
+
+.ma2 {
+  margin: 2em;
+}
+
+.ma3 {
+  margin: 3em;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.mt2 {
+  margin-top: 2em;
+}
+
+.mt3 {
+  margin-top: 3em;
+}
+
+.mr0 {
+  margin-right: 0;
+}
+
+.mr1 {
+  margin-right: 1em;
+}
+
+.mr2 {
+  margin-right: 2em;
+}
+
+.mr3 {
+  margin-right: 3em;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mb1 {
+  margin-bottom: 1em;
+}
+
+.mb2 {
+  margin-bottom: 2em;
+}
+
+.mb3 {
+  margin-bottom: 3em;
+}
+
+.ml0 {
+  margin-left: 0;
+}
+
+.ml1 {
+  margin-left: 1em;
+}
+
+.ml2 {
+  margin-left: 2em;
+}
+
+.ml3 {
+  margin-left: 3em;
+}
+
+/* -- @subsection Marges internes -------------------- */
+.pa1 {
+  padding: 1em;
+}
+
+.pa2 {
+  padding: 2em;
+}
+
+.pa3 {
+  padding: 3em;
+}
+
+.pt0 {
+  padding-top: 0;
+}
+
+.pt1 {
+  padding-top: 1em;
+}
+
+.pt2 {
+  padding-top: 2em;
+}
+
+.pt3 {
+  padding-top: 3em;
+}
+
+.pr0 {
+  padding-right: 0;
+}
+
+.pr1 {
+  padding-right: 1em;
+}
+
+.pr2 {
+  padding-right: 2em;
+}
+
+.pr3 {
+  padding-right: 3em;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}
+
+.pb1 {
+  padding-bottom: 1em;
+}
+
+.pb2 {
+  padding-bottom: 2em;
+}
+
+.pb3 {
+  padding-bottom: 3em;
+}
+
+.pl0 {
+  padding-left: 0;
+}
+
+.pl1 {
+  padding-left: 1em;
+}
+
+.pl2 {
+  padding-left: 2em;
+}
+
+.pl3 {
+  padding-left: 3em;
+}
+
+/* == @section Éléments masqués ==================== */
+.visually-hidden {
+  left: -7000px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.js .js-hidden,
+.no-js .js-visible {
+  display: none;
+}
+
+.js .js-visible,
+.no-js .js-hidden {
+  display: block;
+}
+
+/* -- @subsection Remplacement d'image -------------------- */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+}
+
+/* == @section Orientation ====================
+ * @note : Corrige un bug sur les font-size lors du changement d'orientation sur iOS
+*/
+@media (orientation: landscape) and (max-device-width: 768px) {
+  html,
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see github.com/nathansmith/formalize
+  * @see www.sitepen.com
+*/
+/* ----------------------------- */
+/* ==Formulaires */
+/* @note : Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+form,
+fieldset {
+  border: 0;
+}
+
+input,
+button,
+select,
+label {
+  vertical-align: middle;
+  /* @bugfix alignement */
+}
+
+/* Éléments de formulaires */
+label {
+  cursor: pointer;
+}
+
+legend {
+  border: 0;
+  white-space: normal;
+}
+
+button,
+input,
+select {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+textarea {
+  min-height: 5em;
+  overflow: auto;
+                /* @bugfix
+@affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
+  resize: vertical;
+  vertical-align: top;
+  /* Évite l'aplication d'une fonte monospace */
+  font-family: inherit;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+                            /* @ bugfix
+@affected Types d'input cliquables sur iOS */
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+            /* @bugfix
+@affected Corrige un espace excessif sur IE8/9 */
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+               /* @bugfix
+@affected 'x' apparait à droite d'un champ de recherche lorsqu'un texte est entré. Ceci le retire */
+}
+
+::-webkit-input-placeholder {
+  color: #777;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #777;
+}
+
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+            /* @bugfix
+@affected Retire les marges internes et les bordures sur FF3+ */
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see : Twentythirteen
+  * @see : http://twentythirteendemo.wordpress.com/
+*/
+/* ----------------------------- */
+/* ==Navigation */
+/* @note : Ici sont définis les styles de base de la navigation
+/* ----------------------------- */
+/* == @section Navigation ==================== */
+#nav {
+  position: relative;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+}
+
+.sub-menu {
+  position: absolute;
+  left: -7000px;
+  z-index: 4;
+}
+
+.menu li:hover > .sub-menu,
+.menu a:focus + .sub-menu {
+  left: -2px;
+}
+
+.sub-menu a:focus {
+  left: 7000px;
+  position: absolute;
+  top: 0;
+}
+
+.sub-menu a:hover,
+.sub-menu a:active {
+  position: static;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Typographie */
+/* @note : Cette feuille de stlye gère le rythme vertical, les corps et graisses de texte (niveaux de titres, texte courant, éléments particuliers..).
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Typographie
+    -- Niveaux de titres
+    -- Corps alternatifs
+    -- Styles particuliers
+*/
+/* == @section Typographie ====================
+ * @see : http://www.codestyle.org/servlets/FontStack
+ * @see : http://ffffallback.com/
+ * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
+*/
+/* = 14px & s'adapte à votre design */
+body {
+  font: 1em/1.5 Lucida Sans Unicode, Lucida Sans, sans-serif;
+}
+
+/*
+  Corps du texte pour le contenu,
+  Préserve le rythme vertical.
+*/
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea {
+  font-size: 1em;
+  /* = 14px */
+  line-height: 1.5em;
+  margin: 1.5em 0;
+}
+
+/* -- @subsection Niveaux de titres -------------------- */
+h1,
+.h1-like {
+  font-size: 5.1429em;
+  /* = 72px */
+  line-height: .8751em;
+  margin: .5834em 0 .2917em;
+}
+
+h2,
+.h2-like {
+  font-size: 2.5714em;
+  /* = 36px */
+  line-height: 1.1666em;
+  margin: 1.1666em 0 .5833em;
+}
+
+h3,
+.h3-like {
+  font-size: 1.7143em;
+  /* = 24px */
+  line-height: 1.75em;
+  margin: 1.75em 0 .875em;
+}
+
+h4,
+.h4-like {
+  font-size: 1.2857em;
+  /* = 18px */
+  line-height: 1.1667em;
+  margin: 2.3334em 0 1.1667em;
+}
+
+h5,
+.h5-like {
+  font-size: 1.1429em;
+  /* = 16px */
+  line-height: 1.3125em;
+  margin: 2.625em 0 1.3125em;
+}
+
+h6,
+.h6-like {
+  font-size: 1em;
+  /* = 14px */
+  line-height: 1.5em;
+  margin: 3em 0 1.5em;
+}
+
+h1,
+.h1-like,
+h2,
+.h2-like,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -- @subsection Corps alternatifs -------------------- */
+.smaller {
+  font-size: .8571em;
+  /* = 12px */
+  line-height: 1.75em;
+  margin: 1.75em 0;
+}
+
+.small {
+  font-size: .8571em;
+  /* = 12px */
+  line-height: 1.75em;
+  margin: 1.75em 0;
+}
+
+.big {
+  font-size: 1.1429em;
+  /* = 16px */
+  line-height: 1.3125em;
+  margin: 1.3125em 0;
+}
+
+.bigger {
+  font-size: 1.2857em;
+  /* = 18px */
+  line-height: 1.1667em;
+  margin: 1.1667em 0;
+}
+
+.biggest {
+  font-size: 1.7143em;
+  /* = 24px */
+  line-height: 1.75em;
+  margin: .875em 0;
+}
+
+/* -- @subsection Styles particuliers -------------------- */
+blockquote {
+  font-style: italic;
+}
+
+code,
+pre,
+samp {
+  font-family: Lucida Sans Typewriter, monospace;
+}
+
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Modules */
+/* @note : Cette feuille de style gère la partie personnalisation et modules ajoutés.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Couleurs
+  == Liens
+  == Modules
+  == Formulaires
+  == Tableaux
+*/
+/* == @section Couleurs ==================== */
+body {
+  background-color: #f2f2e2;
+  color: #333;
+}
+
+/* == @section Liens ==================== */
+/* Signale les liens visités */
+/* Signale la prise de focus pour l'accessibilité */
+/* Signaler les liens externes */
+/* Contact, liens mailto */
+/* Liens vers un .pdf */
+/* Les liens d'évitement sont de la même couleur que le fond. */
+.skip,
+.skip:hover {
+  color: #f2f2e2;
+  cursor: default;
+}
+
+/* Au focus, ils apparaissent. */
+.skip:focus {
+  color: #333;
+}
+
+mark {
+  font-weight: bold;
+}
+
+#site-title {
+  vertical-align: middle;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 1em 2em;
+}
+
+/* == @section Modules ==================== */
+.page-numbers,
+form li {
+  list-style: none;
+}
+
+.page-numbers li {
+  display: inline-block;
+}
+
+/* == @section Formulaires ==================== */
+form label {
+  display: inline-block;
+  min-width: 200px;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: .2em 0 .2em .2em;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea,
+button,
+input[type="button"],
+input[type="reset"] {
+  min-width: 100px;
+}
+
+/* == @section Tableaux ==================== */
+table,
+.table {
+  border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
+  vertical-align: top;
+}
+
+table {
+  caption-side: bottom;
+  width: 100%;
+}
+
+caption {
+  color: #555;
+  font-style: italic;
+  padding: 1em;
+}
+
+tbody {
+  border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+tbody tr > * + * {
+  border-left: 1px solid #ccc;
+}
+
+table th,
+table td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+table td {
+  color: #555;
+}
+
+/* == @section WordPress ==================== */
+/*
+ * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
+ */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see HTML5boilerplate
+  * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+/* ----------------------------- */
+/* ==Structure étendue // Design réactif */
+/* @note : utilisé pour étendre la structure d'origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em), etc....
+ * @see : http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
+ * @see : http://lanyrd.com/2013/parisweb/sckdfg/
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Largeurs
+    -- Largeurs du contenu
+    -- Largeurs fixes supplémentaires
+  == Pansement pour le viewport
+  == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
+  == Modification des classes
+    -- Palier "large"
+    -- Palier "small"
+    -- Palier "tiny"
+*/
+/* == @section Largeurs ==================== */
+/* -- @subsection Largeur du contenu -------------------- */
+/* -- @subsection Largeurs fixes supplémentaires -------------------- */
+.w960p {
+  width: 960px;
+}
+
+.mw960p {
+  max-width: 960px;
+}
+
+/* == @section Pansement pour le viewport ==================== */
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-moz-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@-o-viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+/* == @section Ressources pour ordinateurs de bureau et écrans à haute densité de pixels ==================== */
+@media (min-width: 40em) {
+  /* Indiquer ici les ressources pour grands écrans : images d'arrière-plans, font-face, etc... */
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  /* Ajustement de styles pour les écrans à haute densité de pixels */
+}
+/* == @section Modification des classes ====================
+ * @note : premier palier :   "large"
+ * @note : deuxième palier :  "small"
+ * @note : troisième palier : "tiny"
+*/
+/* -- @subsection Palier "large" -------------------- */
+@media (min-width: 80em) {
+  .large-hidden,
+  .tablet-hidden {
+    display: none !important;
+  }
+
+  .large-visible {
+    display: block !important;
+  }
+
+  .large-no-float {
+    float: none;
+  }
+}
+@media (max-width: 80em) {
+  .w--site,
+  .mw--site {
+    width: 60%;
+  }
+}
+/* -- @subsection Palier "small" -------------------- */
+@media (max-width: 48em) {
+  .small-hidden,
+  .tablet-hidden {
+    display: none !important;
+  }
+
+  .small-visible {
+    display: block !important;
+  }
+
+  .small-no-float {
+    float: none;
+  }
+}
+/* -- @subsection Palier "tiny" -------------------- */
+@media (max-width: 40em) {
+  .tiny-hidden,
+  .phone-hidden {
+    display: none !important;
+  }
+
+  .tiny-visible {
+    display: block !important;
+  }
+
+  .tiny-no-float {
+    float: none;
+  }
+}

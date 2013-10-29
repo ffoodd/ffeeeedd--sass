@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+* @subsection Références :
+  * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
+  * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
+*/
+
+/* ----------------------------- */
+/* ==Base */
+/* @note : Aucun de ces éléments ne doit être modifié.
+/* ----------------------------- */
+
+/* Soft reset */
+html,
+body,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+blockquote {
+  padding-left: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+
+code { line-height: 1em; }
+
+table { margin-bottom: 21px; }
+
+.m-reset { margin: 0 !important; }
+
+.p-reset { padding: 0 !important; }
+
+.b-reset { border: 0 !important; }
+
+.ul-reset { list-style: none !important; }
+
+/* Élude la fusion des marges pour les titrailles */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+/* Élude la fusion des marges pour les éléments imbriqués */
+li p,
+li ul,
+li ol {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Balises HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+main { display: block; }
+
+/* Valeurs maximum */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Corrige un bug de max-width sur les images de Gmap3 */
+#map_canvas img,
+.gmnoprint img { max-width: none ; }
+
+/* Vous ne passerez pas ! */
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp,
+div {
+  -webkit-hyphens: auto;
+  -moz-hyphens:    auto;
+  -ms-hyphens:     auto;
+  -o-hyphens:      auto;
+  hyphens:         auto;
+  word-wrap: break-word;
+}
+
+/* Éviter l'interlignage disgracieux */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: .5ex;
+}
+
+/* Parce que "les abbr c'est bon pour la planète" (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
+abbr[title] {
+  border-bottom: dotted 1px; /* La couleur est héritée du texte */
+  cursor: help;
+}
+
+/* Images */
+img { vertical-align: middle; }
+
+a img { border: 0; }
+
+a:focus img { outline: 4px solid; }

@@ -1,0 +1,16 @@
+/**
+ * @author Gaël Poupard
+ * @site Thème ffeeeedd--sass
+ * @lastmodified 2013-10-29
+ */
+
+// Fichiers de base : ne devraient pas être modifiés
+@import "sass/base";
+@import "sass/structure";
+@import "sass/formulaires";
+@import "sass/navigation";
+
+// Fichiers personnalisables
+@import "sass/typographie";
+@import "sass/modules";
+@import "sass/structure--etendue";
