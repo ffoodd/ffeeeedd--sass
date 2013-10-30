@@ -29,29 +29,28 @@ body {
 }
 
 
-/* == @section Liens ==================== */
-a { }
+/* == @section Liens ====================
+ * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
+ * @note : ne surtout pas oublier le :focus, primoridla pour l'#a11y
+*/
+a {
 
-/* Signale les liens visités */
-a:visited { }
+  &:visited { }
 
-/* Signale la prise de focus pour l'accessibilité */
-a:focus { }
+  &:focus { }
 
-a:hover { }
+  &:hover { }
 
-a:active { }
+  &:active { }
 
-/* Signaler les liens externes */
-a[target="_blank"] { }
+  &[target="_blank"] { }
 
-/* Contact, liens mailto */
-.mail,
-a[href^="mailto:"] {
+  &.mail,
+  &[href^="mailto:"] { }
+
+  &[href$=".pdf"] { }
+
 }
-
-/* Liens vers un .pdf */
-a[href$=".pdf"] { }
 
 /* Les liens d'évitement sont de la même couleur que le fond. */
 .skip,

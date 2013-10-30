@@ -29,12 +29,12 @@ blockquote {
 
 a {
   text-decoration: none;
-}
 
-a:focus,
-a:hover,
-a:active {
-  text-decoration: underline;
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
 }
 
 code,
@@ -112,12 +112,12 @@ code,
 pre,
 samp,
 div {
+  -ms-word-break:  break-all;
+  word-break:      break-all;
+  word-break:      break-word;
   -webkit-hyphens: auto;
   -moz-hyphens:    auto;
-  -ms-hyphens:     auto;
-  -o-hyphens:      auto;
   hyphens:         auto;
-  word-wrap: break-word;
 }
 
 /* Éviter l'interlignage disgracieux */

@@ -97,15 +97,16 @@
   a {
     color: #000 !important;
     text-decoration: underline !important;
-  }
 
-  a[href]:after {
-    content: " (" attr(href) ")"; /* Affiche les URLs */
-  }
+    &[href]:after {
+      content: " (" attr(href) ") "; /* 1 */
+    }
 
-  a[href^="#"]:after,
-  a[href^="javascript"]:after {
-    content: ''; /* Masque l'url des ancres */
+    &[href^="javascript:"]:after,
+    &[href^="#"]:after,
+    &[href=""] {
+      content: ''; /* 2 */
+    }
   }
 
   abbr[title]:after {
