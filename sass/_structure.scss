@@ -282,13 +282,13 @@ img.alignright { margin-left: 2em; }
   background-color: transparent;
   border: 0;
   overflow: hidden;
-}
 
-.ir:before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 0;
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0;
+  }
 }
 
 

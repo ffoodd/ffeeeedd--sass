@@ -66,11 +66,13 @@ h6:first-child {
 }
 
 /* Élude la fusion des marges pour les éléments imbriqués */
-li p,
-li ul,
-li ol {
-  margin-bottom: 0;
-  margin-top: 0;
+li {
+  p,
+  ul,
+  ol {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
 /* Balises HTML5 */

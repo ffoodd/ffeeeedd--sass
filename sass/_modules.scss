@@ -112,17 +112,22 @@ input[type="reset"] { min-width: 100px; }
 
 
 /* == @section Tableaux ==================== */
-table,
-.table {
+table {
   border-collapse: collapse;
+  caption-side: bottom;
   display: table;
   table-layout: fixed;
   vertical-align: top;
-}
-
-table {
-  caption-side: bottom;
   width: 100%;
+
+  th,
+  td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  td { color: #555; }
 }
 
 caption {
@@ -131,21 +136,13 @@ caption {
   padding: 1em;
 }
 
-tbody { border: 1px solid #ccc; }
+tbody {
+  border: 1px solid #ccc;
 
-tbody tr:nth-child(odd) { background: #eee; }
+  tr:nth-child(odd) { background: #eee; }
 
-tbody tr > * + * { border-left: 1px solid #ccc; }
-
-table th,
-table td {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 20px;
-  text-align: left;
+  tr > * + * { border-left: 1px solid #ccc; }
 }
-
-table td { color: #555; }
-
 
 /* == @section WordPress ==================== */
 /*
