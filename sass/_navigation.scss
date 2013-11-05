@@ -37,9 +37,9 @@
 
   a:hover,
   a:active { position: static; }
-}
 
-.menu li:hover > .sub-menu,
-.menu a:focus + .sub-menu { left: -2px; }
+  .menu li:hover > &,
+  .menu a:focus + & { left: -2px; }
+}
 
 .menu-toggle { display: none; }

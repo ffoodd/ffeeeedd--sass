@@ -2,7 +2,7 @@
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-06-26
+* @lastmodified 2013-11-05
 * @subsection Références :
   * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
   * @see HTML5boilerplate
@@ -31,6 +31,8 @@
   == Largeurs
     -- Largeurs en %
   == Espacements
+    -- Marges externes
+    -- Marges internes
   == Éléments masqués
     -- Remplacement d'image
   == Orientation
@@ -47,13 +49,12 @@
 
 /* == @section Structure flottante ==================== */
 /* Bloc capable de contenir plusieurs .mod, peut contenir des flottants */
-.line {
-}
+.line { @extend .clear; }
 
 /* Module autonome - flottant, doit avoir une largeur */
 .mod {
   overflow: hidden;
-  padding: 1em;
+  @extend .pa1;
 }
 
 /* Généralement dans un .mod, peut contenir des .item */
@@ -65,25 +66,21 @@
 
 /* == @section Structure en tableau ==================== */
 .row {
+  @extend .clear;
   display: table;
   table-layout: fixed;
-  width: 100%;
+  @extend .w-100;
 }
 
 .row > *,
 .col {
   display: table-cell;
-  padding: 1em;
-  vertical-align: top;
+  @extend .pa1;
+  @extend .aligntop;
 }
 
 /* Blocs qui peuvent suivre des flottants ( i.e. pour déclarer une nouvelle ligne ) */
-.clear,
-.line,
-.row,
-.clearfix:after,
-.line:after,
-.mod:after { clear: both; }
+.clear { clear: both; }
 
 /* Blocs qui peuvent contenir des flottants */
 .clearfix:before,
@@ -92,6 +89,7 @@
 .line:after,
 .mod:before,
 .mod:after {
+  @extend .clear;
   content: "";
   display: table;
 }
@@ -105,18 +103,19 @@
 .alignleft { float: left; }
 
 img.left,
-img.alignleft { margin-right: 2em; }
+img.alignleft { @extend .mr2; }
 
 /* À droite */
 .right,
 .alignright { float: right; }
 
 img.right,
-img.alignright { margin-left: 2em; }
+img.alignright { @extend .ml2; }
+
 
 /* Centré */
 .aligncenter {
-  clear: both;
+  @extend .clear;
   display: block;
 }
 
@@ -134,29 +133,10 @@ img.alignright { margin-left: 2em; }
 
 .txtcenter { text-align: center; }
 
-/* Une gouttière d'1em si le parent est un .gut */
-.row.gut > * + * { border-left: 1em solid transparent; }
-
-.line.gut > .left { margin-right: 1em; }
-
-.line.gut > .right { margin-left: 1em; }
-
-/* "Multi-colonnes" avec des gouttières en % */
-.line.gut2 > * { width: 49%; }
-
-.line.gut2 > * + * { margin-left: 2%; }
-
-.line.gut3 > * { width: 32.333%; }
-
-.line.gut3 > * + * { margin-left: 1.5%; }
-
-.line.gut4 > * { width: 24%; }
-
-.line.gut4 > * + * { margin-left: 1.333%; }
-
-
 /* -- @subsection Alignement vertical -------------------- */
 .aligntop { vertical-align: top; }
+
+.alignmiddle { vertical-align: middle; }
 
 .alignbottom { vertical-align: bottom; }
 
@@ -198,45 +178,24 @@ img.alignright { margin-left: 2em; }
 .inbl,
 .btn {
   display: inline-block;
-  vertical-align: top;
+  @extend .aligntop;
 }
 
 
 /* == @section Largeurs ==================== */
 
 /* -- @subsection Largeurs en % -------------------- */
-.w10 { width: 10%; }
-
-.w20 { width: 20%; }
-
-.w25 { width: 25%; }
-
-.w30 { width: 30%; }
-
-.w33 { width: 33.333%; }
-
-.w40 { width: 40%; }
-
-.w50 { width: 50%; }
-
-.w60 { width: 60%; }
-
-.w66 { width: 66.666%; }
-
-.w70 { width: 70%; }
-
-.w75 { width: 75%; }
-
-.w80 { width: 80%; }
-
-.w90 { width: 90%; }
-
-.w100 { width: 100%; }
+@each $w in 10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100 {
+  .w-#{$w} {
+    width: percentage( $w / 100 );
+  }
+}
 
 
 /* == @section Espacements ====================
  * @note : p, m = padding, margin
  * @note : a, t, r, b, l = all, top, right, bottom, left
+ * @note : Nous avons besoin des valeurs de 0 à 2 au minimum.
 */
 @for $i from 0 through 3 {
 
@@ -263,7 +222,6 @@ img.alignright { margin-left: 2em; }
 }
 
 
-
 /* == @section Éléments masqués ==================== */
 .visually-hidden {
   left: -7000px;
@@ -280,7 +238,7 @@ img.alignright { margin-left: 2em; }
 /* -- @subsection Remplacement d'image -------------------- */
 .ir {
   background-color: transparent;
-  border: 0;
+  @extend .b-reset;
   overflow: hidden;
 
   &:before {

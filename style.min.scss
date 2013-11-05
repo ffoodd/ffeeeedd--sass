@@ -4,6 +4,12 @@
  * @lastmodified 2013-10-29
  */
 
+// Variables
+$base-line-height: 1.5em;
+$base-font-size: 1em;
+$regular-font-stack: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+$monospace-font-stack: "Lucida Sans Typewriter", monospace;
+
 // Fichiers de base : ne devraient pas être modifiés
 @import "sass/base";
 @import "sass/structure";

@@ -144,8 +144,12 @@ abbr[title] {
 }
 
 /* Images */
-img { vertical-align: middle; }
-
-a img { border: 0; }
-
-a:focus img { outline: 4px solid; }
+img {
+  vertical-align: middle;
+  a & {
+    @extend .b-reset;
+  }
+  a:focus & {
+    outline: 4px solid;
+  }
+}
