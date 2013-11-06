@@ -2,7 +2,7 @@
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-06-26
+* @lastmodified 2013-11-06
 * @subsection Références :
   * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
   * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
@@ -54,16 +54,6 @@ table { margin-bottom: 21px; }
 .b-reset { border: 0 !important; }
 
 .ul-reset { list-style: none !important; }
-
-/* Élude la fusion des marges pour les titrailles */
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
 
 /* Élude la fusion des marges pour les éléments imbriqués */
 li {

@@ -5,10 +5,43 @@
  */
 
 // Variables
-$base-line-height: 1.5em;
-$base-font-size: 1em;
+$base-line-height: 1.5;
+$base-font-size: 16;
+$ratio: $base-font-size * $base-line-height;
 $regular-font-stack: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
+
+// Fonctions
+@function em($f, $base: $base-font-size) {
+  @return $f / $base * 1em;
+}
+
+// Mixins
+@mixin font($s, $m: true) {
+  /* @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
+
+  @if $s > $ratio {
+
+    font-size: em( $s );
+    line-height:  ceil( $s / $ratio ) * $ratio / $s;
+    @if $m == true {
+      $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
+      margin: $margin (0) $margin / 2 ;
+    }
+
+  } @else if $s < $ratio {
+
+    font-size: em( $s );
+    line-height: $ratio / $s;
+    @if $m == true {
+      $margin: $ratio / $s * 1em;
+      margin: $margin * 2 (0) $margin;
+    }
+  }
+
+}
 
 // Fichiers de base : ne devraient pas être modifiés
 @import "sass/base";

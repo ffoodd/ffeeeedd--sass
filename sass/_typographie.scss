@@ -2,7 +2,7 @@
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-11-05
+* @lastmodified 2013-11-06
 */
 
 /* ----------------------------- */
@@ -27,7 +27,10 @@
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
 
-body { font: $base-font-size/$base-line-height $regular-font-stack; }
+body {
+  @include font(16, false);
+  font-family: $regular-font-stack;
+}
 
 /*
   Corps du texte pour le contenu,
@@ -43,96 +46,63 @@ td,
 th,
 label,
 textarea {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  margin: $base-line-height 0;
+  @include font(16, true);
 }
 
 /* -- @subsection Niveaux de titres -------------------- */
 .hn {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
+  &:first-child {
+    /* Élude la fusion des marges pour les titrailles */
+    margin-top: 0;
+  }
 }
 
 h1,
 .h1-like {
-  font-size: 5.1429em;
-  line-height: .8751em;
-  margin: .5834em 0 .2917em;
+  @include font(96, true);
   @extend .hn;
 }
 
 h2,
 .h2-like {
-  font-size: 2.5714em;
-  line-height: 1.1666em;
-  margin: 1.1666em 0 .5833em;
+  @include font(64, true);
   @extend .hn;
 }
 
 h3,
 .h3-like {
-  font-size: 1.7143em;
-  line-height: 1.75em;
-  margin: 1.75em 0 .875em;
+  @include font(42, true);
   @extend .hn;
 }
 
 h4,
 .h4-like {
-  font-size: 1.2857em;
-  line-height: 1.1667em;
-  margin: 2.3334em 0 1.1667em;
+  @include font(36, true);
   @extend .hn;
 }
 
 h5,
 .h5-like {
-  font-size: 1.1429em;
-  line-height: 1.3125em;
-  margin: 2.625em 0 1.3125em;
+  @include font(24, true);
   @extend .hn;
 }
 
 h6,
 .h6-like {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 3em 0 1.5em;
+  @include font(18, true);
   @extend .hn;
 }
 
 
+
 /* -- @subsection Corps alternatifs -------------------- */
-.smaller {
-  font-size: .8571em;
-  line-height: 1.75em;
-  margin: 1.75em 0;
-}
-
 .small {
-  font-size: .8571em;
-  line-height: 1.75em;
-  margin: 1.75em 0;
+  @include font(12, true);
 }
 
-.big {
-  font-size: 1.1429em;
-  line-height: 1.3125em;
-  margin: 1.3125em 0;
-}
-
-.bigger {
-  font-size: 1.2857em;
-  line-height: 1.1667em;
-  margin: 1.1667em 0;
-}
-
-.biggest {
-  font-size: 1.7143em;
-  line-height: 1.75em;
-  margin: .875em 0;
-}
 
 /* -- @subsection Styles particuliers -------------------- */
 blockquote { font-style: italic; }

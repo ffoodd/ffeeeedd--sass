@@ -33,10 +33,7 @@ blockquote {
 a {
   text-decoration: none;
 }
-
-a:focus,
-a:hover,
-a:active {
+a:focus, a:hover, a:active {
   text-decoration: underline;
 }
 
@@ -62,22 +59,12 @@ table {
   padding: 0 !important;
 }
 
-.b-reset {
+.b-reset, a img, .ir {
   border: 0 !important;
 }
 
 .ul-reset {
   list-style: none !important;
-}
-
-/* Élude la fusion des marges pour les titrailles */
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
 }
 
 /* Élude la fusion des marges pour les éléments imbriqués */
@@ -162,14 +149,6 @@ abbr[title] {
 }
 
 /* Images */
-img {
-  vertical-align: middle;
-}
-
-a img {
-  border: 0;
-}
-
 a:focus img {
   outline: 4px solid;
 }
@@ -222,7 +201,6 @@ a:focus img {
 /* Module autonome - flottant, doit avoir une largeur */
 .mod {
   overflow: hidden;
-  padding: 1em;
 }
 
 /* Généralement dans un .mod, peut contenir des .item */
@@ -235,23 +213,20 @@ a:focus img {
 .row {
   display: table;
   table-layout: fixed;
-  width: 100%;
 }
 
 .row > *,
 .col {
   display: table-cell;
-  padding: 1em;
-  vertical-align: top;
 }
 
 /* Blocs qui peuvent suivre des flottants ( i.e. pour déclarer une nouvelle ligne ) */
-.clear,
-.line,
-.row,
+.clear, .line, .row, .clearfix:before,
 .clearfix:after,
+.line:before,
 .line:after,
-.mod:after {
+.mod:before,
+.mod:after, .aligncenter {
   clear: both;
 }
 
@@ -274,25 +249,14 @@ a:focus img {
   float: left;
 }
 
-img.left,
-img.alignleft {
-  margin-right: 2em;
-}
-
 /* À droite */
 .right,
 .alignright {
   float: right;
 }
 
-img.right,
-img.alignright {
-  margin-left: 2em;
-}
-
 /* Centré */
 .aligncenter {
-  clear: both;
   display: block;
 }
 
@@ -316,47 +280,18 @@ img.alignright {
   text-align: center;
 }
 
-/* Une gouttière d'1em si le parent est un .gut */
-.row.gut > * + * {
-  border-left: 1em solid transparent;
-}
-
-.line.gut > .left {
-  margin-right: 1em;
-}
-
-.line.gut > .right {
-  margin-left: 1em;
-}
-
-/* "Multi-colonnes" avec des gouttières en % */
-.line.gut2 > * {
-  width: 49%;
-}
-
-.line.gut2 > * + * {
-  margin-left: 2%;
-}
-
-.line.gut3 > * {
-  width: 32.333%;
-}
-
-.line.gut3 > * + * {
-  margin-left: 1.5%;
-}
-
-.line.gut4 > * {
-  width: 24%;
-}
-
-.line.gut4 > * + * {
-  margin-left: 1.333%;
-}
-
 /* -- @subsection Alignement vertical -------------------- */
-.aligntop {
+.aligntop, .row > *,
+.col, .inbl,
+.btn, textarea {
   vertical-align: top;
+}
+
+.alignmiddle, img, input,
+button,
+select,
+label {
+  vertical-align: middle;
 }
 
 .alignbottom {
@@ -420,219 +355,228 @@ img.alignright {
 .inbl,
 .btn {
   display: inline-block;
-  vertical-align: top;
 }
 
 /* == @section Largeurs ==================== */
 /* -- @subsection Largeurs en % -------------------- */
-.w10 {
+.w-10 {
   width: 10%;
 }
 
-.w20 {
+.w-20 {
   width: 20%;
 }
 
-.w25 {
+.w-25 {
   width: 25%;
 }
 
-.w30 {
+.w-30 {
   width: 30%;
 }
 
-.w33 {
-  width: 33.333%;
+.w-33 {
+  width: 33%;
 }
 
-.w40 {
+.w-40 {
   width: 40%;
 }
 
-.w50 {
+.w-50 {
   width: 50%;
 }
 
-.w60 {
+.w-60 {
   width: 60%;
 }
 
-.w66 {
-  width: 66.666%;
+.w-66 {
+  width: 66%;
 }
 
-.w70 {
+.w-70 {
   width: 70%;
 }
 
-.w75 {
+.w-75 {
   width: 75%;
 }
 
-.w80 {
+.w-80 {
   width: 80%;
 }
 
-.w90 {
+.w-90 {
   width: 90%;
 }
 
-.w100 {
+.w-100, .row {
   width: 100%;
 }
 
 /* == @section Espacements ====================
  * @note : p, m = padding, margin
  * @note : a, t, r, b, l = all, top, right, bottom, left
+ * @note : Nous avons besoin des valeurs de 0 à 2 au minimum.
 */
-/* -- @subsection Marges externes -------------------- */
-.ma1 {
-  margin: 1em;
-}
-
-.ma2 {
-  margin: 2em;
-}
-
-.ma3 {
-  margin: 3em;
+.ma0 {
+  margin: 0em;
 }
 
 .mt0 {
-  margin-top: 0;
+  margin-top: 0em;
+}
+
+.mr0 {
+  margin-right: 0em;
+}
+
+.mb0 {
+  margin-bottom: 0em;
+}
+
+.ml0 {
+  margin-left: 0em;
+}
+
+.pa0 {
+  padding: 0em;
+}
+
+.pt0 {
+  padding-top: 0em;
+}
+
+.pr0 {
+  padding-right: 0em;
+}
+
+.pb0 {
+  padding-bottom: 0em;
+}
+
+.pl0 {
+  padding-left: 0em;
+}
+
+.ma1 {
+  margin: 1em;
 }
 
 .mt1 {
   margin-top: 1em;
 }
 
-.mt2 {
-  margin-top: 2em;
-}
-
-.mt3 {
-  margin-top: 3em;
-}
-
-.mr0 {
-  margin-right: 0;
-}
-
 .mr1 {
   margin-right: 1em;
-}
-
-.mr2 {
-  margin-right: 2em;
-}
-
-.mr3 {
-  margin-right: 3em;
-}
-
-.mb0 {
-  margin-bottom: 0;
 }
 
 .mb1 {
   margin-bottom: 1em;
 }
 
-.mb2 {
-  margin-bottom: 2em;
-}
-
-.mb3 {
-  margin-bottom: 3em;
-}
-
-.ml0 {
-  margin-left: 0;
-}
-
 .ml1 {
   margin-left: 1em;
 }
 
-.ml2 {
-  margin-left: 2em;
-}
-
-.ml3 {
-  margin-left: 3em;
-}
-
-/* -- @subsection Marges internes -------------------- */
-.pa1 {
+.pa1, .mod, .row > *,
+.col {
   padding: 1em;
-}
-
-.pa2 {
-  padding: 2em;
-}
-
-.pa3 {
-  padding: 3em;
-}
-
-.pt0 {
-  padding-top: 0;
 }
 
 .pt1 {
   padding-top: 1em;
 }
 
-.pt2 {
-  padding-top: 2em;
-}
-
-.pt3 {
-  padding-top: 3em;
-}
-
-.pr0 {
-  padding-right: 0;
-}
-
 .pr1 {
   padding-right: 1em;
-}
-
-.pr2 {
-  padding-right: 2em;
-}
-
-.pr3 {
-  padding-right: 3em;
-}
-
-.pb0 {
-  padding-bottom: 0;
 }
 
 .pb1 {
   padding-bottom: 1em;
 }
 
-.pb2 {
-  padding-bottom: 2em;
-}
-
-.pb3 {
-  padding-bottom: 3em;
-}
-
-.pl0 {
-  padding-left: 0;
-}
-
 .pl1 {
   padding-left: 1em;
 }
 
+.ma2 {
+  margin: 2em;
+}
+
+.mt2 {
+  margin-top: 2em;
+}
+
+.mr2, img.left,
+img.alignleft {
+  margin-right: 2em;
+}
+
+.mb2 {
+  margin-bottom: 2em;
+}
+
+.ml2, img.right,
+img.alignright {
+  margin-left: 2em;
+}
+
+.pa2 {
+  padding: 2em;
+}
+
+.pt2 {
+  padding-top: 2em;
+}
+
+.pr2 {
+  padding-right: 2em;
+}
+
+.pb2 {
+  padding-bottom: 2em;
+}
+
 .pl2 {
   padding-left: 2em;
+}
+
+.ma3 {
+  margin: 3em;
+}
+
+.mt3 {
+  margin-top: 3em;
+}
+
+.mr3 {
+  margin-right: 3em;
+}
+
+.mb3 {
+  margin-bottom: 3em;
+}
+
+.ml3 {
+  margin-left: 3em;
+}
+
+.pa3 {
+  padding: 3em;
+}
+
+.pt3 {
+  padding-top: 3em;
+}
+
+.pr3 {
+  padding-right: 3em;
+}
+
+.pb3 {
+  padding-bottom: 3em;
 }
 
 .pl3 {
@@ -659,10 +603,8 @@ img.alignright {
 /* -- @subsection Remplacement d'image -------------------- */
 .ir {
   background-color: transparent;
-  border: 0;
   overflow: hidden;
 }
-
 .ir:before {
   content: "";
   display: block;
@@ -682,12 +624,13 @@ img.alignright {
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-06-26
+* @lastmodified 2013-11-05
 * @subsection Références :
   * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
   * @see HTML5boilerplate
   * @see github.com/nathansmith/formalize
   * @see www.sitepen.com
+  * @see https://github.com/HugoGiraudel/KNACSS-Sass/blob/master/sass/modules/_forms.scss @author : Hugo Giraudel pour Knacss-Sass
 */
 /* ----------------------------- */
 /* ==Formulaires */
@@ -702,7 +645,6 @@ input,
 button,
 select,
 label {
-  vertical-align: middle;
   /* @bugfix alignement */
 }
 
@@ -730,7 +672,6 @@ textarea {
                 /* @bugfix
 @affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
   resize: vertical;
-  vertical-align: top;
   /* Évite l'aplication d'une fonte monospace */
   font-family: inherit;
 }
@@ -752,14 +693,7 @@ input[type="radio"] {
 @affected Corrige un espace excessif sur IE8/9 */
 }
 
-input[type="search"] {
-  -webkit-appearance: textfield;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
   display: none;
                /* @bugfix
 @affected 'x' apparait à droite d'un champ de recherche lorsqu'un texte est entré. Ceci le retire */
@@ -769,8 +703,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #777;
 }
 
-input:-moz-placeholder,
-textarea:-moz-placeholder {
+input:-moz-placeholder, textarea:-moz-placeholder {
   color: #777;
 }
 
@@ -805,7 +738,6 @@ input[type='submit']::-moz-focus-inner {
   display: inline-block;
   position: relative;
 }
-
 .menu li a {
   display: block;
 }
@@ -815,21 +747,17 @@ input[type='submit']::-moz-focus-inner {
   left: -7000px;
   z-index: 4;
 }
-
-.menu li:hover > .sub-menu,
-.menu a:focus + .sub-menu {
-  left: -2px;
-}
-
 .sub-menu a:focus {
   left: 7000px;
   position: absolute;
   top: 0;
 }
-
 .sub-menu a:hover,
 .sub-menu a:active {
   position: static;
+}
+.menu li:hover > .sub-menu, .menu a:focus + .sub-menu {
+  left: -2px;
 }
 
 .menu-toggle {
@@ -859,9 +787,10 @@ input[type='submit']::-moz-focus-inner {
  * @see : http://ffffallback.com/
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
-/* = 14px & s'adapte à votre design */
 body {
-  font: 1em/1.5 Lucida Sans Unicode, Lucida Sans, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
 /*
@@ -879,110 +808,72 @@ th,
 label,
 textarea {
   font-size: 1em;
-  /* = 14px */
-  line-height: 1.5em;
-  margin: 1.5em 0;
-}
-
-/* -- @subsection Niveaux de titres -------------------- */
-h1,
-.h1-like {
-  font-size: 5.1429em;
-  /* = 72px */
-  line-height: .8751em;
-  margin: .5834em 0 .2917em;
-}
-
-h2,
-.h2-like {
-  font-size: 2.5714em;
-  /* = 36px */
-  line-height: 1.1666em;
-  margin: 1.1666em 0 .5833em;
-}
-
-h3,
-.h3-like {
-  font-size: 1.7143em;
-  /* = 24px */
-  line-height: 1.75em;
-  margin: 1.75em 0 .875em;
-}
-
-h4,
-.h4-like {
-  font-size: 1.2857em;
-  /* = 18px */
-  line-height: 1.1667em;
-  margin: 2.3334em 0 1.1667em;
-}
-
-h5,
-.h5-like {
-  font-size: 1.1429em;
-  /* = 16px */
-  line-height: 1.3125em;
-  margin: 2.625em 0 1.3125em;
-}
-
-h6,
-.h6-like {
-  font-size: 1em;
-  /* = 14px */
-  line-height: 1.5em;
+  line-height: 1.5;
   margin: 3em 0 1.5em;
 }
 
-h1,
-.h1-like,
-h2,
-.h2-like,
-h3,
-.h3-like,
-h4,
-.h4-like,
-h5,
-.h5-like,
-h6,
+/* -- @subsection Niveaux de titres -------------------- */
+.hn, h1,
+.h1-like, h2,
+.h2-like, h3,
+.h3-like, h4,
+.h4-like, h5,
+.h5-like, h6,
 .h6-like {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+.hn:first-child, h1:first-child,
+.h1-like:first-child, h2:first-child,
+.h2-like:first-child, h3:first-child,
+.h3-like:first-child, h4:first-child,
+.h4-like:first-child, h5:first-child,
+.h5-like:first-child, h6:first-child,
+.h6-like:first-child {
+  /* Élude la fusion des marges pour les titrailles */
+  margin-top: 0;
+}
+
+h1,
+.h1-like {
+  font-size: 6em;
+  line-height: 1;
+  margin: 1em 0 0.5em;
+}
+
+h2,
+.h2-like {
+  font-size: 4em;
+  line-height: 1.125;
+  margin: 1.125em 0 0.5625em;
+}
+
+h3,
+.h3-like {
+  font-size: 2.625em;
+  line-height: 1.14286;
+  margin: 1.14286em 0 0.57143em;
+}
+
+h4,
+.h4-like {
+  font-size: 2.25em;
+  line-height: 1.33333;
+  margin: 1.33333em 0 0.66667em;
+}
+
+h6,
+.h6-like {
+  font-size: 1.125em;
+  line-height: 1.33333;
+  margin: 2.66667em 0 1.33333em;
+}
 
 /* -- @subsection Corps alternatifs -------------------- */
-.smaller {
-  font-size: .8571em;
-  /* = 12px */
-  line-height: 1.75em;
-  margin: 1.75em 0;
-}
-
 .small {
-  font-size: .8571em;
-  /* = 12px */
-  line-height: 1.75em;
-  margin: 1.75em 0;
-}
-
-.big {
-  font-size: 1.1429em;
-  /* = 16px */
-  line-height: 1.3125em;
-  margin: 1.3125em 0;
-}
-
-.bigger {
-  font-size: 1.2857em;
-  /* = 18px */
-  line-height: 1.1667em;
-  margin: 1.1667em 0;
-}
-
-.biggest {
-  font-size: 1.7143em;
-  /* = 24px */
-  line-height: 1.75em;
-  margin: .875em 0;
+  font-size: 0.75em;
+  line-height: 2;
+  margin: 4em 0 2em;
 }
 
 /* -- @subsection Styles particuliers -------------------- */
@@ -993,7 +884,7 @@ blockquote {
 code,
 pre,
 samp {
-  font-family: Lucida Sans Typewriter, monospace;
+  font-family: "Lucida Sans Typewriter", monospace;
 }
 
 /**
@@ -1021,12 +912,10 @@ body {
   color: #333;
 }
 
-/* == @section Liens ==================== */
-/* Signale les liens visités */
-/* Signale la prise de focus pour l'accessibilité */
-/* Signaler les liens externes */
-/* Contact, liens mailto */
-/* Liens vers un .pdf */
+/* == @section Liens ====================
+ * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
+ * @note : ne surtout pas oublier le :focus, primoridla pour l'#a11y
+*/
 /* Les liens d'évitement sont de la même couleur que le fond. */
 .skip,
 .skip:hover {
@@ -1096,17 +985,22 @@ input[type="reset"] {
 }
 
 /* == @section Tableaux ==================== */
-table,
-.table {
+table {
   border-collapse: collapse;
+  caption-side: bottom;
   display: table;
   table-layout: fixed;
   vertical-align: top;
-}
-
-table {
-  caption-side: bottom;
   width: 100%;
+}
+table th,
+table td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: left;
+}
+table td {
+  color: #555;
 }
 
 caption {
@@ -1118,24 +1012,11 @@ caption {
 tbody {
   border: 1px solid #ccc;
 }
-
 tbody tr:nth-child(odd) {
   background: #eee;
 }
-
 tbody tr > * + * {
   border-left: 1px solid #ccc;
-}
-
-table th,
-table td {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 20px;
-  text-align: left;
-}
-
-table td {
-  color: #555;
 }
 
 /* == @section WordPress ==================== */
