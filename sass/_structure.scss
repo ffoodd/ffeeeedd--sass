@@ -127,38 +127,37 @@ img.alignright { @extend .ml2; }
 }
 
 /* Alignement du texte */
-.txtleft { text-align: left; }
-
-.txtright { text-align: right; }
-
-.txtcenter { text-align: center; }
+@each $t in left, right, center, justify {
+  .txt#{$t} {
+    text-align: $t;
+  }
+}
 
 /* -- @subsection Alignement vertical -------------------- */
-.aligntop { vertical-align: top; }
-
-.alignmiddle { vertical-align: middle; }
-
-.alignbottom { vertical-align: bottom; }
+@each $a in top, middle, bottom {
+  .align#{$a} {
+    vertical-align: $a;
+  }
+}
 
 
 /* == @section Grilles ==================== */
 
 /* -- @subsection Grilles égales, marge 2% -------------------- */
 /* Les enfants directs sont flottants */
-[class*=grid] > * { float: left; }
+[class*=grid] > * {
+  @extend .left;
+}
 
 /* Et voilà la gouttière */
 [class*=grid] > * + * { margin-left: 2%; }
 
-.grid2 > * { width: 49%; }
-
-.grid3 > * { width: 32%; }
-
-.grid4 > * { width: 23.5%; }
-
-.grid5 > * { width: 18.4%; }
-
-.grid6 > * { width: 15%; }
+@for $c from 2 through 6 {
+  .grid-#{$c} > * {
+    $g: 100 - ( $c - 1 ) * 2;
+    width: percentage( $g / $c / 100 );
+  }
+}
 
 /* -- @subsection Grilles inégales (1-2, 2-1, 1-3 et 3-1) -------------------- */
 .grid2-1 > *:first-child,

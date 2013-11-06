@@ -97,12 +97,15 @@ h6,
 }
 
 
-
 /* -- @subsection Corps alternatifs -------------------- */
+small,
 .small {
-  @include font(12, true);
+  @include font(12, false);
 }
 
+.big {
+  @include font(18, false);
+}
 
 /* -- @subsection Styles particuliers -------------------- */
 blockquote { font-style: italic; }

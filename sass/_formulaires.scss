@@ -50,7 +50,7 @@ textarea {
   @affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
   resize: vertical;
   @extend .aligntop;
-  /* Évite l'aplication d'une fonte monospace */
+  /* Évite l'application d'une fonte monospace */
   font-family: inherit;
 }
 

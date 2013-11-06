@@ -20,9 +20,7 @@
 /* Sommaire */
 /* ----------------------------- */
 /*
-  == Largeurs
-    -- Largeurs du contenu
-    -- Largeurs fixes supplémentaires
+  == Largeur du contenu
   == Pansement pour le viewport
   == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
   == Modification des classes
@@ -32,17 +30,14 @@
 */
 
 
-/* == @section Largeurs ==================== */
+/* == @section Largeur du contenu ==================== */
+.w--site {
+  width: em( $base-width );
+}
 
-/* -- @subsection Largeur du contenu -------------------- */
-.w--site { }
-
-.mw--site { }
-
-/* -- @subsection Largeurs fixes supplémentaires -------------------- */
-.w960p { width: 960px; }
-
-.mw960p { max-width: 960px; }
+.mw--site {
+  max-width: em( $base-width );
+}
 
 
 /* == @section Pansement pour le viewport ==================== */

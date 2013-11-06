@@ -10,6 +10,7 @@ $base-font-size: 16;
 $ratio: $base-font-size * $base-line-height;
 $regular-font-stack: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
+$base-width: 960;
 
 // Fonctions
 @function em($f, $base: $base-font-size) {
