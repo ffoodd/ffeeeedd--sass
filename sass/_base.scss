@@ -23,29 +23,23 @@ label {
 
 ul,
 ol,
-blockquote {
-  padding-left: 2em;
-}
+blockquote { padding-left: 2em; }
 
 a {
   text-decoration: none;
 
   &:focus,
   &:hover,
-  &:active {
-    text-decoration: underline;
-  }
+  &:active { text-decoration: underline; }
 }
 
 code,
 pre,
-samp {
-  white-space: pre-wrap;
-}
+samp { white-space: pre-wrap; }
 
 code { line-height: 1em; }
 
-table { margin-bottom: 21px; }
+table { margin-bottom: 1em; }
 
 .m-reset { margin: 0 !important; }
 
@@ -91,10 +85,6 @@ video {
   max-width: 100%;
 }
 
-/* Corrige un bug de max-width sur les images de Gmap3 */
-#map_canvas img,
-.gmnoprint img { max-width: none ; }
-
 /* Vous ne passerez pas ! */
 textarea,
 table,
@@ -119,13 +109,9 @@ sub {
   position: relative;
 }
 
-sup {
-  bottom: 1ex;
-}
+sup { bottom: 1ex; }
 
-sub {
-  top: .5ex;
-}
+sub { top: .5ex; }
 
 /* Parce que "les abbr c'est bon pour la planète" (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
 abbr[title] {
@@ -136,10 +122,6 @@ abbr[title] {
 /* Images */
 img {
   vertical-align: middle;
-  a & {
-    @extend .b-reset;
-  }
-  a:focus & {
-    outline: 4px solid;
-  }
+  a & { @extend .b-reset; }
+  a:focus & { outline: 4px solid; }
 }

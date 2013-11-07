@@ -25,8 +25,6 @@
     -- Alignement horizontal
     -- Alignement vertical
   == Grilles
-    -- Grilles égales, marge 2%
-    -- Grilles inégales (1-2, 2-1, 1-3 et 3-1)
   == Inline-block
   == Largeurs
     -- Largeurs en %
@@ -49,19 +47,10 @@
 
 /* == @section Structure flottante ==================== */
 /* Bloc capable de contenir plusieurs .mod, peut contenir des flottants */
-.line { @extend .clear; }
-
-/* Module autonome - flottant, doit avoir une largeur */
-.mod {
+.line {
   overflow: hidden;
-  @extend .pa1;
+  @extend .clear;
 }
-
-/* Généralement dans un .mod, peut contenir des .item */
-.items { }
-
-/* Fluide, contient des flottants, peut être placé à côté d'un flottant */
-.item { overflow: hidden; }
 
 
 /* == @section Structure en tableau ==================== */
@@ -79,17 +68,14 @@
   @extend .aligntop;
 }
 
-/* Blocs qui peuvent suivre des flottants ( i.e. pour déclarer une nouvelle ligne ) */
+/* Blocs qui peuvent suivre des flottants */
 .clear { clear: both; }
 
 /* Blocs qui peuvent contenir des flottants */
-.clearfix:before,
 .clearfix:after,
-.line:before,
 .line:after,
-.mod:before,
 .mod:after {
-  @extend .clear;
+  clear: both;
   content: "";
   display: table;
 }
@@ -103,14 +89,14 @@
 .alignleft { float: left; }
 
 img.left,
-img.alignleft { @extend .mr2; }
+img.alignleft { margin-right: 2em; }
 
 /* À droite */
 .right,
 .alignright { float: right; }
 
 img.right,
-img.alignright { @extend .ml2; }
+img.alignright { margin-left: 2em; }
 
 
 /* Centré */
@@ -135,22 +121,23 @@ img.alignright { @extend .ml2; }
 
 /* -- @subsection Alignement vertical -------------------- */
 @each $a in top, middle, bottom {
-  .align#{$a} {
-    vertical-align: $a;
-  }
+  .align#{$a} { vertical-align: $a; }
 }
 
 
 /* == @section Grilles ==================== */
+// Contexte de formatage
+[class*="grid"] {
+  @extend .line;
 
-/* -- @subsection Grilles égales, marge 2% -------------------- */
-/* Les enfants directs sont flottants */
-[class*=grid] > * {
-  @extend .left;
+  // Les enfants directs sont flottants
+  & > * {
+    float: left;
 
-  /* Et voilà la gouttière */
-  & + * {
-    margin-left: percentage( $grid-guts / 100 );
+    & + * {
+      // Et voilà la gouttière
+      margin-left: percentage( $grid-guts / 100 );
+    }
   }
 }
 
@@ -160,11 +147,18 @@ img.alignright { @extend .ml2; }
   .grid-#{$c} > * {
     $g: 100 - ( $c - 1 ) * $grid-guts;
     width: percentage( $g / $c / 100 );
+
+    // On "nettoie" la grille pour autoriser les lignes multiples
+    // @to-do : compatibilité IE8
+    $n: $c + 1;
+    &:nth-child( #{$c}n + #{$n} ) {
+      clear: left;
+      margin-left: 0;
+    }
   }
 
   // Grille asymétrique (une seule gouttière)
   $as: $c - 1 ;
-
   .grid-#{$as}-1 > *:first-child,
   .grid-1-#{$as} > * + * {
     $g: 100 - $grid-guts;
@@ -174,6 +168,12 @@ img.alignright { @extend .ml2; }
   .grid-#{$as}-1 > * + * {
     $g: 100 - $grid-guts;
     width: percentage( floor( $g / $c ) / 100 );
+  }
+  // On "nettoie" les grilles asymétriques
+  [class*="grid-1-"] > *:nth-child( 2n + 3 ),
+  .grid-#{$as}-1 > *:nth-child( 2n + 3 ) {
+    clear: left;
+    margin-left: 0;
   }
 
 }
@@ -191,9 +191,7 @@ img.alignright { @extend .ml2; }
 
 /* -- @subsection Largeurs en % -------------------- */
 @each $w in 10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100 {
-  .w-#{$w} {
-    width: percentage( $w / 100 );
-  }
+  .w-#{$w} { width: percentage( $w / 100 ); }
 }
 
 
@@ -260,7 +258,5 @@ img.alignright { @extend .ml2; }
 */
 @media ( orientation: landscape ) and ( max-device-width: 768px ) {
   html,
-  body {
-    -webkit-text-size-adjust: 100%;
-  }
+  body { -webkit-text-size-adjust: 100%; }
 }

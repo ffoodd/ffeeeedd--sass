@@ -31,13 +31,9 @@
 
 
 /* == @section Largeur du contenu ==================== */
-.w--site {
-  width: em( $base-width );
-}
+.w--site { width: em( $base-width ); }
 
-.mw--site {
-  max-width: em( $base-width );
-}
+.mw--site { max-width: em( $base-width ); }
 
 
 /* == @section Pansement pour le viewport ==================== */
