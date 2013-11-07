@@ -4,6 +4,13 @@
  * @site Thème ffeeeedd--sass
  * @lastmodified 2013-10-29
  */
+/* Typographie */
+/* Dimensions */
+/* Largeur maximum en px (sera convertie en em) */
+/* Pour les espacements : padding, margin (en em)... */
+/* Nombre de colonnes pour la grille */
+/* La gouttière en px, convertie en pourcentage à la ligne suivante */
+/* Et voilà la gouttière en pourcents */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -280,6 +287,10 @@ a:focus img {
   text-align: center;
 }
 
+.txtjustify {
+  text-align: justify;
+}
+
 /* -- @subsection Alignement vertical -------------------- */
 .aligntop, .row > *,
 .col, .inbl,
@@ -304,51 +315,79 @@ label {
 [class*=grid] > * {
   float: left;
 }
-
-/* Et voilà la gouttière */
 [class*=grid] > * + * {
+  /* Et voilà la gouttière */
   margin-left: 2%;
 }
 
-.grid2 > * {
+.grid-2 > * {
   width: 49%;
 }
 
-.grid3 > * {
+.grid-1-1 > *:first-child,
+.grid-1-1 > * + * {
+  width: 49%;
+}
+
+.grid-1-1 > *:first-child,
+.grid-1-1 > * + * {
+  width: 49%;
+}
+
+.grid-3 > * {
   width: 32%;
 }
 
-.grid4 > * {
-  width: 23.5%;
-}
-
-.grid5 > * {
-  width: 18.4%;
-}
-
-.grid6 > * {
-  width: 15%;
-}
-
-/* -- @subsection Grilles inégales (1-2, 2-1, 1-3 et 3-1) -------------------- */
-.grid2-1 > *:first-child,
-.grid1-2 > * + * {
+.grid-2-1 > *:first-child,
+.grid-1-2 > * + * {
   width: 66%;
 }
 
-.grid1-2 > *:first-child,
-.grid2-1 > * + * {
+.grid-1-2 > *:first-child,
+.grid-2-1 > * + * {
   width: 32%;
 }
 
-.grid1-3 > *:first-child,
-.grid3-1 > * + * {
+.grid-4 > * {
   width: 23.5%;
 }
 
-.grid3-1 > *:first-child,
-.grid1-3 > * + * {
-  width: 74.5%;
+.grid-3-1 > *:first-child,
+.grid-1-3 > * + * {
+  width: 74%;
+}
+
+.grid-1-3 > *:first-child,
+.grid-3-1 > * + * {
+  width: 24%;
+}
+
+.grid-5 > * {
+  width: 18.4%;
+}
+
+.grid-4-1 > *:first-child,
+.grid-1-4 > * + * {
+  width: 79%;
+}
+
+.grid-1-4 > *:first-child,
+.grid-4-1 > * + * {
+  width: 19%;
+}
+
+.grid-6 > * {
+  width: 15%;
+}
+
+.grid-5-1 > *:first-child,
+.grid-1-5 > * + * {
+  width: 82%;
+}
+
+.grid-1-5 > *:first-child,
+.grid-5-1 > * + * {
+  width: 16%;
 }
 
 /* == @section Inline-block ==================== */
@@ -672,7 +711,7 @@ textarea {
                 /* @bugfix
 @affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
   resize: vertical;
-  /* Évite l'aplication d'une fonte monospace */
+  /* Évite l'application d'une fonte monospace */
   font-family: inherit;
 }
 
@@ -788,6 +827,10 @@ input[type='submit']::-moz-focus-inner {
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
 body {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 1em;
   line-height: 1.5;
   font-family: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
@@ -807,6 +850,10 @@ td,
 th,
 label,
 textarea {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 1em;
   line-height: 1.5;
   margin: 3em 0 1.5em;
@@ -836,6 +883,10 @@ textarea {
 
 h1,
 .h1-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 6em;
   line-height: 1;
   margin: 1em 0 0.5em;
@@ -843,6 +894,10 @@ h1,
 
 h2,
 .h2-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 4em;
   line-height: 1.125;
   margin: 1.125em 0 0.5625em;
@@ -850,6 +905,10 @@ h2,
 
 h3,
 .h3-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 2.625em;
   line-height: 1.14286;
   margin: 1.14286em 0 0.57143em;
@@ -857,23 +916,52 @@ h3,
 
 h4,
 .h4-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 2.25em;
   line-height: 1.33333;
   margin: 1.33333em 0 0.66667em;
 }
 
+h5,
+.h5-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
+}
+
 h6,
 .h6-like {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 1.125em;
   line-height: 1.33333;
   margin: 2.66667em 0 1.33333em;
 }
 
 /* -- @subsection Corps alternatifs -------------------- */
+small,
 .small {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
   font-size: 0.75em;
   line-height: 2;
-  margin: 4em 0 2em;
+}
+
+.big {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   * @author @EmmanuelGeorjon
+   */
+  font-size: 1.125em;
+  line-height: 1.33333;
 }
 
 /* -- @subsection Styles particuliers -------------------- */
@@ -1026,7 +1114,7 @@ tbody tr > * + * {
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-06-26
+* @lastmodified 2013-11-06
 * @subsection Références :
   * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
   * @see HTML5boilerplate
@@ -1042,9 +1130,7 @@ tbody tr > * + * {
 /* Sommaire */
 /* ----------------------------- */
 /*
-  == Largeurs
-    -- Largeurs du contenu
-    -- Largeurs fixes supplémentaires
+  == Largeur du contenu
   == Pansement pour le viewport
   == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
   == Modification des classes
@@ -1052,15 +1138,13 @@ tbody tr > * + * {
     -- Palier "small"
     -- Palier "tiny"
 */
-/* == @section Largeurs ==================== */
-/* -- @subsection Largeur du contenu -------------------- */
-/* -- @subsection Largeurs fixes supplémentaires -------------------- */
-.w960p {
-  width: 960px;
+/* == @section Largeur du contenu ==================== */
+.w--site {
+  width: 60em;
 }
 
-.mw960p {
-  max-width: 960px;
+.mw--site {
+  max-width: 60em;
 }
 
 /* == @section Pansement pour le viewport ==================== */
