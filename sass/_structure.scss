@@ -183,7 +183,7 @@ img.alignright { margin-left: 2em; }
 .inbl,
 .btn {
   display: inline-block;
-  @extend .aligntop;
+  vertical-align: top;
 }
 
 

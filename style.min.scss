@@ -11,7 +11,7 @@ $base-font-size:       16;
 $ratio:                $base-font-size * $base-line-height;
 $regular-font-stack:   "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
-  /* Dimensions */
+  /* Grilles */
 $base-width:           960; /* Largeur maximum en px (sera convertie en em) */
 $base-spacing:         3;   /* Pour les espacements : padding, margin (en em)... */
 $grid-cols:            6;   /* Nombre de colonnes pour la grille */
@@ -24,9 +24,9 @@ $grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la goutti
 }
 
 // Mixins
-@mixin font($s, $m: true) {
-  /* @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
+@mixin font( $s, $m: true ) {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
    */
 
   @if $s > $ratio {
@@ -36,6 +36,15 @@ $grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la goutti
     @if $m == true {
       $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
       margin: $margin (0) $margin / 2 ;
+    }
+
+  } @else if $s == $ratio {
+
+    font-size: em( $s );
+    line-height: $base-line-height;
+    @if $m == true {
+      $margin: $base-line-height * 1em;
+      margin: $margin (0);
     }
 
   } @else if $s < $ratio {
@@ -49,6 +58,19 @@ $grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la goutti
   }
 
 }
+
+
+@mixin ie( $v ) {
+  /* @note : Support d'IE en spécifiant la version
+   * @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
+   * @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
+   * @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
+   */
+  .ie#{$v} & {
+    @content;
+  }
+}
+
 
 // Fichiers de base : ne devraient pas être modifiés
 @import "sass/base";
