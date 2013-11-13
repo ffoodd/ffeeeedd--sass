@@ -1,0 +1,52 @@
+/**
+ * @author Gaël Poupard
+ * @site Thème ffeeeedd--sass
+ * @lastmodified 2013-11-13
+ */
+
+// Mixins
+@mixin ffeeeedd--font( $s, $m: true ) {
+  /* @note : Gère l'échelle typographique
+   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+   */
+
+  @if $s > $ratio {
+
+    font-size: em( $s );
+    line-height:  ceil( $s / $ratio ) * $ratio / $s;
+    @if $m == true {
+      $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
+      margin: $margin (0) $margin / 2 ;
+    }
+
+  } @else if $s == $ratio {
+
+    font-size: em( $s );
+    line-height: $base-line-height;
+    @if $m == true {
+      $margin: $base-line-height * 1em;
+      margin: $margin (0);
+    }
+
+  } @else if $s < $ratio {
+
+    font-size: em( $s );
+    line-height: $ratio / $s;
+    @if $m == true {
+      $margin: $ratio / $s * 1em;
+      margin: $margin * 2 (0) $margin;
+    }
+  }
+
+}
+
+@mixin ffeeeedd--ie( $v ) {
+  /* @note : Support d'IE en spécifiant la version
+   * @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
+   * @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
+   * @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
+   */
+  .ie#{$v} & {
+    @content;
+  }
+}

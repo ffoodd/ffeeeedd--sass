@@ -2,15 +2,21 @@
 /**
  * @author Gaël Poupard
  * @site Thème ffeeeedd--sass
- * @lastmodified 2013-11-07
+ * @lastmodified 2013-11-13
  */
 /* Typographie */
-/* Dimensions */
+/* Grilles */
 /* Largeur maximum en px (sera convertie en em) */
 /* Pour les espacements : padding, margin (en em)... */
 /* Nombre de colonnes pour la grille */
 /* La gouttière en px, convertie en pourcentage à la ligne suivante */
 /* Et voilà la gouttière en pourcents */
+/* Couleurs */
+/**
+ * @author Gaël Poupard
+ * @site Thème ffeeeedd--sass
+ * @lastmodified 2013-11-13
+ */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -37,17 +43,14 @@ blockquote {
   padding-left: 2em;
 }
 
-a {
-  text-decoration: none;
-}
-a:focus, a:hover, a:active {
-  text-decoration: underline;
-}
-
 code,
 pre,
 samp {
   white-space: pre-wrap;
+}
+
+mark {
+  font-weight: bold;
 }
 
 code {
@@ -150,6 +153,17 @@ abbr[title] {
 }
 
 /* Images */
+img {
+  /* @note : Support d'IE en spécifiant la version
+   * @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
+   * @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
+   * @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
+   */
+}
+.ie8 img {
+  width: auto;
+  /* @bugfix @affected IE8 */
+}
 a:focus img {
   outline: 4px solid;
 }
@@ -282,12 +296,14 @@ img.alignright {
 
 /* -- @subsection Alignement vertical -------------------- */
 .aligntop, .row > *,
-.col, .inbl, .menu li,
-.btn, textarea {
+.col, textarea {
   vertical-align: top;
 }
 
-.alignmiddle, img {
+.alignmiddle, img, input,
+button,
+select,
+label, #site-title {
   vertical-align: middle;
 }
 
@@ -427,6 +443,7 @@ img.alignright {
 .inbl, .menu li,
 .btn {
   display: inline-block;
+  vertical-align: top;
 }
 
 /* == @section Largeurs ==================== */
@@ -715,7 +732,6 @@ input,
 button,
 select,
 label {
-  vertical-align: middle;
   /* @bugfix alignement */
 }
 
@@ -771,11 +787,11 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 }
 
 ::-webkit-input-placeholder {
-  color: #777;
+  color: #065366;
 }
 
 input:-moz-placeholder, textarea:-moz-placeholder {
-  color: #777;
+  color: #065366;
 }
 
 button::-moz-focus-inner,
@@ -860,7 +876,6 @@ input[type='submit']::-moz-focus-inner {
 body {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 1em;
   line-height: 1.5;
@@ -883,7 +898,6 @@ label,
 textarea {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 1em;
   line-height: 1.5;
@@ -916,7 +930,6 @@ h1,
 .h1-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 6em;
   line-height: 1;
@@ -927,7 +940,6 @@ h2,
 .h2-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 4em;
   line-height: 1.125;
@@ -938,7 +950,6 @@ h3,
 .h3-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 2.625em;
   line-height: 1.14286;
@@ -949,7 +960,6 @@ h4,
 .h4-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 2.25em;
   line-height: 1.33333;
@@ -960,15 +970,16 @@ h5,
 .h5-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin: 1.5em 0;
 }
 
 h6,
 .h6-like {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 1.125em;
   line-height: 1.33333;
@@ -980,7 +991,6 @@ small,
 .small {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 0.75em;
   line-height: 2;
@@ -989,7 +999,6 @@ small,
 .big {
   /* @note : Gère l'échelle typographique
    * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   * @author @EmmanuelGeorjon
    */
   font-size: 1.125em;
   line-height: 1.33333;
@@ -1028,13 +1037,25 @@ samp {
 /* == @section Couleurs ==================== */
 body {
   background-color: #f2f2e2;
-  color: #333;
+  color: #032c36;
 }
 
 /* == @section Liens ====================
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
- * @note : ne surtout pas oublier le :focus, primoridla pour l'#a11y
+ * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
+a {
+  color: #c42419;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  color: #971c13;
+  text-decoration: underline;
+}
+a:active, a:visited {
+  color: #e4382c;
+}
+
 /* Les liens d'évitement sont de la même couleur que le fond. */
 .skip,
 .skip:hover {
@@ -1044,15 +1065,7 @@ body {
 
 /* Au focus, ils apparaissent. */
 .skip:focus {
-  color: #333;
-}
-
-mark {
-  font-weight: bold;
-}
-
-#site-title {
-  vertical-align: middle;
+  color: #c42419;
 }
 
 .menu a {
@@ -1077,7 +1090,7 @@ form label {
 }
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid #d2d29c;
   padding: .2em 0 .2em .2em;
 }
 
@@ -1114,28 +1127,28 @@ table {
 }
 table th,
 table td {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 20px;
+  border-bottom: 1px solid #d2d29c;
+  padding: .5em 1em;
   text-align: left;
 }
 table td {
-  color: #555;
+  color: #000506;
 }
 
 caption {
-  color: #555;
+  color: #000506;
   font-style: italic;
   padding: 1em;
 }
 
 tbody {
-  border: 1px solid #ccc;
+  border: 1px solid #d2d29c;
 }
 tbody tr:nth-child(odd) {
-  background: #eee;
+  background: #e2e2bf;
 }
 tbody tr > * + * {
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #d2d29c;
 }
 
 /* == @section WordPress ==================== */

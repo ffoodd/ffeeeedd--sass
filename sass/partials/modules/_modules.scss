@@ -24,24 +24,29 @@
 
 /* == @section Couleurs ==================== */
 body {
-  background-color: #f2f2e2;
-  color: #333;
+  background-color: $background-color;
+  color: $primary-color;
 }
 
 
 /* == @section Liens ====================
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
- * @note : ne surtout pas oublier le :focus, primoridla pour l'#a11y
+ * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
 a {
+  color: $secondary-color;
+  text-decoration: none;
 
-  &:visited { }
+  &:focus,
+  &:hover {
+    color: darken( $secondary-color, 10 );
+    text-decoration: underline;
+  }
 
-  &:focus { }
-
-  &:hover { }
-
-  &:active { }
+  &:active,
+  &:visited {
+    color: lighten( $secondary-color, 10 );
+  }
 
   &[target="_blank"] { }
 
@@ -55,16 +60,14 @@ a {
 /* Les liens d'évitement sont de la même couleur que le fond. */
 .skip,
 .skip:hover {
-  color: #f2f2e2;
+  color: $background-color;
   cursor: default;
 }
 
 /* Au focus, ils apparaissent. */
-.skip:focus { color: #333; }
+.skip:focus { color: $secondary-color; }
 
-mark { font-weight: bold; }
-
-#site-title { vertical-align: middle; }
+#site-title { @extend .alignmiddle; }
 
 .menu a {
   display: inline-block;
@@ -86,7 +89,7 @@ form label {
 }
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid darken( $background-color, 20 );
   padding: .2em 0 .2em .2em;
 }
 
@@ -113,6 +116,7 @@ input[type="reset"] { min-width: 100px; }
 
 /* == @section Tableaux ==================== */
 table {
+
   border-collapse: collapse;
   caption-side: bottom;
   display: table;
@@ -122,27 +126,31 @@ table {
 
   th,
   td {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 20px;
+    border-bottom: 1px solid darken( $background-color, 20 );
+    padding: .5em 1em;
     text-align: left;
   }
 
-  td { color: #555; }
+  td { color: darken( $primary-color, 10 ); }
+
 }
 
 caption {
-  color: #555;
+  color: darken( $primary-color, 10 );
   font-style: italic;
   padding: 1em;
 }
 
 tbody {
-  border: 1px solid #ccc;
 
-  tr:nth-child(odd) { background: #eee; }
+  border: 1px solid darken( $background-color, 20 );
 
-  tr > * + * { border-left: 1px solid #ccc; }
+  tr:nth-child(odd) { background: darken( $background-color, 10 ); }
+
+  tr > * + * { border-left: 1px solid darken( $background-color, 20 ); }
+
 }
+
 
 /* == @section WordPress ==================== */
 /*

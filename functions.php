@@ -15,7 +15,6 @@
 /*
   == Traduction
   == Injection des scripts et styles
-    -- Injection des styles pour IE
 */
 
 
@@ -60,18 +59,4 @@
     //wp_enqueue_style( 'prototype' );
     wp_enqueue_style( 'print' );
     wp_enqueue_script( 'site' );
-  }
-
-  /* -- @subsection Injection des styles pour IE ---------------- */
-  /**
-   * @author Jonathan Buttigieg
-   * @see https://twitter.com/GeekPressFR
-   * @see http://www.geekpress.fr/wordpress/astuce/ajouter-fichier-css-conditionnel-ie-wordpress-578/
-   */
-  add_action( 'wp_print_styles', 'ffeeeedd__ie' );
-  function ffeeeedd__ie() {
-      wp_register_style( 'ffeeeedd-ie', get_stylesheet_directory_uri() . '/css/ie.css', false, null, 'all' );
-      wp_enqueue_style( 'ffeeeedd-ie' );
-      global $wp_styles;
-      $wp_styles->add_data( 'ffeeeedd-ie', 'conditional', 'lte IE 9' );
   }

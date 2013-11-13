@@ -1,7 +1,7 @@
 /**
  * @author Gaël Poupard
  * @site Thème ffeeeedd--sass
- * @lastmodified 2013-11-07
+ * @lastmodified 2013-11-13
  */
 
 // Variables
@@ -17,68 +17,27 @@ $base-spacing:         3;   /* Pour les espacements : padding, margin (en em)...
 $grid-cols:            6;   /* Nombre de colonnes pour la grille */
 $gut:                  20;  /* La gouttière en px, convertie en pourcentage à la ligne suivante */
 $grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la gouttière en pourcents */
+  /* Couleurs */
+$primary-color: #032c36;
+$secondary-color: #c42419;
+$complementary-color: complement( $primary-color );
+$background-color: #f2f2e2;
 
 // Fonctions
-@function em($f, $base: $base-font-size) {
+@function em( $f, $base: $base-font-size ) {
   @return $f / $base * 1em;
 }
 
 // Mixins
-@mixin font( $s, $m: true ) {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
-
-  @if $s > $ratio {
-
-    font-size: em( $s );
-    line-height:  ceil( $s / $ratio ) * $ratio / $s;
-    @if $m == true {
-      $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
-      margin: $margin (0) $margin / 2 ;
-    }
-
-  } @else if $s == $ratio {
-
-    font-size: em( $s );
-    line-height: $base-line-height;
-    @if $m == true {
-      $margin: $base-line-height * 1em;
-      margin: $margin (0);
-    }
-
-  } @else if $s < $ratio {
-
-    font-size: em( $s );
-    line-height: $ratio / $s;
-    @if $m == true {
-      $margin: $ratio / $s * 1em;
-      margin: $margin * 2 (0) $margin;
-    }
-  }
-
-}
-
-
-@mixin ie( $v ) {
-  /* @note : Support d'IE en spécifiant la version
-   * @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
-   * @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
-   * @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
-   */
-  .ie#{$v} & {
-    @content;
-  }
-}
-
+@import "sass/mixins/mixins";
 
 // Fichiers de base : ne devraient pas être modifiés
-@import "sass/base";
-@import "sass/structure";
-@import "sass/formulaires";
-@import "sass/navigation";
+@import "sass/partials/base";
+@import "sass/partials/structure";
+@import "sass/partials/formulaires";
+@import "sass/partials/navigation";
 
 // Fichiers personnalisables
-@import "sass/typographie";
-@import "sass/modules";
-@import "sass/structure--etendue";
+@import "sass/partials/modules/typographie";
+@import "sass/partials/modules/modules";
+@import "sass/partials/modules/structure--etendue";

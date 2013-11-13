@@ -22,7 +22,7 @@ fieldset { border: 0; }
 input,
 button,
 select,
-label { vertical-align: middle; /* @bugfix alignement */ }
+label { @extend .alignmiddle; /* @bugfix alignement */ }
 
 /* Éléments de formulaires */
 label { cursor: pointer; }
@@ -75,11 +75,11 @@ input[type="search"] {
   }
 }
 
-::-webkit-input-placeholder { color: #777; }
+::-webkit-input-placeholder { color: lighten( $primary-color, 10 ); }
 
 input, textarea {
   &:-moz-placeholder {
-    color: #777;
+    color: lighten( $primary-color, 10 );
   }
 }
 

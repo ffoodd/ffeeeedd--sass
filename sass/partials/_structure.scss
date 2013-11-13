@@ -2,7 +2,7 @@
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-11-05
+* @lastmodified 2013-06-26
 * @subsection Références :
   * @see KNACSS.com V1.1 @author : Raphael Goetter, Alsacreations
   * @see HTML5boilerplate
@@ -149,7 +149,7 @@ img.alignright { margin-left: 2em; }
     width: percentage( $g / $c / 100 );
 
     // On "nettoie" la grille pour autoriser les lignes multiples
-    // @to-do : compatibilité IE8
+    // @to-do : compatibilité IE8. Ajouter une classe en javascript ?
     $n: $c + 1;
     &:nth-child( #{$c}n + #{$n} ) {
       clear: left;

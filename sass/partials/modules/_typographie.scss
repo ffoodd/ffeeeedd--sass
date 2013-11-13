@@ -2,7 +2,7 @@
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-11-06
+* @lastmodified 2013-06-26
 */
 
 /* ----------------------------- */
@@ -28,7 +28,7 @@
 */
 
 body {
-  @include font(16, false);
+  @include ffeeeedd--font(16, false);
   font-family: $regular-font-stack;
 }
 
@@ -46,7 +46,7 @@ td,
 th,
 label,
 textarea {
-  @include font(16, true);
+  @include ffeeeedd--font(16, true);
 }
 
 /* -- @subsection Niveaux de titres -------------------- */
@@ -62,37 +62,37 @@ textarea {
 
 h1,
 .h1-like {
-  @include font(96, true);
+  @include ffeeeedd--font(96, true);
   @extend .hn;
 }
 
 h2,
 .h2-like {
-  @include font(64, true);
+  @include ffeeeedd--font(64, true);
   @extend .hn;
 }
 
 h3,
 .h3-like {
-  @include font(42, true);
+  @include ffeeeedd--font(42, true);
   @extend .hn;
 }
 
 h4,
 .h4-like {
-  @include font(36, true);
+  @include ffeeeedd--font(36, true);
   @extend .hn;
 }
 
 h5,
 .h5-like {
-  @include font(24, true);
+  @include ffeeeedd--font(24, true);
   @extend .hn;
 }
 
 h6,
 .h6-like {
-  @include font(18, true);
+  @include ffeeeedd--font(18, true);
   @extend .hn;
 }
 
@@ -100,12 +100,13 @@ h6,
 /* -- @subsection Corps alternatifs -------------------- */
 small,
 .small {
-  @include font(12, false);
+  @include ffeeeedd--font(12, false);
 }
 
 .big {
-  @include font(18, false);
+  @include ffeeeedd--font(18, false);
 }
+
 
 /* -- @subsection Styles particuliers -------------------- */
 blockquote { font-style: italic; }
