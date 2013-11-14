@@ -74,6 +74,16 @@ a {
   padding: 1em 2em;
 }
 
+/* Boutons */
+.btn {
+  background-color: darken( $secondary-color, 10 );
+  background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 10 ) 0%, darken( $secondary-color, 10 ) 100% );
+  background-image: linear-gradient( to bottom,  lighten( $secondary-color, 10 ) 0%, darken( $secondary-color, 10 ) 100% );
+  border: 1px solid darken( $secondary-color, 20 );
+  box-shadow: inset 1px 1px 0 transparentize( lighten( $background-color, 10 ), .7);
+  color: lighten( $background-color, 10 );
+}
+
 
 /* == @section Modules ==================== */
 .page-numbers,
@@ -88,9 +98,17 @@ form label {
   min-width: 200px;
 }
 
-input {
+input,
+select,
+textarea {
   border: 1px solid darken( $background-color, 20 );
   padding: .2em 0 .2em .2em;
+  
+  &:focus { border-color: $secondary-color; }
+  
+  &:hover,
+  &:active { border-color: $primary-color; }
+
 }
 
 input[type="color"],
