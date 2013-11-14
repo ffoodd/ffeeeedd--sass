@@ -100,7 +100,7 @@
   }
 
   a[href]:after {
-    content: " (" attr(href) ")"; /* Affiche les URLs */
+    content: " (" attr(href) ") "; /* Affiche les URLs */
   }
 
   a[href^="#"]:after,
