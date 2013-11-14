@@ -22,9 +22,9 @@
 /*
   == Largeur du contenu
   == Pansement pour le viewport
-  == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
   == Modification des classes
     -- Palier "large"
+    -- Palier "medium"
     -- Palier "small"
     -- Palier "tiny"
 */
@@ -63,53 +63,45 @@
 }
 
 
-/* == @section Ressources pour ordinateurs de bureau et écrans à haute densité de pixels ==================== */
-@media ( min-width: 40em ) {
-  /* Indiquer ici les ressources pour grands écrans : images d'arrière-plans, font-face, etc... */
-}
-
-@media ( -webkit-min-device-pixel-ratio: 2 ), ( min-resolution: 192dpi ), ( min-resolution: 2dppx ) {
-  /* Ajustement de styles pour les écrans à haute densité de pixels */
-}
-
-
 /* == @section Modification des classes ====================
- * @note : premier palier :   "large"
- * @note : deuxième palier :  "small"
- * @note : troisième palier : "tiny"
+ * @note : premier palier :    "large"
+ * @note : deuxième palier :   "medium"
+ * @note : troisième palier :  "small"
+ * @note : quatrième palier :  "tiny"
 */
+
 /* -- @subsection Palier "large" -------------------- */
-@media ( min-width: 80em ) {
-  .large-hidden,
-  .tablet-hidden { display: none !important; }
+@media ( min-width: em( $large-width ) ) {
+    .large-hidden { display: none !important; }
 
-  .large-visible { display: block !important; }
+    .large-visible { display: block !important; }
 
-  .large-no-float {float: none; }
+    .large-no-float {float: none; }
 }
 
+/* -- @subsection Palier "medium" -------------------- */
+@media ( max-width: em( $medium-width ) ) {
+    .medium-hidden { display: none !important; }
 
-@media ( max-width: 80em ) {
-  .w--site,
-  .mw--site { width: 60%; }
+    .medium-visible { display: block !important; }
+
+    .medium-no-float {float: none; }
 }
 
 /* -- @subsection Palier "small" -------------------- */
-@media ( max-width: 48em ) {
-  .small-hidden,
-  .tablet-hidden { display: none !important; }
+@media ( max-width: em( $small-width ) ) {
+    .small-hidden { display: none !important; }
 
-  .small-visible { display: block !important; }
+    .small-visible { display: block !important; }
 
-  .small-no-float { float: none; }
+    .small-no-float {float: none; }
 }
 
 /* -- @subsection Palier "tiny" -------------------- */
-@media ( max-width: 40em ) {
-  .tiny-hidden,
-  .phone-hidden { display: none !important; }
+@media ( max-width: em( $tiny-width ) ) {
+    .tiny-hidden { display: none !important; }
 
-  .tiny-visible { display: block !important; }
+    .tiny-visible { display: block !important; }
 
-  .tiny-no-float { float: none; }
+    .tiny-no-float {float: none; }
 }

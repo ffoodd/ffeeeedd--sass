@@ -12,6 +12,7 @@
 /* La gouttière en px, convertie en pourcentage à la ligne suivante */
 /* Et voilà la gouttière en pourcents */
 /* Couleurs */
+/* Responsive */
 /**
  * @author Gaël Poupard
  * @site Thème ffeeeedd--sass
@@ -125,7 +126,6 @@ div {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -o-hyphens: auto;
   hyphens: auto;
   word-wrap: break-word;
 }
@@ -1044,6 +1044,12 @@ body {
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
+a, .btn, input,
+select,
+textarea {
+  transition: all .3s linear;
+}
+
 a {
   color: #c42419;
   text-decoration: none;
@@ -1073,6 +1079,26 @@ a:active, a:visited {
   padding: 1em 2em;
 }
 
+/* Boutons */
+.btn {
+  background-color: #971c13;
+  background-image: -webkit-linear-gradient(top, #e4382c 0%, #971c13 100%);
+  background-image: linear-gradient(to bottom, #e4382c 0%, #971c13 100%);
+  border: 1px solid #6a130d;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+  color: white;
+}
+.btn:hover, .btn:focus {
+  background-color: #6a130d;
+  background-image: -webkit-linear-gradient(top, #ea6259 0%, #6a130d 100%);
+  background-image: linear-gradient(to bottom, #ea6259 0%, #6a130d 100%);
+}
+.btn:active {
+  background-color: #ad2016;
+  background-image: -webkit-linear-gradient(top, #db281c 0%, #ad2016 100%);
+  background-image: linear-gradient(to bottom, #db281c 0%, #ad2016 100%);
+}
+
 /* == @section Modules ==================== */
 .page-numbers,
 form li {
@@ -1089,9 +1115,23 @@ form label {
   min-width: 200px;
 }
 
-input {
+input,
+select,
+textarea {
   border: 1px solid #d2d29c;
   padding: .2em 0 .2em .2em;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #c42419;
+}
+input:hover, input:active,
+select:hover,
+select:active,
+textarea:hover,
+textarea:active {
+  border-color: #032c36;
 }
 
 input[type="color"],
@@ -1155,6 +1195,7 @@ tbody tr > * + * {
 /*
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
+/* Spécifiques aux contenus */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -1176,9 +1217,9 @@ tbody tr > * + * {
 /*
   == Largeur du contenu
   == Pansement pour le viewport
-  == Ressources pour ordinateurs de bureau et écrans à haute densité de pixels
   == Modification des classes
     -- Palier "large"
+    -- Palier "medium"
     -- Palier "small"
     -- Palier "tiny"
 */
@@ -1217,22 +1258,15 @@ tbody tr > * + * {
   zoom: 1.0;
 }
 
-/* == @section Ressources pour ordinateurs de bureau et écrans à haute densité de pixels ==================== */
-@media (min-width: 40em) {
-  /* Indiquer ici les ressources pour grands écrans : images d'arrière-plans, font-face, etc... */
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  /* Ajustement de styles pour les écrans à haute densité de pixels */
-}
 /* == @section Modification des classes ====================
- * @note : premier palier :   "large"
- * @note : deuxième palier :  "small"
- * @note : troisième palier : "tiny"
+ * @note : premier palier :    "large"
+ * @note : deuxième palier :   "medium"
+ * @note : troisième palier :  "small"
+ * @note : quatrième palier :  "tiny"
 */
 /* -- @subsection Palier "large" -------------------- */
 @media (min-width: 80em) {
-  .large-hidden,
-  .tablet-hidden {
+  .large-hidden {
     display: none !important;
   }
 
@@ -1244,16 +1278,23 @@ tbody tr > * + * {
     float: none;
   }
 }
-@media (max-width: 80em) {
-  .w--site,
-  .mw--site {
-    width: 60%;
+/* -- @subsection Palier "medium" -------------------- */
+@media (max-width: 50em) {
+  .medium-hidden {
+    display: none !important;
+  }
+
+  .medium-visible {
+    display: block !important;
+  }
+
+  .medium-no-float {
+    float: none;
   }
 }
 /* -- @subsection Palier "small" -------------------- */
-@media (max-width: 48em) {
-  .small-hidden,
-  .tablet-hidden {
+@media (max-width: 30em) {
+  .small-hidden {
     display: none !important;
   }
 
@@ -1266,9 +1307,8 @@ tbody tr > * + * {
   }
 }
 /* -- @subsection Palier "tiny" -------------------- */
-@media (max-width: 40em) {
-  .tiny-hidden,
-  .phone-hidden {
+@media (max-width: 20em) {
+  .tiny-hidden {
     display: none !important;
   }
 

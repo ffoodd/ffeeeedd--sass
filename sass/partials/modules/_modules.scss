@@ -33,9 +33,12 @@ body {
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
+%smooth { transition: all .3s linear; }
+
 a {
   color: $secondary-color;
   text-decoration: none;
+  @extend %smooth;
 
   &:focus,
   &:hover {
@@ -82,8 +85,22 @@ a {
   border: 1px solid darken( $secondary-color, 20 );
   box-shadow: inset 1px 1px 0 transparentize( lighten( $background-color, 10 ), .7);
   color: lighten( $background-color, 10 );
-}
+  @extend %smooth;
 
+  &:hover,
+  &:focus {
+    background-color: darken( $secondary-color, 20 );
+    background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 20 ) 0%, darken( $secondary-color, 20 ) 100% );
+    background-image: linear-gradient( to bottom,  lighten( $secondary-color, 20 ) 0%, darken( $secondary-color, 20 ) 100% );
+  }
+
+  &:active {
+    background-color: darken( $secondary-color, 5 );
+    background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 5 ) 0%, darken( $secondary-color, 5 ) 100% );
+    background-image: linear-gradient( to bottom,  lighten( $secondary-color, 5 ) 0%, darken( $secondary-color, 5 ) 100% );
+  }
+
+}
 
 /* == @section Modules ==================== */
 .page-numbers,

@@ -5,23 +5,33 @@
  */
 
 // Variables
+
   /* Typographie */
 $base-line-height:     1.5;
 $base-font-size:       16;
 $ratio:                $base-font-size * $base-line-height;
 $regular-font-stack:   "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
+
   /* Grilles */
 $base-width:           960; /* Largeur maximum en px (sera convertie en em) */
 $base-spacing:         3;   /* Pour les espacements : padding, margin (en em)... */
 $grid-cols:            6;   /* Nombre de colonnes pour la grille */
 $gut:                  20;  /* La gouttière en px, convertie en pourcentage à la ligne suivante */
 $grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la gouttière en pourcents */
+
   /* Couleurs */
 $primary-color: #032c36;
 $secondary-color: #c42419;
 $complementary-color: complement( $primary-color );
 $background-color: #f2f2e2;
+
+  /* Responsive */
+$tiny-width:   320;
+$small-width:  480;
+$medium-width: 800;
+$large-width:  1280;
+
 
 // Fonctions
 @function em( $f, $base: $base-font-size ) {
@@ -40,4 +50,7 @@ $background-color: #f2f2e2;
 // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";
+  /* Spécifiques aux contenus */
+  @import "sass/partials/contenus/types";
+  @import "sass/partials/contenus/pages";
 @import "sass/partials/modules/structure--etendue";
