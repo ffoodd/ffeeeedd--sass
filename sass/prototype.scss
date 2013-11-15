@@ -25,17 +25,18 @@
  * @see : http://blokkfont.com/
 */
 @font-face {
-  font-family: 'BLOKKNeue-Regular';
-  src: url('../typo/BLOKKNeue-Regular.eot');
-  src: url('../typo/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
-       url('../typo/BLOKKNeue-Regular.woff') format('woff'),
-       url('../typo/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+  font-family: "BLOKKNeue-Regular";
+  src: url("../typo/BLOKKNeue-Regular.eot");
+  src: url("../typo/BLOKKNeue-Regular.eot?#iefix") format("embedded-opentype"),
+       url("../typo/BLOKKNeue-Regular.woff") format("woff"),
+       url("../typo/BLOKKNeue-Regular.svg#BLOKKNeue-Regular") format("svg");
   font-style: normal;
   font-weight: normal;
 }
 
+
 * {
-  font-family: 'BLOKKNeue-Regular';
+  font-family: "BLOKKNeue-Regular";
 }
 
 /* == @section Images ====================

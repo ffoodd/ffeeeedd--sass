@@ -13,11 +13,14 @@
 /* Et voilà la gouttière en pourcents */
 /* Couleurs */
 /* Responsive */
+/* Compass */
+/* Mixins */
 /**
  * @author Gaël Poupard
  * @site Thème ffeeeedd--sass
  * @lastmodified 2013-11-13
  */
+/* Fichiers de base : ne devraient pas être modifiés */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -850,6 +853,7 @@ input[type='submit']::-moz-focus-inner {
   display: none;
 }
 
+/* Fichiers personnalisables */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -1044,9 +1048,7 @@ body {
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
-a, .btn, input,
-select,
-textarea {
+a, .btn {
   transition: all .3s linear;
 }
 

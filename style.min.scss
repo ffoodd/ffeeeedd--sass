@@ -38,16 +38,20 @@ $large-width:  1280;
   @return $f / $base * 1em;
 }
 
-// Mixins
+// Imports
+  /* Compass */
+
+
+  /* Mixins */
 @import "sass/mixins/mixins";
 
-// Fichiers de base : ne devraient pas être modifiés
+  /* Fichiers de base : ne devraient pas être modifiés */
 @import "sass/partials/base";
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
 @import "sass/partials/navigation";
 
-// Fichiers personnalisables
+  /* Fichiers personnalisables */
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";
   /* Spécifiques aux contenus */
