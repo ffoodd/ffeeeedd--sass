@@ -46,13 +46,11 @@
 
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );
   function ffeeeedd__script() {
-    // On teste la présence de la constante SCRIPT_DEBUG dans le wp-config.php afin de définir si on charge les fichiers lisibles ou minifiés
-    $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '.max' : '.min';
-    wp_register_style( 'all', get_stylesheet_directory_uri().'/style' . $suffix . '.css', false, null, 'all' );
+    wp_register_style( 'all', get_stylesheet_directory_uri().'/style.min.css', false, null, 'all' );
     wp_register_style( 'print', get_stylesheet_directory_uri().'/css/impression.css', false, null, 'all' );
     wp_register_style( 'debug', get_stylesheet_directory_uri().'/css/debug.css', false, null, 'all' );
     wp_register_style( 'prototype', get_stylesheet_directory_uri().'/css/prototype.css', false, null, 'all' );
-    wp_register_script( 'site', get_stylesheet_directory_uri() . '/script' . $suffix . '.js', false, null, true );
+    wp_register_script( 'site', get_stylesheet_directory_uri() . '/script.min.js', false, null, true );
     // On ajoute les fichiers à la queue
     wp_enqueue_style( 'all' );
     //wp_enqueue_style( 'debug' );
