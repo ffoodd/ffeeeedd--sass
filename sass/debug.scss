@@ -4,7 +4,7 @@
 *
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-06-26
+* @lastmodified 2013-11-21
 *
 * @subsection Références :
   * @see https://github.com/redroot/holmes/blob/master/holmes.css
@@ -35,15 +35,53 @@
 /* ----------------------------- */
 /* Sommaire */
 /* ----------------------------- */
+
 /*
- == Détection des erreurs.
- == Messages d'erreur.
+ == Variables & Mixins
+ == Détection des erreurs
+ == Messages d'erreur
 */
 
+/* == @section Variables & Mixins
+ *
+*/
+$error: crimson;
+$warning: gold;
+$obsolete: gray;
 
-/* == @section Détection des erreurs.
+@mixin outline( $level ) {
+  outline: 4px solid transparentize( $level, .25 ) !important;
+
+  &::after {
+    background: rgba( 255, 255, 255, .98 );
+    color: dimgray;
+    display: block;
+    font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    height: 4em;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    -webkit-transform: translateY( -4em );
+    -ms-transform:     translateY( -4em );
+    transition: all .3s ease-in;
+    width: 100%;
+    z-index: 99;
+  }
+
+  &:hover::after {
+    -webkit-transform: translateY( 0 );
+    -ms-transform:     translateY( 0 );
+    transition: all .3s ease-out;
+  }
+}
+
+
+/* == @section Détection des erreurs
  *
  * @note : Sert à détecter les liens utilisés comme boutons d'action,
+ * les événements javascript «inline»,
  * certains liens temporaires dont l'url n'est pas renseignée,
  * les liens sans titre,
  * les liens sans cible,
@@ -52,20 +90,11 @@
 */
 a[href="#"],
 a[href^="javascript"],
-a[title=""],
-a:not([title]) {
-  outline: 4px dashed crimson !important;
-}
 a:not([href]),
-a[href=""] {
-  outline: 4px solid crimson !important;
-}
+a[href=""],
 
-/* Repère les images sans alternvative textuelle, ou avec une alternative vide. */
+/* Repère les images sans alternative textuelle */
 img:not([alt]),
-img[alt=""] {
-  outline: 4px dashed crimson !important;
-}
 
 /* Détecte les attributs manquants ou vides. */
 label:not([for]),
@@ -75,6 +104,7 @@ input:not([name]),
 input[name=""],
 input:not([type]),
 input[type=""],
+input[type="submit"]:not([value]),
 
 select:not([name]),
 select[name=""],
@@ -91,9 +121,34 @@ table[summary=""],
 iframe:not([title]),
 iframe[title=""],
 
+form:not([action]),
+
 [class=""],
-[id=""] {
-  outline: 4px solid crimson !important;
+[id=""],
+
+/* Les événements javascript sous forme d’attributs HTML sont déconseillés */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  @include outline( $error );
 }
 
 /* Repère les imbrications inadéquates d'éléments. */
@@ -101,337 +156,263 @@ ul > *:not(li),
 ol > *:not(li),
 table > tr,
 table table,
-tbody + tfoot {
-  outline: 4px solid gold !important;
-}
+/* tfoot doit être *avant* tbody */
+tbody + tfoot,
+
+/* Les liens sans titre ou avec un titre vide doivent être vérifiés. */
+a[title=""],
+a:not([title]),
+
+/* Les images avec une alternative vide doivent être vérifiées. */
+img[alt=""],
 
 /* Détecte les éléments supportant des styles en ligne. */
-[style] {
-  outline: 4px solid gold !important;
-}
+[style],
 
-/* Marque les éléments & attributs obsolètes. */
-applet,
-acronym,
-center,
-dir,
-basefont,
-font,
-strike,
-frame,
-frameset,
-isindex,
-noframes,
-u,
-big,
-tt,
-marquee,
-plaintext,
-xmp,
-
-body[background],
-body[bgproperties],
-body[topmargin],
-body[rightmargin],
-body[bottommargin],
-body[leftmargin],
-
-*[bordercolor],
-*[bordercolordark],
-*[bordercolorlight],
-table[frame],
-
-*[align],
-*[valign],
-*[bgcolor],
-*[clear],
-
-ul[type],
-li[type] {
-  outline: 4px solid gray;
-}
-
-/*
- * Affiche un arrière-plan sous les éléments vides.
- * @note : Ces derniers sont à supprimer du code.
-*/
+/* Détecte les éléments vides */
 div:empty,
 span:empty,
 li:empty,
 p:empty,
 td:empty,
 th:empty {
-  background: gold !important;
-}
-
-
-/* == @section Messages d'erreur, Styles d'alertes, Contenu des alertes. */
-
-/* ==Styles d'alertes */
-/* Liens */
-a[href="#"]:hover::after,
-a[href^="javascript"]:hover::after,
-a[title=""]:hover::after,
-a:not([title]):hover::after,
-img[alt=""]:hover::after,
-
-/* Éléments vides */
-div:empty:hover::after,
-span:empty:hover::after,
-li:empty:hover::after,
-p:empty:hover::after,
-td:empty:hover::after,
-th:empty:hover::after,
-
-/* Imbrication inadéquate d'éléments */
-ul > *:not(li):hover::after,
-ol > *:not(li):hover::after,
-table > tr:hover::after,
-tbody + tfoot:hover::after,
-
-/* Attributs [style] */
-[style]:hover::after {
-  background: gold;
-  border-radius: .5em;
-  color: black;
-  display: block;
-  left: 0;
-  margin: 1em;
-  padding: 1em;
-  position: fixed;
-  top: 0;
-  z-index: 99;
-}
-
-/* Liens */
-a:not([href]):hover::after,
-a[href=""]:hover::after,
-
-/* Images */
-img:not([alt]):hover:after,
-
-/* Attributs */
-label:not([for]):hover::after,
-label[for=""]:hover::after,
-
-input:not([name]):hover::after,
-input[name=""]:hover::after,
-input:not([type]):hover::after,
-input[type=""]:hover::after,
-
-select:not([name]):hover::after,
-select[name=""]:hover::after,
-
-textarea:not([name]):hover::after,
-textarea[name=""]:hover::after,
-
-abbr:not([title]):hover::after,
-abbr[title=""]:hover::after,
-
-iframe:not([title]):hover::after,
-iframe[title=""]:hover::after,
-
-[class=""]:hover::after,
-[id=""]:hover::after,
-
-table:not([summary]):hover::after,
-table[summary=""]:hover::after {
-  background: red;
-  border-radius: .5em;
-  color: white;
-  display: block;
-  left: 0;
-  margin: 1em;
-  padding: 1em;
-  position: fixed;
-  text-decoration: none;
-  top: 0;
-  z-index: 99;
-}
-
-/* Éléments & attributs obsolètes. */
-applet:hover::after,
-acronym:hover::after,
-center:hover::after,
-dir:hover::after,
-font:hover::after,
-strike:hover::after,
-big:hover::after,
-tt:hover::after,
-marquee:hover::after,
-plaintext:hover::after,
-xmp:hover::after,
-*[bordercolor]:hover::after,
-*[bordercolordark]:hover::after,
-*[bordercolorlight]:hover::after,
-table[frame]:hover::after,
-*[align]:hover::after,
-*[valign]:hover::after,
-*[bgcolor]:hover::after,
-*[clear]:hover::after,
-ul[type]:hover::after,
-li[type]:hover::after {
-  background: gray;
-  border-radius: .5em;
-  color: black;
-  display: block;
-  left: 0;
-  margin: 1em;
-  padding: 1em;
-  position: fixed;
-  top: 0;
-  z-index: 99;
-}
-
-/* Attributs obsolètes sur le <body> */
-body[background]:hover::after,
-body[bgproperties]:hover::after,
-body[topmargin]:hover::after,
-body[rightmargin]:hover::after,
-body[bottommargin]:hover::after,
-body[leftmargin]:hover::after {
-  background: gray;
-  border-radius: .5em;
-  bottom: 0;
-  color: black;
-  display: block;
-  margin: 1em;
-  padding: 1em;
-  position: fixed;
-  right: 0;
-  z-index: 99;
-  /* On couvre tout le corps de la page. */
-}
-
-/* Corrige l'éventualité d'une double erreur à indiquer sur les cellules de tableaux */
-td:empty:hover::after,
-th:empty:hover::after {
-  top: 4em;
-}
-
-
-/* ==Contenu des alertes */
-
-a:not([href]):hover::after,
-a[href=""]:hover::after {
-  content: "Attribut [href] manquant.";
-}
-
-a[href="#"]:hover:after{
-  content: "Attribut [href='#'].";
-}
-
-a[href^="javascript"]:hover:after{
-  content: "Attribut [href] débutant par javascript.";
-}
-
-a[title=""]:hover::after,
-a:not([title]):hover::after {
-  content: "Attribut [title] vide ou manquant.";
-}
-
-img:not([alt]):hover::after {
-  content: "Attribut [alt] manquant.";
-}
-img[alt=""]:hover::after {
-  content: "Attribut [alt] vide.";
-}
-
-label:not([for]):hover::after,
-label[for=""]:hover::after{
-  content: "Attribut [for] manquant.";
-}
-
-input:not([name]):hover::after,
-input[name=""]:hover::after,
-input:not([type]):hover::after,
-input[type=""]:hover::after,
-select:not([name]):hover::after,
-select[name=""]:hover::after,
-textarea:not([name]):hover::after,
-textarea[name=""]:hover::after {
-  content: "Attribut [name] manquant ou vide.";
-}
-
-input:not([type]):hover::after,
-input[type=""]:hover::after {
-  content: "Attribut [type] manquant ou vide.";
-}
-
-abbr:not([title]):hover::after,
-abbr[title=""]:hover::after {
-  content: "Attribut [title] manquant ou vide.";
-}
-
-[class=""]:hover::after {
-  content: "Attribut [class] vide.";
-}
-
-[id=""]:hover::after {
-  content: "Attribut [id] vide.";
-}
-
-table:not([summary]):hover::after,
-table[summary=""]:hover::after {
-  content: "Attribut [summary] manquant ou vide.";
-}
-
-[style]:hover::after {
-  content: "Éléments supportant des styles en ligne.";
-}
-
-/* Imbrication inadéquate d'éléments */
-ul > *:not(li):hover::after,
-ol > *:not(li):hover::after,
-table > tr:hover::after,
-tbody + tfoot:hover::after {
-  content: "Imbrication inadéquate d'éléments.";
+  @include outline( $warning );
 }
 
 /* Éléments obsolètes
  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
 */
-applet:hover::after,
-acronym:hover::after,
-center:hover::after,
-dir:hover::after,
-font:hover::after,
-strike:hover::after,
-big:hover::after,
-tt:hover::after,
-marquee:hover::after,
-plaintext:hover::after,
-xmp:hover::after,
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt,
 
-body[background]:hover::after,
-body[bgproperties]:hover::after,
-body[topmargin]:hover::after,
-body[rightmargin]:hover::after,
-body[bottommargin]:hover::after,
-body[leftmargin]:hover::after,
+/* Marque les attributs obsolètes. */
+a[charset], link[charset],
+a[coords],
+a[shape],
+a[methods], link[methods],
+a[name], embed[name], img[name], option[name],
+a[rev], link[rev],
+form[accept],
+area[nohref],
+head[profile],
+html[version],
+input[ismap],
+input[usemap],
+iframe[longdesc], img[longdesc],
+img[lowsrc],
+link[target],
+meta[scheme],
+object[archive],
+object[classid],
+object[code],
+object[codebase],
+object[codetype],
+object[declare],
+object[standby],
+param[type],
+param[valuetype],
+script[language],
+script[event],
+script[for],
+table[datapagesize],
+table[summary],
+td[axis], th[axis],
+td[scope],
+a[datasrc], applet[datasrc], button[datasrc], div[datasrc], frame[datasrc], iframe[datasrc], img[datasrc], input[datasrc], label[datasrc], legend[datasrc], marquee[datasrc], object[datasrc], option[datasrc], select[datasrc], span[datasrc], table[datasrc], textarea[datasrc],
+a[datafld], applet[datafld], button[datafld], div[datafld], fieldset[datafld], frame[datafld], iframe[datafld], img[datafld], input[datafld], label[datafld], legend[datafld], marquee[datafld], object[datafld], param[datafld], select[datafld], span[datafld], textarea[datafld],
+button[dataformatas], div[dataformatas], input[dataformatas], label[dataformatas], legend[dataformatas], marquee[dataformatas], object[dataformatas], option[dataformatas], select[dataformatas], span[dataformatas], table[dataformatas],
+body[alink],
+body[bgcolor], table[bgcolor], td[bgcolor], th[bgcolor], tr[bgcolor],
+body[link],
+body[marginbottom],
+body[marginheight], iframe[marginheight],
+body[marginleft],
+body[marginright],
+body[margintop],
+body[marginwidth], iframe[marginwidth],
+body[text],
+body[vlink],
+br[clear],
+col[char], tbody[char], thead[char], tfoot[char], td[char], th[char], tr[char],
+col[charoff], tbody[charoff], thead[charoff], tfoot[charoff], td[charoff], th[charoff], tr[charoff],
+col[valign], tbody[valign], thead[valign], tfoot[valign], td[valign], th[valign], tr[valign],
+col[width], hr[width], pre[width], table[width], td[width], th[width],
+dl[compact], ol[compact], ul[compact],
+embed[hspace], iframe[hspace], input[hspace], img[hspace], object[hspace],
+embed[vspace], iframe[vspace], input[vspace], img[vspace], object[vspace],
+hr[color],
+hr[noshade],
+hr[size],
+h1[align], h2[align], h3[align], h4[align], h5[align], h6[align], iframe[align], caption[align], col[align], div[align], embed[align], hr[align], input[align], img[align], legend[align], object[align], p[align], table[align], tbody[align], thead[align], tfoot[align], td[align], th[align], tr[align],
+iframe[allowtransparency],
+iframe[frameborder],
+iframe[scrolling],
+img[border], object[border],
+li[type], ul[type],
+table[cellpadding],
+table[cellspacing],
+table[frame],
+table[rules],
+td[height], th[height],
+td[nowrap], th[nowrap],
+body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
 
-*[bordercolor]:hover::after,
-*[bordercolordark]:hover::after,
-*[bordercolorlight]:hover::after,
+  @include outline( $obsolete );
 
-table[frame]:hover::after,
+  &::after {
+    content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.";
+  }
 
-*[align]:hover::after,
-*[valign]:hover::after,
-*[bgcolor]:hover::after,
-*[clear]:hover::after,
+}
 
-ul[type]:hover::after,
-li[type]:hover::after {
-  content: "Attribut(s) obsolète(s).";
+
+/* == @section Contenu des alertes */
+a:not([href])::after,
+a[href=""]::after {
+  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
+}
+
+a[href="#"]::after{
+  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
+}
+
+a[href^="javascript"]::after{
+  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
+}
+
+a[title=""]::after,
+a:not([title])::after {
+  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
+}
+
+img:not([alt])::after {
+  content: "Attribut [alt] manquant. Quelle hérésie.";
+}
+
+img[alt=""]::after {
+  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+label:not([for])::after,
+label[for=""]::after{
+  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
+}
+
+input:not([name]),
+input[name=""],
+select:not([name]),
+select[name=""],
+textarea:not([name]),
+textarea[name=""] {
+  &::after {
+    content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+  }
+}
+
+input:not([type])::after,
+input[type=""]::after {
+  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
+}
+
+input[type="submit"]:not([value])::after {
+  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
+}
+
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] manquant ou vide. <abbr> n’a pas vraiment d’intérêt sans le titre qui va avec.";
+}
+
+iframe:not([title])::after,
+iframe[title=""]::after {
+  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
+}
+
+form:not([action])::after {
+  content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[class=""]::after {
+  content: "Attribut [class] vide. Pourquoi tant de haine ?";
+}
+
+[id=""]::after {
+  content: "Attribut [id] vide. Sérieusement ?";
+}
+
+[style]::after {
+  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+}
+
+/* Imbrication inadéquate d'éléments */
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot {
+  &::after {
+    content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
+  }
 }
 
 /* Éléments vides */
-div:empty:hover::after,
-span:empty:hover::after,
-li:empty:hover::after,
-p:empty:hover::after,
-td:empty:hover::after,
-th:empty:hover::after {
-  content: "Élément vide.";
+div,
+span,
+li,
+p,
+td,
+th {
+  &:empty::after {
+    content: "Élément vide. Diantre.";
+  }
+}
+
+/* Les événements javscript sous forme d’attributs HTML */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  &::after {
+    content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?";
+  }
 }
