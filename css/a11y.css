@@ -153,6 +153,7 @@ form:not([action])::after,
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
@@ -253,6 +254,7 @@ th:empty::after {
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
@@ -484,6 +486,7 @@ body[background]::after, table[background]::after, thead[background]::after, tbo
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
