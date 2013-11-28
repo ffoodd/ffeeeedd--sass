@@ -883,6 +883,7 @@ body {
   font-size: 1em;
   line-height: 1.5;
   font-family: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 /*
@@ -915,7 +916,6 @@ textarea {
 .h4-like, h5,
 .h5-like, h6,
 .h6-like {
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 .hn:first-child, h1:first-child,

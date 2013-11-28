@@ -30,6 +30,7 @@
 body {
   @include ffeeeedd--font(16, false);
   font-family: $regular-font-stack;
+  text-rendering: optimizeLegibility;
 }
 
 /*
@@ -51,7 +52,6 @@ textarea {
 
 /* -- @subsection Niveaux de titres -------------------- */
 .hn {
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
   &:first-child {
