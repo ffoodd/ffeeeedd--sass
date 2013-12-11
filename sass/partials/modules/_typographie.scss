@@ -53,6 +53,7 @@ textarea {
 /* -- @subsection Niveaux de titres -------------------- */
 .hn {
   -webkit-font-smoothing: antialiased;
+  color: $strong-color;
 
   &:first-child {
     /* Élude la fusion des marges pour les titrailles */

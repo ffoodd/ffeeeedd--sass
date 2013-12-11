@@ -6,27 +6,29 @@
 
 // Variables
 
-  /* Typographie */
+  // Typographie
 $base-line-height:     1.5;
 $base-font-size:       16;
 $ratio:                $base-font-size * $base-line-height;
 $regular-font-stack:   "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
 
-  /* Grilles */
-$base-width:           960; /* Largeur maximum en px (sera convertie en em) */
-$base-spacing:         3;   /* Pour les espacements : padding, margin (en em)... */
-$grid-cols:            6;   /* Nombre de colonnes pour la grille */
-$gut:                  20;  /* La gouttière en px, convertie en pourcentage à la ligne suivante */
-$grid-guts:            round( $gut * 100 / $base-width ); /* Et voilà la gouttière en pourcents */
+  // Grilles
+$base-width:           960; // Largeur maximum en px (sera convertie en em)
+$base-spacing:         3;   // Pour les espacements : padding, margin (en em)...
+$grid-cols:            6;   // Nombre de colonnes pour la grille */
+$gut:                  20;  // La gouttière en px, convertie en pourcentage à la ligne suivante
+$grid-guts:            round( $gut * 100 / $base-width ); // Et voilà la gouttière en pourcents
 
-  /* Couleurs */
-$primary-color: #032c36;
-$secondary-color: #c42419;
+  // Couleurs
+$primary-color: #032c36; // Le texte courant
+$secondary-color: #c42419; // Les liens
+$strong-color: #04192f; // Les éléments importants : emphases, titres…
+$light-color: #8dabcd; // Les éléments anecdotiques ou secondaires.
 $complementary-color: complement( $primary-color );
 $background-color: #f2f2e2;
 
-  /* Responsive */
+  // Responsive
 $tiny-width:   320;
 $small-width:  480;
 $medium-width: 800;
@@ -39,19 +41,19 @@ $large-width:  1280;
 }
 
 // Imports
-  /* Mixins */
+  // Mixins
 @import "sass/mixins/mixins";
 
-  /* Fichiers de base : ne devraient pas être modifiés */
+  // Fichiers de base : ne devraient pas être modifiés
 @import "sass/partials/base";
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
 @import "sass/partials/navigation";
 
-  /* Fichiers personnalisables */
+  // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";
-  /* Spécifiques aux contenus */
+    // Spécifiques aux contenus
   @import "sass/partials/contenus/types";
   @import "sass/partials/contenus/pages";
 @import "sass/partials/modules/structure--etendue";

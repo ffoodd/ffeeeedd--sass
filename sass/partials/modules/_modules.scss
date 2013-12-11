@@ -28,6 +28,10 @@ body {
   color: $primary-color;
 }
 
+strong {
+  color: $strong-color;
+}
+
 
 /* == @section Liens ====================
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
@@ -77,30 +81,30 @@ a {
   padding: 1em 2em;
 }
 
-/* Boutons */
-.btn {
-  background-color: darken( $secondary-color, 10 );
-  background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 10 ) 0%, darken( $secondary-color, 10 ) 100% );
-  background-image: linear-gradient( to bottom,  lighten( $secondary-color, 10 ) 0%, darken( $secondary-color, 10 ) 100% );
-  border: 1px solid darken( $secondary-color, 20 );
-  box-shadow: inset 1px 1px 0 transparentize( lighten( $background-color, 10 ), .7);
+/* Zones d’action */
+%action {
+  background-image: -webkit-linear-gradient( top, rgba(255,255,255,.25) 0%, rgba(0,0,0,.25) 100% );
+  background-image: linear-gradient( to bottom, rgba(255,255,255,.25) 0%, rgba(0,0,0,.25) 100% );
+  box-shadow: inset 1px 1px 0 transparentize( white, .75);
   color: lighten( $background-color, 10 );
-  @extend %smooth;
-
-  &:hover,
-  &:focus {
-    background-color: darken( $secondary-color, 20 );
-    background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 20 ) 0%, darken( $secondary-color, 20 ) 100% );
-    background-image: linear-gradient( to bottom,  lighten( $secondary-color, 20 ) 0%, darken( $secondary-color, 20 ) 100% );
-  }
-
-  &:active {
-    background-color: darken( $secondary-color, 5 );
-    background-image: -webkit-linear-gradient( top, lighten( $secondary-color, 5 ) 0%, darken( $secondary-color, 5 ) 100% );
-    background-image: linear-gradient( to bottom,  lighten( $secondary-color, 5 ) 0%, darken( $secondary-color, 5 ) 100% );
-  }
-
+  transition: all .3s linear;
 }
+
+.action--primary {
+  @extend %action;
+  @include ffeeeedd--action( $secondary-color );
+}
+
+.action--secondary {
+  @extend %action;
+  @include ffeeeedd--action( $primary-color );
+}
+
+.action--extra {
+  @extend %action;
+  @include ffeeeedd--action( $complementary-color );
+}
+
 
 /* == @section Modules ==================== */
 .page-numbers,
@@ -120,9 +124,9 @@ select,
 textarea {
   border: 1px solid darken( $background-color, 20 );
   padding: .2em 0 .2em .2em;
-  
+
   &:focus { border-color: $secondary-color; }
-  
+
   &:hover,
   &:active { border-color: $primary-color; }
 

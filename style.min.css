@@ -4,22 +4,11 @@
  * @site Thème ffeeeedd--sass
  * @lastmodified 2013-11-13
  */
-/* Typographie */
-/* Grilles */
-/* Largeur maximum en px (sera convertie en em) */
-/* Pour les espacements : padding, margin (en em)... */
-/* Nombre de colonnes pour la grille */
-/* La gouttière en px, convertie en pourcentage à la ligne suivante */
-/* Et voilà la gouttière en pourcents */
-/* Couleurs */
-/* Responsive */
-/* Mixins */
 /**
  * @author Gaël Poupard
  * @site Thème ffeeeedd--sass
  * @lastmodified 2013-11-13
  */
-/* Fichiers de base : ne devraient pas être modifiés */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -852,7 +841,6 @@ input[type='submit']::-moz-focus-inner {
   display: none;
 }
 
-/* Fichiers personnalisables */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -917,6 +905,7 @@ textarea {
 .h5-like, h6,
 .h6-like {
   -webkit-font-smoothing: antialiased;
+  color: #04192f;
 }
 .hn:first-child, h1:first-child,
 .h1-like:first-child, h2:first-child,
@@ -1043,11 +1032,15 @@ body {
   color: #032c36;
 }
 
+strong {
+  color: #04192f;
+}
+
 /* == @section Liens ====================
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
-a, .btn {
+a {
   transition: all .3s linear;
 }
 
@@ -1080,24 +1073,58 @@ a:active, a:visited {
   padding: 1em 2em;
 }
 
-/* Boutons */
-.btn {
-  background-color: #971c13;
-  background-image: -webkit-linear-gradient(top, #e4382c 0%, #971c13 100%);
-  background-image: linear-gradient(to bottom, #e4382c 0%, #971c13 100%);
-  border: 1px solid #6a130d;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+/* Zones d’action */
+.action--primary, .action--secondary, .action--extra {
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
   color: white;
+  transition: all .3s linear;
 }
-.btn:hover, .btn:focus {
-  background-color: #6a130d;
-  background-image: -webkit-linear-gradient(top, #ea6259 0%, #6a130d 100%);
-  background-image: linear-gradient(to bottom, #ea6259 0%, #6a130d 100%);
+
+.action--primary {
+  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
+   * @note : On passe en paramètre la couleur désirée.
+   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
+   */
+  background-color: #c42419;
+  border: 1px solid #6a130d;
 }
-.btn:active {
-  background-color: #ad2016;
-  background-image: -webkit-linear-gradient(top, #db281c 0%, #ad2016 100%);
-  background-image: linear-gradient(to bottom, #db281c 0%, #ad2016 100%);
+.action--primary.action--able:hover, .action--primary.action--able:focus {
+  background-color: #971c13;
+}
+.action--primary.action--able:active {
+  background-color: #e4382c;
+}
+
+.action--secondary {
+  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
+   * @note : On passe en paramètre la couleur désirée.
+   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
+   */
+  background-color: #032c36;
+  border: 1px solid black;
+}
+.action--secondary.action--able:hover, .action--secondary.action--able:focus {
+  background-color: #000506;
+}
+.action--secondary.action--able:active {
+  background-color: #065366;
+}
+
+.action--extra {
+  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
+   * @note : On passe en paramètre la couleur désirée.
+   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
+   */
+  background-color: #360d03;
+  border: 1px solid black;
+}
+.action--extra.action--able:hover, .action--extra.action--able:focus {
+  background-color: #060100;
+}
+.action--extra.action--able:active {
+  background-color: #661906;
 }
 
 /* == @section Modules ==================== */
@@ -1196,7 +1223,6 @@ tbody tr > * + * {
 /*
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
-/* Spécifiques aux contenus */
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd

@@ -50,3 +50,21 @@
     @content;
   }
 }
+
+@mixin ffeeeedd--action( $c ) {
+  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
+   * @note : On passe en paramètre la couleur désirée.
+   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
+   */
+  background-color: $c;
+  border: 1px solid darken( $c, 20 );
+
+  &.action--able:hover,
+  &.action--able:focus {
+    background-color: darken( $c, 10 );
+  }
+
+  &.action--able:active {
+    background-color: lighten( $c, 10 );
+  }
+}
