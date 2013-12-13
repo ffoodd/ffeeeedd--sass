@@ -144,13 +144,6 @@ abbr[title] {
 }
 
 /* Images */
-img {
-  /* @note : Support d'IE en spécifiant la version
-   * @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
-   * @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
-   * @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
-   */
-}
 .ie8 img {
   width: auto;
   /* @bugfix @affected IE8 */
@@ -865,11 +858,6 @@ input[type='submit']::-moz-focus-inner {
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
 body {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
-  font-size: 1em;
-  line-height: 1.5;
   font-family: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   text-rendering: optimizeLegibility;
 }
@@ -888,9 +876,6 @@ td,
 th,
 label,
 textarea {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 1em;
   line-height: 1.5;
   margin: 3em 0 1.5em;
@@ -920,9 +905,6 @@ textarea {
 
 h1,
 .h1-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 6em;
   line-height: 1;
   margin: 1em 0 0.5em;
@@ -930,9 +912,6 @@ h1,
 
 h2,
 .h2-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 4em;
   line-height: 1.125;
   margin: 1.125em 0 0.5625em;
@@ -940,9 +919,6 @@ h2,
 
 h3,
 .h3-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 2.625em;
   line-height: 1.14286;
   margin: 1.14286em 0 0.57143em;
@@ -950,9 +926,6 @@ h3,
 
 h4,
 .h4-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 2.25em;
   line-height: 1.33333;
   margin: 1.33333em 0 0.66667em;
@@ -960,9 +933,6 @@ h4,
 
 h5,
 .h5-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 1.5em;
   line-height: 1.5;
   margin: 1.5em 0;
@@ -970,9 +940,6 @@ h5,
 
 h6,
 .h6-like {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 1.125em;
   line-height: 1.33333;
   margin: 2.66667em 0 1.33333em;
@@ -981,17 +948,11 @@ h6,
 /* -- @subsection Corps alternatifs -------------------- */
 small,
 .small {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 0.75em;
   line-height: 2;
 }
 
 .big {
-  /* @note : Gère l'échelle typographique
-   * @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
-   */
   font-size: 1.125em;
   line-height: 1.33333;
 }
@@ -1074,57 +1035,76 @@ a:active, a:visited {
 }
 
 /* Zones d’action */
-.action--primary, .action--secondary, .action--extra {
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+.action--primary {
+  background-color: #032c36;
+  background-image: -webkit-linear-gradient(top, #8dabcd 0%, #032c36 100%);
+  background-image: linear-gradient(to bottom, #8dabcd 0%, #032c36 100%);
+  border: 1px solid black;
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-  color: white;
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   transition: all .3s linear;
 }
-
-.action--primary {
-  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
-   * @note : On passe en paramètre la couleur désirée.
-   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
-   */
-  background-color: #c42419;
-  border: 1px solid #6a130d;
-}
 .action--primary.action--able:hover, .action--primary.action--able:focus {
-  background-color: #971c13;
+  background-color: #02181e;
+  background-image: -webkit-linear-gradient(top, #7b9ec5 0%, #02181e 100%);
+  background-image: linear-gradient(to bottom, #7b9ec5 0%, #02181e 100%);
+  color: #fff;
+  text-decoration: none;
 }
-.action--primary.action--able:active {
-  background-color: #e4382c;
+.action--primary.action--able:active, .action--primary.action--able:visited {
+  background-color: #04404e;
+  background-image: -webkit-linear-gradient(top, #9fb8d5 0%, #04404e 100%);
+  background-image: linear-gradient(to bottom, #9fb8d5 0%, #04404e 100%);
+  color: #fff;
 }
 
 .action--secondary {
-  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
-   * @note : On passe en paramètre la couleur désirée.
-   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
-   */
-  background-color: #032c36;
-  border: 1px solid black;
+  background-color: #971c13;
+  background-image: -webkit-linear-gradient(top, #e4382c 0%, #971c13 100%);
+  background-image: linear-gradient(to bottom, #e4382c 0%, #971c13 100%);
+  border: 1px solid #3c0b08;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  transition: all .3s linear;
 }
 .action--secondary.action--able:hover, .action--secondary.action--able:focus {
-  background-color: #000506;
+  background-color: #801810;
+  background-image: -webkit-linear-gradient(top, #db281c 0%, #801810 100%);
+  background-image: linear-gradient(to bottom, #db281c 0%, #801810 100%);
+  color: #fff;
+  text-decoration: none;
 }
-.action--secondary.action--able:active {
-  background-color: #065366;
+.action--secondary.action--able:active, .action--secondary.action--able:visited {
+  background-color: #ad2016;
+  background-image: -webkit-linear-gradient(top, #e74d43 0%, #ad2016 100%);
+  background-image: linear-gradient(to bottom, #e74d43 0%, #ad2016 100%);
+  color: #fff;
 }
 
 .action--extra {
-  /* @note : Personnalisation des zones d’action (boutons, navigation, etc.)
-   * @note : On passe en paramètre la couleur désirée.
-   * @note : Les éléments cliquables doivent avoir la classe "action--able" également.
-   */
-  background-color: #360d03;
+  background-color: #04192f;
+  background-image: -webkit-linear-gradient(top, #032c36 0%, #04192f 100%);
+  background-image: linear-gradient(to bottom, #032c36 0%, #04192f 100%);
   border: 1px solid black;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  transition: all .3s linear;
 }
 .action--extra.action--able:hover, .action--extra.action--able:focus {
-  background-color: #060100;
+  background-color: #020c18;
+  background-image: -webkit-linear-gradient(top, #02181e 0%, #020c18 100%);
+  background-image: linear-gradient(to bottom, #02181e 0%, #020c18 100%);
+  color: #fff;
+  text-decoration: none;
 }
-.action--extra.action--able:active {
-  background-color: #661906;
+.action--extra.action--able:active, .action--extra.action--able:visited {
+  background-color: #062547;
+  background-image: -webkit-linear-gradient(top, #04404e 0%, #062547 100%);
+  background-image: linear-gradient(to bottom, #04404e 0%, #062547 100%);
+  color: #fff;
 }
 
 /* == @section Modules ==================== */

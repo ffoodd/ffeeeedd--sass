@@ -82,27 +82,16 @@ a {
 }
 
 /* Zones d’action */
-%action {
-  background-image: -webkit-linear-gradient( top, rgba(255,255,255,.25) 0%, rgba(0,0,0,.25) 100% );
-  background-image: linear-gradient( to bottom, rgba(255,255,255,.25) 0%, rgba(0,0,0,.25) 100% );
-  box-shadow: inset 1px 1px 0 transparentize( white, .75);
-  color: lighten( $background-color, 10 );
-  transition: all .3s linear;
-}
-
 .action--primary {
-  @extend %action;
-  @include ffeeeedd--action( $secondary-color );
+  @include ffeeeedd--action( #8dabcd, #032c36 );
 }
 
 .action--secondary {
-  @extend %action;
-  @include ffeeeedd--action( $primary-color );
+  @include ffeeeedd--action( lighten( #c42419, 10 ), darken( #c42419, 10 ) );
 }
 
 .action--extra {
-  @extend %action;
-  @include ffeeeedd--action( $complementary-color );
+  @include ffeeeedd--action( #032c36, #04192f );
 }
 
 
