@@ -33,7 +33,7 @@
     line-height: $ratio / $s;
     @if $m == true {
       $margin: $ratio / $s * 1em;
-      margin: $margin * 2 (0) $margin;
+      margin: $margin (0) $margin / 2;
     }
   }
 

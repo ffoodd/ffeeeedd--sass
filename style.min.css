@@ -878,7 +878,7 @@ label,
 textarea {
   font-size: 1em;
   line-height: 1.5;
-  margin: 3em 0 1.5em;
+  margin: 1.5em 0;
 }
 
 /* -- @subsection Niveaux de titres -------------------- */
@@ -942,7 +942,7 @@ h6,
 .h6-like {
   font-size: 1.125em;
   line-height: 1.33333;
-  margin: 2.66667em 0 1.33333em;
+  margin: 1.33333em 0;
 }
 
 /* -- @subsection Corps alternatifs -------------------- */
