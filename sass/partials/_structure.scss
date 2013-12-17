@@ -126,6 +126,7 @@ img.alignright { margin-left: 2em; }
 
 
 /* == @section Grilles ==================== */
+/* == @section Grilles ==================== */
 // Contexte de formatage
 [class*="grid"] {
   @extend .line;
@@ -141,39 +142,39 @@ img.alignright { margin-left: 2em; }
   }
 }
 
+%clear-left {
+  clear: left;
+  margin-left: 0;
+}
+
 @for $c from 2 through $grid-cols {
+  $g: 100 - ( $c - 1 ) * $grid-guts;
+  $as: $c - 1 ;
+  $n: $c + 1;
 
   // Grille symétrique
-  .grid-#{$c} > * {
-    $g: 100 - ( $c - 1 ) * $grid-guts;
-    width: percentage( $g / $c / 100 );
-
-    // On "nettoie" la grille pour autoriser les lignes multiples
-    // @to-do : compatibilité IE8. Ajouter une classe en javascript ?
-    $n: $c + 1;
-    &:nth-child( #{$c}n + #{$n} ) {
-      clear: left;
-      margin-left: 0;
-    }
-  }
-
-  // Grille asymétrique (une seule gouttière)
-  $as: $c - 1 ;
-  .grid-#{$as}-1 > *:first-child,
-  .grid-1-#{$as} > * + * {
-    $g: 100 - $grid-guts;
-    width: percentage( ceil( $g / $c * $as ) / 100 );
-  }
+  .grid-#{$c} > *,
+  // Grille asymétrique
   .grid-1-#{$as} > *:first-child,
   .grid-#{$as}-1 > * + * {
-    $g: 100 - $grid-guts;
-    width: percentage( floor( $g / $c ) / 100 );
+    width: percentage( $g / $c / 100 );
   }
-  // On "nettoie" les grilles asymétriques
-  [class*="grid-1-"] > *:nth-child( 2n + 3 ),
-  .grid-#{$as}-1 > *:nth-child( 2n + 3 ) {
-    clear: left;
-    margin-left: 0;
+
+  // Largeur double, triple, etc.
+  .grid-#{$as}-1 > *:first-child,
+  .grid-1-#{$as} > * + * {
+    // On prend la largeur de base, qu’on multiplie par le nombre de colonnes réunies;
+    // Puis on ajoute la gouttière devenue manquante.
+    width: percentage( $g / $c / 100 * $as + $grid-guts / 100 );
+  }
+
+
+  // On "nettoie" la grille pour autoriser les lignes multiples
+  // @to-do : compatibilité IE8. Ajouter une classe en javascript ?
+  .grid-#{$c} > *:nth-child( #{$c}n + #{$n} ),
+  [class*="grid-1-#{$as}"] > *:nth-child( 2n + #{$c} ),
+  .grid-#{$as}-1 > *:nth-child( 2n + #{$c} ) {
+    @extend %clear-left;
   }
 
 }

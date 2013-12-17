@@ -296,6 +296,7 @@ label, #site-title {
 }
 
 /* == @section Grilles ==================== */
+/* == @section Grilles ==================== */
 [class*="grid"] > * {
   float: left;
 }
@@ -303,14 +304,22 @@ label, #site-title {
   margin-left: 2%;
 }
 
-.grid-2 > * {
-  width: 49%;
-}
-.grid-2 > *:nth-child(2n + 3) {
+.grid-2 > *:nth-child(2n + 3),
+[class*="grid-1-1"] > *:nth-child(2n + 2),
+.grid-1-1 > *:nth-child(2n + 2), .grid-3 > *:nth-child(3n + 4),
+[class*="grid-1-2"] > *:nth-child(2n + 3),
+.grid-2-1 > *:nth-child(2n + 3), .grid-4 > *:nth-child(4n + 5),
+[class*="grid-1-3"] > *:nth-child(2n + 4),
+.grid-3-1 > *:nth-child(2n + 4), .grid-5 > *:nth-child(5n + 6),
+[class*="grid-1-4"] > *:nth-child(2n + 5),
+.grid-4-1 > *:nth-child(2n + 5), .grid-6 > *:nth-child(6n + 7),
+[class*="grid-1-5"] > *:nth-child(2n + 6),
+.grid-5-1 > *:nth-child(2n + 6) {
   clear: left;
   margin-left: 0;
 }
 
+.grid-2 > *,
 .grid-1-1 > *:first-child,
 .grid-1-1 > * + * {
   width: 49%;
@@ -318,21 +327,13 @@ label, #site-title {
 
 .grid-1-1 > *:first-child,
 .grid-1-1 > * + * {
-  width: 49%;
+  width: 51%;
 }
 
-[class*="grid-1-"] > *:nth-child(2n + 3),
-.grid-1-1 > *:nth-child(2n + 3) {
-  clear: left;
-  margin-left: 0;
-}
-
-.grid-3 > * {
+.grid-3 > *,
+.grid-1-2 > *:first-child,
+.grid-2-1 > * + * {
   width: 32%;
-}
-.grid-3 > *:nth-child(3n + 4) {
-  clear: left;
-  margin-left: 0;
 }
 
 .grid-2-1 > *:first-child,
@@ -340,87 +341,37 @@ label, #site-title {
   width: 66%;
 }
 
-.grid-1-2 > *:first-child,
-.grid-2-1 > * + * {
-  width: 32%;
-}
-
-[class*="grid-1-"] > *:nth-child(2n + 3),
-.grid-2-1 > *:nth-child(2n + 3) {
-  clear: left;
-  margin-left: 0;
-}
-
-.grid-4 > * {
+.grid-4 > *,
+.grid-1-3 > *:first-child,
+.grid-3-1 > * + * {
   width: 23.5%;
-}
-.grid-4 > *:nth-child(4n + 5) {
-  clear: left;
-  margin-left: 0;
 }
 
 .grid-3-1 > *:first-child,
 .grid-1-3 > * + * {
-  width: 74%;
+  width: 72.5%;
 }
 
-.grid-1-3 > *:first-child,
-.grid-3-1 > * + * {
-  width: 24%;
-}
-
-[class*="grid-1-"] > *:nth-child(2n + 3),
-.grid-3-1 > *:nth-child(2n + 3) {
-  clear: left;
-  margin-left: 0;
-}
-
-.grid-5 > * {
+.grid-5 > *,
+.grid-1-4 > *:first-child,
+.grid-4-1 > * + * {
   width: 18.4%;
-}
-.grid-5 > *:nth-child(5n + 6) {
-  clear: left;
-  margin-left: 0;
 }
 
 .grid-4-1 > *:first-child,
 .grid-1-4 > * + * {
-  width: 79%;
+  width: 75.6%;
 }
 
-.grid-1-4 > *:first-child,
-.grid-4-1 > * + * {
-  width: 19%;
-}
-
-[class*="grid-1-"] > *:nth-child(2n + 3),
-.grid-4-1 > *:nth-child(2n + 3) {
-  clear: left;
-  margin-left: 0;
-}
-
-.grid-6 > * {
+.grid-6 > *,
+.grid-1-5 > *:first-child,
+.grid-5-1 > * + * {
   width: 15%;
-}
-.grid-6 > *:nth-child(6n + 7) {
-  clear: left;
-  margin-left: 0;
 }
 
 .grid-5-1 > *:first-child,
 .grid-1-5 > * + * {
-  width: 82%;
-}
-
-.grid-1-5 > *:first-child,
-.grid-5-1 > * + * {
-  width: 16%;
-}
-
-[class*="grid-1-"] > *:nth-child(2n + 3),
-.grid-5-1 > *:nth-child(2n + 3) {
-  clear: left;
-  margin-left: 0;
+  width: 77%;
 }
 
 /* == @section Inline-block ==================== */
@@ -1244,27 +1195,22 @@ tbody tr > * + * {
   width: device-width;
   zoom: 1.0;
 }
-
 @-moz-viewport {
   width: device-width;
   zoom: 1.0;
 }
-
 @-ms-viewport {
   width: device-width;
   zoom: 1.0;
 }
-
 @-o-viewport {
   width: device-width;
   zoom: 1.0;
 }
-
 @viewport {
   width: device-width;
   zoom: 1.0;
 }
-
 /* == @section Modification des classes ====================
  * @note : premier palier :    "large"
  * @note : deuxième palier :   "medium"
