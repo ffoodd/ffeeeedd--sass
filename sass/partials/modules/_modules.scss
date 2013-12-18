@@ -19,6 +19,8 @@
   == Modules
   == Formulaires
   == Tableaux
+  == Navigation
+  == WordPress
 */
 
 
@@ -177,6 +179,25 @@ tbody {
 
   tr > * + * { border-left: 1px solid darken( $background-color, 20 ); }
 
+}
+
+
+/* == @section Navigation ==================== */
+.menu li {
+  @extend .inbl;
+  position: relative;
+
+  a {
+    display: block;
+
+    &:hover { text-decoration: none; }
+  }
+}
+
+[id="nav"] {
+  min-height: em( 60 );
+  position: relative;
+  z-index: 5;
 }
 
 

@@ -7,9 +7,15 @@
 // Variables
 
   // Typographie
-$base-line-height:     1.5;
-$base-font-size:       16;
-$ratio:                $base-font-size * $base-line-height;
+  // Compass attend des valeurs en px
+$base-line-height:     24px !default;
+$base-font-size:       16px !default;
+  // ffeeeedd se sert de valeurs sans unité
+$unitless-line-height:     1.5;
+  // Représente une valeur en px, mais uniquement pour faciliter le calcul du contexte en em
+$unitless-font-size:       16;
+  // Le ratio doit être dépourvu d’unité
+$ratio:                $unitless-font-size * $unitless-line-height;
 $regular-font-stack:   "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 $monospace-font-stack: "Lucida Sans Typewriter", monospace;
 
@@ -36,11 +42,15 @@ $large-width:  1280;
 
 
 // Fonctions
-@function em( $f, $base: $base-font-size ) {
+@function em( $f, $base: $unitless-font-size ) {
+  @if $f == 0 { @return 0 }
   @return $f / $base * 1em;
 }
 
 // Imports
+  // Compass
+@import "compass/utilities/sprites";
+
   // Mixins
 @import "sass/mixins/mixins";
 
@@ -48,12 +58,14 @@ $large-width:  1280;
 @import "sass/partials/base";
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
-@import "sass/partials/navigation";
 
   // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";
+// @import "sass/partials/modules/sprites";
     // Spécifiques aux contenus
   @import "sass/partials/contenus/types";
   @import "sass/partials/contenus/pages";
+    // Librairies ou plugins jQuery
+  @import "sass/partials/vendors/superfish";
 @import "sass/partials/modules/structure--etendue";

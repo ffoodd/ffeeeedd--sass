@@ -21,9 +21,9 @@
   } @else if $s == $ratio {
 
     font-size: em( $s );
-    line-height: $base-line-height;
+    line-height: $unitless-line-height;
     @if $m == true {
-      $margin: $base-line-height * 1em;
+      $margin: $unitless-line-height * 1em;
       margin: $margin (0);
     }
 

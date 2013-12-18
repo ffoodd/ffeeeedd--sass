@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+
+/* ----------------------------- */
+/* ==Sprites */
+/* @note : Cette feuille de style gère les sprites.
+/* ----------------------------- */
+
+@import "sprite/*.png";
+
+[class^="sprite-"],
+[class*=" sprite-"] {
+  @extend .ir;
+  display: inline-block;
+}
+
+// Lister ici tous les noms d’images, séparés par une virgule et un espace
+$s: ;
+
+@each $n in $s {
+  .sprite-#{$n} {
+    @include sprite-dimensions( $sprite-sprites, $n );
+    @include sprite-sprite( $n );
+  }
+}
+

@@ -743,52 +743,6 @@ input[type='submit']::-moz-focus-inner {
 * @author Gaël Poupard
 * @site Thème ffeeeedd
 * @lastmodified 2013-06-26
-* @subsection Références :
-  * @see : Twentythirteen
-  * @see : http://twentythirteendemo.wordpress.com/
-*/
-/* ----------------------------- */
-/* ==Navigation */
-/* @note : Ici sont définis les styles de base de la navigation
-/* ----------------------------- */
-/* == @section Navigation ==================== */
-#nav {
-  position: relative;
-}
-
-.menu li {
-  position: relative;
-}
-.menu li a {
-  display: block;
-}
-
-.sub-menu {
-  position: absolute;
-  left: -7000px;
-  z-index: 4;
-}
-.sub-menu a:focus {
-  left: 7000px;
-  position: absolute;
-  top: 0;
-}
-.sub-menu a:hover,
-.sub-menu a:active {
-  position: static;
-}
-.menu li:hover > .sub-menu, .menu a:focus + .sub-menu {
-  left: -2px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-/**
-* @author Gaël Poupard
-* @site Thème ffeeeedd
-* @lastmodified 2013-06-26
 */
 /* ----------------------------- */
 /* ==Typographie */
@@ -937,6 +891,8 @@ samp {
   == Modules
   == Formulaires
   == Tableaux
+  == Navigation
+  == WordPress
 */
 /* == @section Couleurs ==================== */
 body {
@@ -1150,10 +1106,104 @@ tbody tr > * + * {
   border-left: 1px solid #d2d29c;
 }
 
+/* == @section Navigation ==================== */
+.menu li {
+  position: relative;
+}
+.menu li a {
+  display: block;
+}
+.menu li a:hover {
+  text-decoration: none;
+}
+
+[id="nav"] {
+  min-height: 3.75em;
+  position: relative;
+  z-index: 5;
+}
+
 /* == @section WordPress ==================== */
 /*
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
+/**
+ * @author Joel Birch
+ * @see http://users.tpg.com.au/j_birch/plugins/superfish/
+ * @note Modifié par mes soins (Gaël Poupard)
+ */
+.sf-menu ul {
+  display: none;
+  left: 0;
+  min-width: 100%;
+  position: absolute;
+  top: 100%;
+  z-index: 6;
+}
+.sf-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+.sf-menu > li {
+  float: left;
+}
+.sf-menu a {
+  position: relative;
+}
+.sf-menu li {
+  position: relative;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+  white-space: nowrap;
+}
+.sf-menu li:hover, .sf-menu li.sfHover {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: none;
+  transition: none;
+}
+.sf-menu li:hover > ul, .sf-menu li.sfHover > ul {
+  display: block;
+}
+
+.sub-menu {
+  background-color: #c42419;
+  padding: 0;
+}
+.sub-menu li {
+  border: 0;
+}
+
+.sf-arrows .sf-with-ul {
+  padding-right: 2.5em;
+}
+
+/* À personnaliser en fonction du projet */
+.sf-arrows .sf-with-ul:after {
+  content: '';
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-top-color: #dFeEFF;
+  border-top-color: rgba(255, 255, 255, 0.5);
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #dFeEFF;
+  border-left-color: rgba(255, 255, 255, 0.5);
+}
+
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+  border-left-color: white;
+}
+
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
