@@ -74,6 +74,7 @@ a {
 }
 
 /* Au focus, ils apparaissent. */
+.skip.show,
 .skip:focus { color: $secondary-color; }
 
 #site-title { @extend .alignmiddle; }

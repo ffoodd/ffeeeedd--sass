@@ -932,6 +932,7 @@ a:active, a:visited {
 }
 
 /* Au focus, ils apparaissent. */
+.skip.show,
 .skip:focus {
   color: #c42419;
 }
