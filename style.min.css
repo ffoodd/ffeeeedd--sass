@@ -739,21 +739,6 @@ input[type='submit']::-moz-focus-inner {
 @affected Retire les marges internes et les bordures sur FF3+ */
 }
 
-@font-face {
-  font-family: "Ampersand";
-  src: local("Baskerville"), local("Palatino"), local("Palatino Linotype"), local("Constantia"), local("Book Antiqua"), local("Garamond");
-  unicode-range: U+26;
-}
-@font-face {
-  font-family: "Ampersand";
-  src: local("Arial");
-  unicode-range: U+270C;
-}
-.amp {
-  font-weight: bold;
-  font-style: italic;
-}
-
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -778,7 +763,7 @@ input[type='submit']::-moz-focus-inner {
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
 body {
-  font-family: "Ampersand", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  font-family: "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   text-rendering: optimizeLegibility;
 }
 

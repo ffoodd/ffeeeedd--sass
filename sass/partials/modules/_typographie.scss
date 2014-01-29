@@ -26,16 +26,9 @@
  * @see : http://ffffallback.com/
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
-@if( $ffeeeedd__esperluette == true ) {
-  body {
-    font-family: "Ampersand", $regular-font-stack;
-    text-rendering: optimizeLegibility;
-  }
-} @else {
-  body {
-    font-family: $regular-font-stack;
-    text-rendering: optimizeLegibility;
-  }
+body {
+  font-family: $regular-font-stack;
+  text-rendering: optimizeLegibility;
 }
 
 /*

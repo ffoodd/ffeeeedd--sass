@@ -40,11 +40,6 @@ $small-width:  480;
 $medium-width: 800;
 $large-width:  1280;
 
-  // Extensions
-// @note Ce sont des booléens
-// @note Soit vous utilisez les plugins et chargez les fichiers, soit non :-)
-$ffeeeedd__esperluette: true;
-
 // Fonctions
 @function em( $f, $base: $unitless-font-size ) {
   @if $f == 0 { @return 0 }
@@ -62,9 +57,6 @@ $ffeeeedd__esperluette: true;
 @import "sass/partials/base";
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
-
-  // Extensions : leur contenu ne sera compilé que si vous avez défini leur utilisation sur «true» dans les variables
-@import "sass/partials/mu-plugins/ffeeeedd__esperluette";
 
   // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
