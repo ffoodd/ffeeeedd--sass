@@ -45,7 +45,6 @@ $large-width:  1280;
 // @note Soit vous utilisez les plugins et chargez les fichiers, soit non :-)
 $ffeeeedd__esperluette: true;
 
-
 // Fonctions
 @function em( $f, $base: $unitless-font-size ) {
   @if $f == 0 { @return 0 }
