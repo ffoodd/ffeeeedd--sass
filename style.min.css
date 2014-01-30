@@ -1211,14 +1211,7 @@ tbody tr > * + * {
 #nav > ul li {
   display: block;
   position: relative;
-  -webkit-transition: background .2s;
-  transition: background .2s;
   white-space: nowrap;
-}
-#nav > ul li:hover, #nav > ul li.sfHover {
-  background: #c42419;
-  -webkit-transition: none;
-  transition: none;
 }
 #nav > ul li:hover > ul, #nav > ul li.sfHover > ul {
   display: block;

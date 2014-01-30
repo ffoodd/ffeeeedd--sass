@@ -28,18 +28,10 @@
     li {
       display: block;
       position: relative;
-      -webkit-transition: background .2s;
-      transition:         background .2s;
       white-space: nowrap;
 
-      &:hover,
-      &.sfHover {
-        background: $secondary-color;
-        -webkit-transition: none;
-        transition:         none;
-
-        > ul { display: block; }
-      }
+      &:hover > ul,
+      &.sfHover > ul { display: block; }
     }
   }
 
