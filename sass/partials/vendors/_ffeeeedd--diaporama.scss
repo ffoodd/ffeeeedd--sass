@@ -1,0 +1,68 @@
+@if( $ffeeeedd__diaporama == true ) {
+  /**
+   * @author Gaël Poupard
+   * @see http://www.ffoodd.fr
+   */
+
+  /* ----------------------------- */
+  /* == Diaporama
+   * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__diaporama».
+   * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__diaporama sert à ça.
+    ----------------------------- */
+
+  .ffeeeedd--diaporamas {
+    max-width: em( 980 );
+    position: relative;
+  }
+
+  .ffeeeedd--diaporama {
+    height: em( 430 );
+    width: em( 980 );
+
+    .wp-post-image { max-height: em( 430 ); }
+
+    .wp-caption {
+      background: $strong-color;
+      background: transparentize( $strong-color, .25 );
+      bottom: 0;
+      position: absolute;
+    }
+
+    .wp-caption-text { color: $light-color; }
+
+    .entry-title { line-height: 1; }
+  }
+
+  .no-js .ffeeeedd--diaporama + .ffeeeedd--diaporama { display: none; }
+
+
+
+  .js {
+    .ffeeeedd--controles {
+      max-height: em( 50 );
+      max-width: em( 150 );
+
+      button {
+        background: none;
+        border: 0;
+        line-height: 1;
+        min-width: 0;
+        opacity: .75;
+        padding: em( 8 ) em( 4 );
+        @extend %smooth;
+
+        &:hover,
+        &:focus {
+          background: darken( $secondary-color, 5 );
+          background: transparentize( darken( $secondary-color, 5 ), .25 );
+          opacity: 1;
+        }
+
+        &:focus,
+        &:active { outline-color: $strong-color; }
+
+        &:active { opacity: .5; }
+      }
+    }
+  }
+}
