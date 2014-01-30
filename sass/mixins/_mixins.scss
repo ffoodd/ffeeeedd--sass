@@ -50,34 +50,28 @@
   }
 }
 
-@mixin ffeeeedd--action( $c1, $c2 ) {
+@mixin ffeeeedd--action( $c1, $c2, $able: false ) {
+  // @note : on étend le placeholder précédent pour adjoindre les styles communs
+  @extend %ffeeeedd--action;
   // @note : Personnalisation des zones d’action (boutons, navigation, etc.)
   // @note : On passe en paramètre la couleur désirée.
-  // @note : Les éléments cliquables doivent avoir la classe «action--able» également.
-
+  // @note : Les éléments cliquables doivent avoir la classe "action--able" également.
   background-color: $c2;
-  background-image: -webkit-linear-gradient( top, $c1 0%, $c2 100% );
-  background-image: linear-gradient( to bottom, $c1 0%, $c2 100% );
+  background-image: -webkit-linear-gradient( top, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
+  background-image: linear-gradient( to bottom, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
   border: 1px solid darken( $c2, 20 );
-  box-shadow: inset 1px 1px 0 transparentize( white, .75);
-  color: #fff;
-  text-shadow: 1px 1px transparentize( black, .75);
-  transition: all .3s linear;
 
-  &.action--able:hover,
-  &.action--able:focus {
-    background-color: darken( $c2, 5 );
-    background-image: -webkit-linear-gradient( top, darken( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
-    background-image: linear-gradient( to bottom, darken( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
-    color: #fff;
-    text-decoration: none;
-  }
-
-  &.action--able:active,
-  &.action--able:visited {
-    background-color: lighten( $c2, 5 );
-    background-image: -webkit-linear-gradient( top, lighten( $c1, 5 ) 0%, lighten( $c2, 5 ) 100% );
-    background-image: linear-gradient( to bottom, lighten( $c1, 5 ) 0%, lighten( $c2, 5 ) 100% );
-    color: #fff;
+  @if $able == true {
+    &:hover,
+    &:focus {
+      background-color: darken( $c2, 5 );
+      background-position: 0 100%;
+    }
+    &:active,
+    &:visited {
+      background-color: lighten( $c2, 5 );
+      background-position: 0 0;
+    }
   }
 }
+

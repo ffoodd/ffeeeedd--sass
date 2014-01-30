@@ -61,6 +61,9 @@ $ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
 
+  // Placeholders
+@import "sass/mixins/placeholders";
+
   // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";

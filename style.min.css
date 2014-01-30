@@ -740,6 +740,21 @@ input[type='submit']::-moz-focus-inner {
 }
 
 /**
+ * @author Gaël Poupard
+ * @site Parenthèse Océan Voyages
+ * @lastmodified 2014-01-21
+ */
+.action--primary, .action--secondary, .action--extra {
+  background-size: auto 300%;
+  background-position: 0 50%;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  color: #fff !important;
+  text-decoration: none !important;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  transition: all .3s linear;
+}
+
+/**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
 * @lastmodified 2013-06-26
@@ -938,7 +953,7 @@ strong {
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
 */
-a {
+a, .js .ffeeeedd--controles button {
   transition: all .3s linear;
 }
 
@@ -975,74 +990,23 @@ a:active, a:visited {
 /* Zones d’action */
 .action--primary {
   background-color: #032c36;
-  background-image: -webkit-linear-gradient(top, #8dabcd 0%, #032c36 100%);
-  background-image: linear-gradient(to bottom, #8dabcd 0%, #032c36 100%);
+  background-image: -webkit-linear-gradient(top, #9fb8d5 0%, #02181e 100%);
+  background-image: linear-gradient(to bottom, #9fb8d5 0%, #02181e 100%);
   border: 1px solid black;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-  transition: all .3s linear;
-}
-.action--primary.action--able:hover, .action--primary.action--able:focus {
-  background-color: #02181e;
-  background-image: -webkit-linear-gradient(top, #7b9ec5 0%, #02181e 100%);
-  background-image: linear-gradient(to bottom, #7b9ec5 0%, #02181e 100%);
-  color: #fff;
-  text-decoration: none;
-}
-.action--primary.action--able:active, .action--primary.action--able:visited {
-  background-color: #04404e;
-  background-image: -webkit-linear-gradient(top, #9fb8d5 0%, #04404e 100%);
-  background-image: linear-gradient(to bottom, #9fb8d5 0%, #04404e 100%);
-  color: #fff;
 }
 
 .action--secondary {
   background-color: #971c13;
-  background-image: -webkit-linear-gradient(top, #e4382c 0%, #971c13 100%);
-  background-image: linear-gradient(to bottom, #e4382c 0%, #971c13 100%);
+  background-image: -webkit-linear-gradient(top, #e74d43 0%, #801810 100%);
+  background-image: linear-gradient(to bottom, #e74d43 0%, #801810 100%);
   border: 1px solid #3c0b08;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-  transition: all .3s linear;
-}
-.action--secondary.action--able:hover, .action--secondary.action--able:focus {
-  background-color: #801810;
-  background-image: -webkit-linear-gradient(top, #db281c 0%, #801810 100%);
-  background-image: linear-gradient(to bottom, #db281c 0%, #801810 100%);
-  color: #fff;
-  text-decoration: none;
-}
-.action--secondary.action--able:active, .action--secondary.action--able:visited {
-  background-color: #ad2016;
-  background-image: -webkit-linear-gradient(top, #e74d43 0%, #ad2016 100%);
-  background-image: linear-gradient(to bottom, #e74d43 0%, #ad2016 100%);
-  color: #fff;
 }
 
 .action--extra {
   background-color: #04192f;
-  background-image: -webkit-linear-gradient(top, #032c36 0%, #04192f 100%);
-  background-image: linear-gradient(to bottom, #032c36 0%, #04192f 100%);
+  background-image: -webkit-linear-gradient(top, #04404e 0%, #020c18 100%);
+  background-image: linear-gradient(to bottom, #04404e 0%, #020c18 100%);
   border: 1px solid black;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25);
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-  transition: all .3s linear;
-}
-.action--extra.action--able:hover, .action--extra.action--able:focus {
-  background-color: #020c18;
-  background-image: -webkit-linear-gradient(top, #02181e 0%, #020c18 100%);
-  background-image: linear-gradient(to bottom, #02181e 0%, #020c18 100%);
-  color: #fff;
-  text-decoration: none;
-}
-.action--extra.action--able:active, .action--extra.action--able:visited {
-  background-color: #062547;
-  background-image: -webkit-linear-gradient(top, #04404e 0%, #062547 100%);
-  background-image: linear-gradient(to bottom, #04404e 0%, #062547 100%);
-  color: #fff;
 }
 
 /* == @section Modules ==================== */
@@ -1233,6 +1197,68 @@ tbody tr > * + * {
 .sf-arrows ul li:hover > .sf-with-ul:after,
 .sf-arrows ul .sfHover > .sf-with-ul:after {
   border-left-color: white;
+}
+
+/**
+ * @author Gaël Poupard
+ * @see http://www.ffoodd.fr
+ */
+/* ----------------------------- */
+/* == Diaporama
+ * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__diaporama».
+ * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__diaporama sert à ça.
+  ----------------------------- */
+.ffeeeedd--diaporamas {
+  max-width: 61.25em;
+  position: relative;
+}
+
+.ffeeeedd--diaporama {
+  height: 26.875em;
+  width: 61.25em;
+}
+.ffeeeedd--diaporama .wp-post-image {
+  max-height: 26.875em;
+}
+.ffeeeedd--diaporama .wp-caption {
+  background: #04192f;
+  background: rgba(4, 25, 47, 0.75);
+  bottom: 0;
+  position: absolute;
+}
+.ffeeeedd--diaporama .wp-caption-text {
+  color: #8dabcd;
+}
+.ffeeeedd--diaporama .entry-title {
+  line-height: 1;
+}
+
+.no-js .ffeeeedd--diaporama + .ffeeeedd--diaporama {
+  display: none;
+}
+
+.js .ffeeeedd--controles {
+  max-height: 3.125em;
+  max-width: 9.375em;
+}
+.js .ffeeeedd--controles button {
+  background: none;
+  border: 0;
+  line-height: 1;
+  min-width: 0;
+  opacity: .75;
+  padding: 0.5em 0.25em;
+}
+.js .ffeeeedd--controles button:hover, .js .ffeeeedd--controles button:focus {
+  background: #ad2016;
+  background: rgba(173, 32, 22, 0.75);
+  opacity: 1;
+}
+.js .ffeeeedd--controles button:focus, .js .ffeeeedd--controles button:active {
+  outline-color: #04192f;
+}
+.js .ffeeeedd--controles button:active {
+  opacity: .5;
 }
 
 /**
