@@ -37,11 +37,6 @@
   /**
    * @author Gaël Poupard
    * @see https://twitter.com/ffoodd_fr
-   * @note inspiré du thème Twentytwelve.
-   * @see http://wordpress.org/extend/themes/twentytwelve
-   * @note Amélioré grâce à l'asutce de Julio Potier
-   * @see https://twitter.com/BoiteAWeb
-   * @see http://boiteaweb.fr/min-js-min-css-comment-quand-ajouter-minification-jeudiconfession-9-7364.html
    */
 
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );

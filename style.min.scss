@@ -42,6 +42,7 @@ $large-width:  1280;
 
   // Extensions
 $ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
+$ffeeeedd__navigation: true;
 
 // Fonctions
 @function em( $f, $base: $unitless-font-size ) {
@@ -71,8 +72,7 @@ $ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
     // Spécifiques aux contenus
   @import "sass/partials/contenus/types";
   @import "sass/partials/contenus/pages";
-    // Librairies ou plugins jQuery
-  @import "sass/partials/vendors/superfish";
     // Extensions
   @import "sass/partials/vendors/ffeeeedd--diaporama";
+  @import "sass/partials/vendors/ffeeeedd--navigation";
 @import "sass/partials/modules/structure--etendue";

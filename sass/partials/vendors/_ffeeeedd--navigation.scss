@@ -1,0 +1,81 @@
+@if( $ffeeeedd__navigation == true ) {
+  @charset "UTF-8";
+  /**
+   * @author Joel Birch
+   * @see http://users.tpg.com.au/j_birch/plugins/superfish/
+   * @note Modifié par mes soins (Gaël Poupard)
+   */
+
+  #nav > ul {
+    ul {
+      display: none;
+      left: 0;
+      min-width: 100%;
+      position: absolute;
+      top: 100%;
+      z-index: 6;
+
+      ul {
+        top: 0;
+        left: 100%;
+      }
+    }
+
+    > li { float: left; }
+
+    a { position: relative; }
+
+    li {
+      display: block;
+      position: relative;
+      -webkit-transition: background .2s;
+      transition:         background .2s;
+      white-space: nowrap;
+
+      &:hover,
+      &.sfHover {
+        background: $secondary-color;
+        -webkit-transition: none;
+        transition:         none;
+
+        > ul { display: block; }
+      }
+    }
+  }
+
+  .sub-menu {
+    background-color: $secondary-color;
+    padding: 0;
+
+    li { border: 0; }
+  }
+
+  .sf-arrows .sf-with-ul { padding-right: 2.5em; }
+
+  /* À personnaliser en fonction du projet */
+  .sf-arrows .sf-with-ul:before {
+    content: '';
+    position: absolute;
+    right: 1em;
+    top: 50%;
+
+    // @to-do
+    // Flèche en CSS : à remplacer par une image dans le sprite !!
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top-color: $secondary-color;
+  }
+
+  // Idem pour le 2è niveau de menu : utile ou pas ?
+  .sf-arrows ul .sf-with-ul:before {
+    border-color: transparent;
+    border-left-color: $secondary-color;
+  }
+
+  .sf-arrows ul li > .sf-with-ul:focus:before,
+  .sf-arrows ul li:hover > .sf-with-ul:before,
+  .sf-arrows ul .sfHover > .sf-with-ul:before {
+    border-left-color: white;
+  } // End @to-do
+}
