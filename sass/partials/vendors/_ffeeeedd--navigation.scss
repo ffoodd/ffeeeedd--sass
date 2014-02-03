@@ -42,6 +42,24 @@
     li { border: 0; }
   }
 
+  .no-js #nav .sub-menu {
+    display: block;
+    max-width: 100%;
+
+    li { white-space: normal; }
+
+    a {
+      font-size: .7em;
+      word-wrap: break-word;
+    }
+
+    .sub-menu {
+      font-size: .7em;
+      left: 0;
+      position: relative;
+    }
+  }
+
   .sf-arrows .sf-with-ul { padding-right: 2.5em; }
 
   /* À personnaliser en fonction du projet */

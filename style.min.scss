@@ -16,8 +16,8 @@ $unitless-line-height:     1.5;
 $unitless-font-size:       16;
   // Le ratio doit être dépourvu d’unité
 $ratio:                $unitless-font-size * $unitless-line-height;
-$regular-font-stack:   "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-$monospace-font-stack: "Lucida Sans Typewriter", monospace;
+$regular-font-stack:   "Arial", "Helvetica", sans-serif;
+$monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace;
 
   // Grilles
 $base-width:           960; // Largeur maximum en px (sera convertie en em)
