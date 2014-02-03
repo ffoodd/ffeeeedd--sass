@@ -1123,6 +1123,31 @@ tbody tr > * + * {
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
 /**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2014-01-21
+*/
+/* ----------------------------- */
+/* == Types */
+/* @note : Cette feuille de style gère les personnalisations spécifiques à certains types de contenus : les types d’articles, les catégories, les archives, etc.
+/* ----------------------------- */
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* == Pages */
+/* @note : Cette feuille de style gère les personnalisations spécifiques à certaines pages.
+/* ----------------------------- */
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+  == Accueil
+*/
+/* == @section Accueil ==================== */
+/**
  * @author Gaël Poupard
  * @see http://www.ffoodd.fr
  */
