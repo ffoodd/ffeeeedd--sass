@@ -1272,7 +1272,7 @@ tbody tr > * + * {
 }
 
 /* À personnaliser en fonction du projet */
-.sf-arrows .sf-with-ul:before {
+.sf-arrows .sf-with-ul::before {
   content: '';
   position: absolute;
   right: 1em;
@@ -1280,17 +1280,17 @@ tbody tr > * + * {
   height: 0;
   width: 0;
   border: 5px solid transparent;
-  border-top-color: #c42419;
+  border-top-color: inherit;
 }
 
-.sf-arrows ul .sf-with-ul:before {
+.sf-arrows ul .sf-with-ul::before {
   border-color: transparent;
-  border-left-color: #c42419;
+  border-left-color: inherit;
 }
 
-.sf-arrows ul li > .sf-with-ul:focus:before,
-.sf-arrows ul li:hover > .sf-with-ul:before,
-.sf-arrows ul .sfHover > .sf-with-ul:before {
+.sf-arrows ul li > .sf-with-ul:focus::before,
+.sf-arrows ul li:hover > .sf-with-ul::before,
+.sf-arrows ul .sfHover > .sf-with-ul::before {
   border-left-color: white;
 }
 

@@ -63,7 +63,7 @@
   .sf-arrows .sf-with-ul { padding-right: 2.5em; }
 
   /* À personnaliser en fonction du projet */
-  .sf-arrows .sf-with-ul:before {
+  .sf-arrows .sf-with-ul::before {
     content: '';
     position: absolute;
     right: 1em;
@@ -74,18 +74,18 @@
     height: 0;
     width: 0;
     border: 5px solid transparent;
-    border-top-color: $secondary-color;
+    border-top-color: inherit;
   }
 
   // Idem pour le 2è niveau de menu : utile ou pas ?
-  .sf-arrows ul .sf-with-ul:before {
+  .sf-arrows ul .sf-with-ul::before {
     border-color: transparent;
-    border-left-color: $secondary-color;
+    border-left-color: inherit;
   }
 
-  .sf-arrows ul li > .sf-with-ul:focus:before,
-  .sf-arrows ul li:hover > .sf-with-ul:before,
-  .sf-arrows ul .sfHover > .sf-with-ul:before {
+  .sf-arrows ul li > .sf-with-ul:focus::before,
+  .sf-arrows ul li:hover > .sf-with-ul::before,
+  .sf-arrows ul .sfHover > .sf-with-ul::before {
     border-left-color: white;
   } // End @to-do
 }
