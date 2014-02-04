@@ -13,12 +13,16 @@
 
   .js .ffeeeedd__onglets {
     [data-role="tab"] {
+      border-bottom-color: $strong-color;
       position: relative;
 
       + [data-role="tab"] { margin-left: em( 6 ); }
+
+      &[aria-selected="true"] { border-bottom-color: $background-color; }
     }
 
     .tabpanel {
+      border: 1px solid $strong-color;
       min-height: em( 300 );
       -webkit-transition: min-height .3s ease-in;
       transition:         min-height .3s ease-in;

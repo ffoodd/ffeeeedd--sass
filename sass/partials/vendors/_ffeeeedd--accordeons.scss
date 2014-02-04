@@ -1,0 +1,41 @@
+@if $ffeeeedd__accordeons == true {
+  @charset "UTF-8";
+  /**
+   * @author Gaël Poupard
+   * @see http://www.ffoodd.fr
+   */
+
+  /* ----------------------------- */
+  /* == Onglets
+   * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__accordeons».
+   * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__accordeons sert à ça.
+    ----------------------------- */
+
+  .js .ffeeeedd__accordeons {
+    margin-top: 1.5em;
+
+    [data-job="tab"] {
+      padding-left: em( 36 );
+      position: relative;
+
+      &[aria-selected="true"] { border-bottom: 0; }
+    }
+
+    [data-job="panel"] {
+      border: 1px solid $strong-color;
+      border-top: 0;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      -webkit-transition: all .3s ease-in-out;
+      transition:         all .3s ease-in-out;
+
+      &[aria-expanded="true"] {
+        max-height: em( 800 );
+        opacity: 1;
+        -webkit-transition-delay: .3s;
+        transition-delay:         .3s;
+      }
+    }
+  }
+}

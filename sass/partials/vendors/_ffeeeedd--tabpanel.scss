@@ -21,13 +21,8 @@
       p:empty { display: none; }
     }
 
-    .tabpanel {
-      border: 1px solid $strong-color;
-    }
-
     [role="tab"] {
       border: 1px solid $secondary-color;
-      border-bottom-color: $strong-color;
       bottom: -1px;
       color: $secondary-color;
       cursor: pointer;
@@ -42,7 +37,6 @@
 
       &[aria-selected="true"] {
         border-color: $strong-color;
-        border-bottom-color: $background-color;
         color: $strong-color;
         text-decoration: none;
         z-index: 2;

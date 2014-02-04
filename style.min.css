@@ -1314,12 +1314,8 @@ tbody tr > * + * {
 .js .tabpanel p:empty {
   display: none;
 }
-.js .tabpanel {
-  border: 1px solid #04192f;
-}
 .js [role="tab"] {
   border: 1px solid #c42419;
-  border-bottom-color: #04192f;
   bottom: -1px;
   color: #c42419;
   cursor: pointer;
@@ -1334,7 +1330,6 @@ tbody tr > * + * {
 }
 .js [role="tab"][aria-selected="true"] {
   border-color: #04192f;
-  border-bottom-color: #f2f2e2;
   color: #04192f;
   text-decoration: none;
   z-index: 2;
@@ -1359,12 +1354,17 @@ tbody tr > * + * {
  * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__onglets sert à ça.
   ----------------------------- */
 .js .ffeeeedd__onglets [data-role="tab"] {
+  border-bottom-color: #04192f;
   position: relative;
 }
 .js .ffeeeedd__onglets [data-role="tab"] + [data-role="tab"] {
   margin-left: 0.375em;
 }
+.js .ffeeeedd__onglets [data-role="tab"][aria-selected="true"] {
+  border-bottom-color: #f2f2e2;
+}
 .js .ffeeeedd__onglets .tabpanel {
+  border: 1px solid #04192f;
   min-height: 18.75em;
   -webkit-transition: min-height .3s ease-in;
   transition: min-height .3s ease-in;
@@ -1383,6 +1383,41 @@ tbody tr > * + * {
   -webkit-transform: scale(1) translateZ(0);
   -ms-transform: scale(1) translateZ(0);
   transform: scale(1) translateZ(0);
+}
+
+/**
+ * @author Gaël Poupard
+ * @see http://www.ffoodd.fr
+ */
+/* ----------------------------- */
+/* == Onglets
+ * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__accordeons».
+ * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__accordeons sert à ça.
+  ----------------------------- */
+.js .ffeeeedd__accordeons {
+  margin-top: 1.5em;
+}
+.js .ffeeeedd__accordeons [data-job="tab"] {
+  padding-left: 2.25em;
+  position: relative;
+}
+.js .ffeeeedd__accordeons [data-job="tab"][aria-selected="true"] {
+  border-bottom: 0;
+}
+.js .ffeeeedd__accordeons [data-job="panel"] {
+  border: 1px solid #04192f;
+  border-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.js .ffeeeedd__accordeons [data-job="panel"][aria-expanded="true"] {
+  max-height: 50em;
+  opacity: 1;
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
 }
 
 /**
