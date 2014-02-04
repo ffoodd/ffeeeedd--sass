@@ -1,0 +1,57 @@
+@if $ffeeeedd__onglets == true or $ffeeeedd__accordeons == true {
+  @charset "UTF-8";
+  /**
+   * @author Gaël Poupard
+   * @see http://www.ffoodd.fr
+   */
+
+  /* ----------------------------- */
+  /* == Onglets et/ou Accordéons
+   * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
+   * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
+    ----------------------------- */
+
+  .js {
+    [role="tab"]:focus { outline: 0; }
+
+    .ffeeeedd__onglets,
+    .tabpanel {
+      position: relative;
+
+      p:empty { display: none; }
+    }
+
+    .tabpanel {
+      border: 1px solid $strong-color;
+      border-top: 0;
+    }
+
+    [role="tab"] {
+      border: 1px solid $light-color;
+      border-bottom: 0;
+      cursor: pointer;
+      z-index: 1;
+
+      &:hover,
+      &:focus { text-decoration: underline; }
+
+      &[aria-selected="true"] {
+        border-color: $strong-color;
+        text-decoration: none;
+        z-index: 2;
+      }
+    }
+
+    [role="tabpanel"] {
+      -webkit-transition: all .3s ease-in-out;
+      transition:         all .3s ease-in-out;
+
+      &[aria-expanded="true"] {
+        -webkit-transition-delay: .3s;
+        transition-delay:         .3s;
+        z-index: 1;
+      }
+
+    }
+  }
+}

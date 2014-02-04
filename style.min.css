@@ -1295,6 +1295,94 @@ tbody tr > * + * {
 }
 
 /**
+ * @author Gaël Poupard
+ * @see http://www.ffoodd.fr
+ */
+/* ----------------------------- */
+/* == Onglets et/ou Accordéons
+ * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
+ * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
+  ----------------------------- */
+.js [role="tab"]:focus {
+  outline: 0;
+}
+.js .ffeeeedd__onglets,
+.js .tabpanel {
+  position: relative;
+}
+.js .ffeeeedd__onglets p:empty,
+.js .tabpanel p:empty {
+  display: none;
+}
+.js .tabpanel {
+  border: 1px solid #04192f;
+  border-top: 0;
+}
+.js [role="tab"] {
+  border: 1px solid #8dabcd;
+  border-bottom: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.js [role="tab"]:hover, .js [role="tab"]:focus {
+  text-decoration: underline;
+}
+.js [role="tab"][aria-selected="true"] {
+  border-color: #04192f;
+  text-decoration: none;
+  z-index: 2;
+}
+.js [role="tabpanel"] {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.js [role="tabpanel"][aria-expanded="true"] {
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
+  z-index: 1;
+}
+
+/**
+ * @author Gaël Poupard
+ * @see http://www.ffoodd.fr
+ */
+/* ----------------------------- */
+/* == Onglets
+ * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__onglets».
+ * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__onglets sert à ça.
+  ----------------------------- */
+.js .ffeeeedd__onglets [data-role="tab"] {
+  position: relative;
+}
+.js .ffeeeedd__onglets [data-role="tab"] + [data-role="tab"] {
+  margin-left: 0.375em;
+}
+.js .ffeeeedd__onglets [data-role="tab"][aria-selected="true"] {
+  transition: all .3s linear;
+  z-index: 2;
+}
+.js .ffeeeedd__onglets .tabpanel {
+  min-height: 18.75em;
+  -webkit-transition: min-height .3s ease-in;
+  transition: min-height .3s ease-in;
+}
+.js .ffeeeedd__onglets .tabpanel [data-role="panel"] {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transform: scale(0.9) translateZ(0);
+  -ms-transform: scale(0.9) translateZ(0);
+  transform: scale(0.9) translateZ(0);
+}
+.js .ffeeeedd__onglets .tabpanel [data-role="panel"][aria-expanded="true"] {
+  height: auto;
+  opacity: 1;
+  -webkit-transform: scale(1) translateZ(0);
+  -ms-transform: scale(1) translateZ(0);
+  transform: scale(1) translateZ(0);
+}
+
+/**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
 * @lastmodified 2013-11-06

@@ -1,0 +1,49 @@
+@if $ffeeeedd__onglets == true {
+  @charset "UTF-8";
+  /**
+   * @author Gaël Poupard
+   * @see http://www.ffoodd.fr
+   */
+
+  /* ----------------------------- */
+  /* == Onglets
+   * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__onglets».
+   * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__onglets sert à ça.
+    ----------------------------- */
+
+  .js .ffeeeedd__onglets {
+    [data-role="tab"] {
+      position: relative;
+
+      + [data-role="tab"] { margin-left: em( 6 ); }
+
+      &[aria-selected="true"] {
+        transition: all .3s linear;
+        z-index: 2;
+      }
+    }
+
+    .tabpanel {
+      min-height: em( 300 );
+      -webkit-transition: min-height .3s ease-in;
+      transition:         min-height .3s ease-in;
+
+      [data-role="panel"] {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        -webkit-transform:  scale( .9 ) translateZ( 0 );
+        -ms-transform:      scale( .9 ) translateZ( 0 );
+        transform:          scale( .9 ) translateZ( 0 );
+
+        &[aria-expanded="true"] {
+          height: auto;
+          opacity: 1;
+          -webkit-transform: scale( 1 ) translateZ( 0 );
+          -ms-transform:     scale( 1 ) translateZ( 0 );
+          transform:         scale( 1 ) translateZ( 0 );
+        }
+      }
+    }
+  }
+}

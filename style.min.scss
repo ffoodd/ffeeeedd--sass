@@ -43,6 +43,8 @@ $large-width:  1280;
   // Extensions
 $ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
 $ffeeeedd__navigation: true;
+$ffeeeedd__onglets: true;
+$ffeeeedd__accordeons: true;
 
 // Fonctions
 @function em( $f, $base: $unitless-font-size ) {
@@ -75,4 +77,6 @@ $ffeeeedd__navigation: true;
     // Extensions
   @import "sass/partials/vendors/ffeeeedd--diaporama";
   @import "sass/partials/vendors/ffeeeedd--navigation";
+  @import "sass/partials/vendors/ffeeeedd--tabpanel";
+  @import "sass/partials/vendors/ffeeeedd--onglets";
 @import "sass/partials/modules/structure--etendue";
