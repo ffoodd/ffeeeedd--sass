@@ -16,11 +16,6 @@
       position: relative;
 
       + [data-role="tab"] { margin-left: em( 6 ); }
-
-      &[aria-selected="true"] {
-        transition: all .3s linear;
-        z-index: 2;
-      }
     }
 
     .tabpanel {

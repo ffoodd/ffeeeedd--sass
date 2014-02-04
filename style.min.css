@@ -1316,12 +1316,17 @@ tbody tr > * + * {
 }
 .js .tabpanel {
   border: 1px solid #04192f;
-  border-top: 0;
 }
 .js [role="tab"] {
-  border: 1px solid #8dabcd;
-  border-bottom: 0;
+  border: 1px solid #c42419;
+  border-bottom-color: #04192f;
+  bottom: -1px;
+  color: #c42419;
   cursor: pointer;
+  margin: 0;
+  padding: .5em 1em;
+  -webkit-transition: color .3s linear;
+  transition: color .3s linear;
   z-index: 1;
 }
 .js [role="tab"]:hover, .js [role="tab"]:focus {
@@ -1329,6 +1334,8 @@ tbody tr > * + * {
 }
 .js [role="tab"][aria-selected="true"] {
   border-color: #04192f;
+  border-bottom-color: #f2f2e2;
+  color: #04192f;
   text-decoration: none;
   z-index: 2;
 }
@@ -1356,10 +1363,6 @@ tbody tr > * + * {
 }
 .js .ffeeeedd__onglets [data-role="tab"] + [data-role="tab"] {
   margin-left: 0.375em;
-}
-.js .ffeeeedd__onglets [data-role="tab"][aria-selected="true"] {
-  transition: all .3s linear;
-  z-index: 2;
 }
 .js .ffeeeedd__onglets .tabpanel {
   min-height: 18.75em;

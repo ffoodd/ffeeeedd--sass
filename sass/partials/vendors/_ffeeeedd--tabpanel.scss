@@ -23,13 +23,18 @@
 
     .tabpanel {
       border: 1px solid $strong-color;
-      border-top: 0;
     }
 
     [role="tab"] {
-      border: 1px solid $light-color;
-      border-bottom: 0;
+      border: 1px solid $secondary-color;
+      border-bottom-color: $strong-color;
+      bottom: -1px;
+      color: $secondary-color;
       cursor: pointer;
+      margin: 0;
+      padding: .5em 1em;
+      -webkit-transition: color .3s linear;
+      transition:         color .3s linear;
       z-index: 1;
 
       &:hover,
@@ -37,6 +42,8 @@
 
       &[aria-selected="true"] {
         border-color: $strong-color;
+        border-bottom-color: $background-color;
+        color: $strong-color;
         text-decoration: none;
         z-index: 2;
       }
@@ -51,7 +58,6 @@
         transition-delay:         .3s;
         z-index: 1;
       }
-
     }
   }
 }
