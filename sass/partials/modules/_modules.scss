@@ -205,9 +205,9 @@ tbody {
 /*
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
-.wp-caption {}
+.wp-caption { border: 1px solid $light-color; }
 
-.wp-caption-text {}
+.wp-caption-text { color: $light-color; }
 
 .gallery-caption {}
 

@@ -915,7 +915,11 @@ code,
 kbd,
 pre,
 samp {
+  border: 1px solid;
+  border-radius: 2px;
+  color: #c42419;
   font-family: "Consolas", "Monaco", "Andale Mono", monospace;
+  padding: 0 .2em;
 }
 
 /**
@@ -1121,6 +1125,14 @@ tbody tr > * + * {
 /*
  * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
  */
+.wp-caption {
+  border: 1px solid #054656;
+}
+
+.wp-caption-text {
+  color: #054656;
+}
+
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
@@ -1175,7 +1187,7 @@ tbody tr > * + * {
   position: absolute;
 }
 .ffeeeedd--diaporama .wp-caption-text {
-  color: #8dabcd;
+  color: #054656;
 }
 .ffeeeedd--diaporama .entry-title {
   line-height: 1;

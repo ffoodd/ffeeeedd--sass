@@ -44,12 +44,10 @@
     wp_register_style( 'all', get_stylesheet_directory_uri().'/style.min.css', false, null, 'all' );
     wp_register_style( 'print', get_stylesheet_directory_uri().'/css/impression.css', false, null, 'print' );
     wp_register_style( 'a11y', get_stylesheet_directory_uri().'/css/a11y.css', false, null, 'all' );
-    wp_register_style( 'prototype', get_stylesheet_directory_uri().'/css/prototype.css', false, null, 'all' );
     wp_register_script( 'site', get_stylesheet_directory_uri() . '/script.min.js', false, null, true );
     // On ajoute les fichiers à la queue
     wp_enqueue_style( 'all' );
     //wp_enqueue_style( 'a11y' );
-    //wp_enqueue_style( 'prototype' );
     wp_enqueue_style( 'print' );
     wp_enqueue_script( 'site' );
   }

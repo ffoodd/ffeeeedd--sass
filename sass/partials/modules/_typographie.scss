@@ -143,4 +143,10 @@ blockquote {
 code,
 kbd,
 pre,
-samp { font-family: $monospace-font-stack; }
+samp {
+  border: 1px solid;
+  border-radius: 2px;
+  color: $secondary-color;
+  font-family: $monospace-font-stack;
+  padding: 0 .2em;
+}
