@@ -959,7 +959,6 @@ a, .js .ffeeeedd--controles button {
 
 a {
   color: #c42419;
-  text-decoration: none;
 }
 a:focus, a:hover {
   color: #971c13;
@@ -1271,16 +1270,15 @@ tbody tr > * + * {
   padding-right: 2.5em;
 }
 
-/* À personnaliser en fonction du projet */
 .sf-arrows .sf-with-ul::before {
+  border: 5px solid transparent;
+  border-top-color: inherit;
   content: '';
+  height: 0;
   position: absolute;
   right: 1em;
   top: 50%;
-  height: 0;
   width: 0;
-  border: 5px solid transparent;
-  border-top-color: inherit;
 }
 
 .sf-arrows ul .sf-with-ul::before {
@@ -1401,8 +1399,23 @@ tbody tr > * + * {
   padding-left: 2.25em;
   position: relative;
 }
+.js .ffeeeedd__accordeons [data-job="tab"]::before {
+  border: 5px solid transparent;
+  border-top-color: inherit;
+  content: '';
+  height: 0;
+  left: 1.125em;
+  position: absolute;
+  top: 1.125em;
+  width: 0;
+}
 .js .ffeeeedd__accordeons [data-job="tab"][aria-selected="true"] {
   border-bottom: 0;
+}
+.js .ffeeeedd__accordeons [data-job="tab"][aria-selected="true"]::before {
+  border-bottom-color: inherit;
+  border-top-color: transparent;
+  top: 0.8125em;
 }
 .js .ffeeeedd__accordeons [data-job="panel"] {
   border: 1px solid #04192f;

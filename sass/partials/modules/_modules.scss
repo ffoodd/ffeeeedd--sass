@@ -43,7 +43,6 @@ strong {
 
 a {
   color: $secondary-color;
-  text-decoration: none;
   @extend %smooth;
 
   &:focus,

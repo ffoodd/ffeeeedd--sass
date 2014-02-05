@@ -18,7 +18,24 @@
       padding-left: em( 36 );
       position: relative;
 
+      &::before {
+        border: 5px solid transparent;
+        border-top-color: inherit;
+        content: '';
+        height: 0;
+        left: em( 18 );
+        position: absolute;
+        top: em( 18 );
+        width: 0;
+      }
+
       &[aria-selected="true"] { border-bottom: 0; }
+
+      &[aria-selected="true"]::before {
+        border-bottom-color: inherit;
+        border-top-color: transparent;
+        top: em( 13 );
+      }
     }
 
     [data-job="panel"] {
