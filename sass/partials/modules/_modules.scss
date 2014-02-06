@@ -56,13 +56,11 @@ a {
     color: lighten( $secondary-color, 10 );
   }
 
-  &[target="_blank"] { }
+  &[target="_blank"]::after { content: "\21ac"; }
 
-  &.mail,
-  &[href^="mailto:"] { }
+  &[href^="mailto:"]::before { content: "@ "; }
 
-  &[href$=".pdf"] { }
-
+  &[href$=".pdf"]::after { content: "\2935"; }
 }
 
 /* Les liens d'évitement sont de la même couleur que le fond. */
@@ -120,7 +118,6 @@ textarea {
 
   &:hover,
   &:active { border-color: $primary-color; }
-
 }
 
 input[type="color"],
@@ -172,13 +169,11 @@ caption {
 }
 
 tbody {
-
   border: 1px solid darken( $background-color, 20 );
 
   tr:nth-child(odd) { background: darken( $background-color, 10 ); }
 
   tr > * + * { border-left: 1px solid darken( $background-color, 20 ); }
-
 }
 
 

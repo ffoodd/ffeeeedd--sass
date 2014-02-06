@@ -62,25 +62,7 @@
 
   .sf-arrows .sf-with-ul { padding-right: 2.5em; }
 
-  .sf-arrows .sf-with-ul::before {
-    border: 5px solid transparent;
-    border-top-color: inherit;
-    content: '';
-    height: 0;
-    position: absolute;
-    right: 1em;
-    top: 50%;
-    width: 0;
-  }
+  .sf-arrows .sf-with-ul::after { content: " \25bc"; }
 
-  .sf-arrows ul .sf-with-ul::before {
-    border-color: transparent;
-    border-left-color: inherit;
-  }
-
-  .sf-arrows ul li > .sf-with-ul:focus::before,
-  .sf-arrows ul li:hover > .sf-with-ul::before,
-  .sf-arrows ul .sfHover > .sf-with-ul::before {
-    border-left-color: white;
-  }
+  .sf-arrows ul .sf-with-ul::after { content: " \25b6"; }
 }

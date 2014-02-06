@@ -10,7 +10,7 @@
 /* @note : Cette feuille de style gère les sprites.
 /* ----------------------------- */
 
-@import "sprite/*.png";
+@import "ffeeeedd--sprite/*.png";
 
 [class^="sprite-"],
 [class*=" sprite-"] {
@@ -19,12 +19,11 @@
 }
 
 // Lister ici tous les noms d’images, séparés par une virgule et un espace
-$s: ;
+$s: out, mail, pdf;
 
 @each $n in $s {
   .sprite-#{$n} {
-    @include sprite-dimensions( $sprite-sprites, $n );
-    @include sprite-sprite( $n );
+    @include sprite-dimensions( $ffeeeedd--sprite-sprites, $n );
+    @include ffeeeedd--sprite-sprite( $n );
   }
 }
-
