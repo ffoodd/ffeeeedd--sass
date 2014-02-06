@@ -116,7 +116,7 @@ abbr[title] {
 img {
   @extend .alignmiddle;
 
-  @include ffeeeedd--ie( 8 ) {
+  .ie8 & {
     width: auto; /* @bugfix @affected IE8 */
   }
 

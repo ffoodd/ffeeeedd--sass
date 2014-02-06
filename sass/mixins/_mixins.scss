@@ -39,16 +39,6 @@
 
 }
 
-@mixin ffeeeedd--ie( $v ) {
-  // @note : Support d'IE en spécifiant la version
-  // @note : Nécessite l'ajout d'une classe sur le html via commentaires conditionnels
-  // @see : http://www.alsacreations.com/astuce/lire/988-classes-conditionnelles-HTML.html
-  // @note: Peut être adapté pour Modernizr par exemple, en passant la propriété supportée ou non en argument
-
-  .ie#{$v} & {
-    @content;
-  }
-}
 
 @mixin ffeeeedd--action( $c1, $c2, $able: false ) {
   // @note : on étend le placeholder précédent pour adjoindre les styles communs
