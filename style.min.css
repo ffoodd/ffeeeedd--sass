@@ -952,6 +952,10 @@ strong {
   color: #04192f;
 }
 
+.required {
+  color: crimson;
+}
+
 /* == @section Liens ====================
  * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y

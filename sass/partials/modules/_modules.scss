@@ -30,9 +30,9 @@ body {
   color: $primary-color;
 }
 
-strong {
-  color: $strong-color;
-}
+strong { color: $strong-color; }
+
+.required { color: crimson; }
 
 
 /* == @section Liens ====================
