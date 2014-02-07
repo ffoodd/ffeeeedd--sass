@@ -36,8 +36,8 @@ strong { color: $strong-color; }
 
 
 /* == @section Liens ====================
- * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
- * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
+ * @note Signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
+ * @note Ne surtout pas oublier le :focus, primordial pour l’accessibilité.
 */
 %smooth { transition: all .3s linear; }
 
@@ -52,9 +52,7 @@ a {
   }
 
   &:active,
-  &:visited {
-    color: lighten( $secondary-color, 10 );
-  }
+  &:visited { color: lighten( $secondary-color, 10 ); }
 
   &[target="_blank"]::after { content: "\21ac"; }
 
@@ -63,7 +61,7 @@ a {
   &[href$=".pdf"]::after { content: "\2935"; }
 }
 
-/* Les liens d'évitement sont de la même couleur que le fond. */
+/* Les liens d’évitement sont de la même couleur que le fond. */
 .skip,
 .skip:hover {
   color: $background-color;
@@ -82,17 +80,11 @@ a {
 }
 
 /* Zones d’action */
-.action--primary {
-  @include ffeeeedd--action( #8dabcd, #032c36 );
-}
+.action--primary { @include ffeeeedd--action( #8dabcd, #032c36 ); }
 
-.action--secondary {
-  @include ffeeeedd--action( lighten( #c42419, 10 ), darken( #c42419, 10 ) );
-}
+.action--secondary { @include ffeeeedd--action( lighten( #c42419, 10 ), darken( #c42419, 10 ) ); }
 
-.action--extra {
-  @include ffeeeedd--action( #032c36, #04192f );
-}
+.action--extra { @include ffeeeedd--action( #032c36, #04192f ); }
 
 
 /* == @section Modules ==================== */
@@ -143,7 +135,6 @@ input[type="reset"] { min-width: 100px; }
 
 /* == @section Tableaux ==================== */
 table {
-
   border-collapse: collapse;
   caption-side: bottom;
   display: table;
@@ -159,7 +150,6 @@ table {
   }
 
   td { color: darken( $primary-color, 10 ); }
-
 }
 
 caption {
@@ -198,7 +188,7 @@ tbody {
 
 /* == @section WordPress ==================== */
 /*
- * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
+ * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d’images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l’auteur d’un article himself.
  */
 .wp-caption { border: 1px solid $light-color; }
 

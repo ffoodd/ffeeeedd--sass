@@ -7,7 +7,7 @@
 
 /* ----------------------------- */
 /* ==Sprites */
-/* @note : Cette feuille de style gère les sprites.
+/* @note Cette feuille de style gère les sprites.
 /* ----------------------------- */
 
 @import "ffeeeedd--sprite/*.png";
@@ -18,7 +18,7 @@
   display: inline-block;
 }
 
-// Lister ici tous les noms d’images, séparés par une virgule et un espace
+// Lister ici tous les noms d’images, séparés par une virgule et un espace :
 $s: out, mail, pdf;
 
 @each $n in $s {

@@ -1,6 +1,6 @@
 <?php
 /**
- * ffeeeedd--sass : fonctions du thème - communes à l'administration et au front-end - en phase de developpement basé sur Sass
+ * ffeeeedd--sass : fonctions du thème - communes à l’administration et au front-end basé sur Sass
  * @author                Gaël Poupard
  * @link                  www.ffoodd.fr
  *
@@ -22,11 +22,10 @@
   /**
    * @author Gaël Poupard
    * @see https://twitter.com/ffoodd_fr
-   * @note I18n : déclare le domaine et l'emplacement des fichiers de traduction
+   * @note I18n : déclare le domaine et l’emplacement des fichiers de traduction
    * @see Twentytwelve - Thème WordPress par défaut.
    * @link http://codex.wordpress.org/Child_Themes#Internationalization
   */
-
   add_action( 'after_setup_theme', 'ffeeeedd__sass__setup' );
   function ffeeeedd__sass__setup() {
     load_child_theme_textdomain( 'ffeeeedd--sass', get_stylesheet_directory() . '/lang' );
@@ -38,7 +37,6 @@
    * @author Gaël Poupard
    * @see https://twitter.com/ffoodd_fr
    */
-
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );
   function ffeeeedd__script() {
     wp_register_style( 'all', get_stylesheet_directory_uri().'/style.min.css', false, null, 'all' );

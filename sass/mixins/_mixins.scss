@@ -6,8 +6,8 @@
 
 // Mixins
 @mixin ffeeeedd--font( $s, $m: true ) {
-  // @note : Gère l'échelle typographique
-  // @see : http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+  // @note Gère l’échelle typographique
+  // @see http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
 
   @if $s > $ratio {
 
@@ -41,11 +41,11 @@
 
 
 @mixin ffeeeedd--action( $c1, $c2, $able: false ) {
-  // @note : on étend le placeholder précédent pour adjoindre les styles communs
+  // @note On étend le placeholder précédent pour adjoindre les styles communs
   @extend %ffeeeedd--action;
-  // @note : Personnalisation des zones d’action (boutons, navigation, etc.)
-  // @note : On passe en paramètre la couleur désirée.
-  // @note : Les éléments cliquables doivent avoir la classe "action--able" également.
+  // @note Personnalisation des zones d’action (boutons, navigation, etc.)
+  // @note On passe en paramètre la couleur désirée.
+  // @note Les éléments cliquables doivent avoir la classe «action--able» également.
   background-color: $c2;
   background-image: -webkit-linear-gradient( top, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
   background-image: linear-gradient( to bottom, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );

@@ -10,10 +10,10 @@
 */
 
 /* ----------------------------- */
-/* ==Structure étendue // Design réactif */
-/* @note : utilisé pour étendre la structure d'origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em), etc....
- * @see : http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
- * @see : http://lanyrd.com/2013/parisweb/sckdfg/
+/* ==Structure étendue // Design réactif
+/* @note Utilisé pour étendre la structure d’origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em)…
+ * @see http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
+ * @see http://lanyrd.com/2013/parisweb/sckdfg/
 /* ----------------------------- */
 
 /* ----------------------------- */
@@ -23,10 +23,10 @@
   == Largeur du contenu
   == Pansement pour le viewport
   == Modification des classes
-    -- Palier "large"
-    -- Palier "medium"
-    -- Palier "small"
-    -- Palier "tiny"
+    -- Palier «large»
+    -- Palier «medium»
+    -- Palier «small»
+    -- Palier «tiny»
 */
 
 
@@ -64,13 +64,13 @@
 
 
 /* == @section Modification des classes ====================
- * @note : premier palier :    "large"
- * @note : deuxième palier :   "medium"
- * @note : troisième palier :  "small"
- * @note : quatrième palier :  "tiny"
+ * @note Premier palier :    «large»
+ * @note Deuxième palier :   «medium»
+ * @note Troisième palier :  «small»
+ * @note Quatrième palier :  «tiny»
 */
 
-/* -- @subsection Palier "large" -------------------- */
+/* -- @subsection Palier «large» -------------------- */
 @media ( min-width: em( $large-width ) ) {
     .large-hidden { display: none !important; }
 
@@ -79,7 +79,7 @@
     .large-no-float {float: none; }
 }
 
-/* -- @subsection Palier "medium" -------------------- */
+/* -- @subsection Palier «medium» -------------------- */
 @media ( max-width: em( $medium-width ) ) {
     .medium-hidden { display: none !important; }
 
@@ -88,7 +88,7 @@
     .medium-no-float {float: none; }
 }
 
-/* -- @subsection Palier "small" -------------------- */
+/* -- @subsection Palier «small» -------------------- */
 @media ( max-width: em( $small-width ) ) {
     .small-hidden { display: none !important; }
 
@@ -97,7 +97,7 @@
     .small-no-float {float: none; }
 }
 
-/* -- @subsection Palier "tiny" -------------------- */
+/* -- @subsection Palier «tiny» -------------------- */
 @media ( max-width: em( $tiny-width ) ) {
     .tiny-hidden { display: none !important; }
 

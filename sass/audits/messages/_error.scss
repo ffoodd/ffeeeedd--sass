@@ -7,7 +7,7 @@
   }
 
   a[href="#"]::after{
-    content: "#{$error-ico} Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué." !important;
+    content: "#{$error-ico} Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important;
   }
 
   a[href^="javascript"]::after{
@@ -117,7 +117,7 @@
   [onseeking], [onstalled], [onsuspend], [ontimeupdate],
   [onvolumechange], [onwaiting] {
     &::after {
-      content: "#{$error-ico} Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?" !important;
+      content: "#{$error-ico} Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important;
     }
   }
 }

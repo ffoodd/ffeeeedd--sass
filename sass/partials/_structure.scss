@@ -27,12 +27,11 @@
   == Grilles
   == Inline-block
   == Largeurs
-    -- Largeurs en %
   == Espacements
     -- Marges externes
     -- Marges internes
   == Éléments masqués
-    -- Remplacement d'image
+    -- Remplacement d’image
   == Orientation
 */
 
@@ -113,7 +112,7 @@ img.alignright { margin-left: 2em; }
 }
 
 /* Alignement du texte */
-@each $t in left, right, center, justify {
+@each $t in left, right, center {
   .txt#{$t} {
     text-align: $t;
   }
@@ -125,7 +124,6 @@ img.alignright { margin-left: 2em; }
 }
 
 
-/* == @section Grilles ==================== */
 /* == @section Grilles ==================== */
 // Contexte de formatage
 [class*="grid"] {
@@ -168,15 +166,13 @@ img.alignright { margin-left: 2em; }
     width: percentage( $g / $c / 100 * $as + $grid-guts / 100 );
   }
 
-
-  // On "nettoie" la grille pour autoriser les lignes multiples
+  // On «nettoie» la grille pour autoriser les lignes multiples
   // @to-do : compatibilité IE8. Ajouter une classe en javascript ?
   .grid-#{$c} > *:nth-child( #{$c}n + #{$n} ),
   [class*="grid-1-#{$as}"] > *:nth-child( 2n + #{$c} ),
   .grid-#{$as}-1 > *:nth-child( 2n + #{$c} ) {
     @extend %clear-left;
   }
-
 }
 
 
@@ -189,17 +185,15 @@ img.alignright { margin-left: 2em; }
 
 
 /* == @section Largeurs ==================== */
-
-/* -- @subsection Largeurs en % -------------------- */
 @each $w in 10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100 {
   .w-#{$w} { width: percentage( $w / 100 ); }
 }
 
 
 /* == @section Espacements ====================
- * @note : p, m = padding, margin
- * @note : a, t, r, b, l = all, top, right, bottom, left
- * @note : Nous avons besoin des valeurs de 0 à 2 au minimum.
+ * @note p, m = padding, margin
+ * @note a, t, r, b, l = all, top, right, bottom, left
+ * @note Nous avons besoin des valeurs de 0 à 2 au minimum.
 */
 @for $i from 0 through $base-spacing {
 
@@ -239,7 +233,7 @@ img.alignright { margin-left: 2em; }
 .js .js-visible,
 .no-js .js-hidden { display: block; }
 
-/* -- @subsection Remplacement d'image -------------------- */
+/* -- @subsection Remplacement d’image -------------------- */
 .ir {
   background-color: transparent;
   @extend .b-reset;
@@ -255,7 +249,7 @@ img.alignright { margin-left: 2em; }
 
 
 /* == @section Orientation ====================
- * @note : Corrige un bug sur les font-size lors du changement d'orientation sur iOS
+ * @note Corrige un bug sur les font-size lors du changement d’orientation sur iOS
 */
 @media ( orientation: landscape ) and ( max-device-width: 768px ) {
   html,

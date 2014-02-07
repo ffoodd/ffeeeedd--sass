@@ -19,7 +19,7 @@
 */
 /* ----------------------------- */
 /* ==Base */
-/* @note : Aucun de ces éléments ne doit être modifié.
+/* @note Aucun de ces éléments ne doit être modifié.
 /* ----------------------------- */
 /* Soft reset */
 html,
@@ -121,7 +121,7 @@ div {
   word-wrap: break-word;
 }
 
-/* Éviter l'interlignage disgracieux */
+/* Éviter l’interlignage disgracieux */
 sup,
 sub {
   vertical-align: 0;
@@ -136,7 +136,7 @@ sub {
   top: .5ex;
 }
 
-/* Parce que "les abbr c'est bon pour la planète" (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
+/* Parce que «les abbr c’est bon pour la planète» (dixit Nicolas Hoffmann dans RÖCSSTI), ceux ayant un title sont signalés */
 abbr[title] {
   border-bottom: dotted 1px;
   /* La couleur est héritée du texte */
@@ -178,12 +178,11 @@ a:focus img {
   == Grilles
   == Inline-block
   == Largeurs
-    -- Largeurs en %
   == Espacements
     -- Marges externes
     -- Marges internes
   == Éléments masqués
-    -- Remplacement d'image
+    -- Remplacement d’image
   == Orientation
 */
 /* == @section Modèle de boîte ==================== */
@@ -274,10 +273,6 @@ img.alignright {
   text-align: center;
 }
 
-.txtjustify {
-  text-align: justify;
-}
-
 /* -- @subsection Alignement vertical -------------------- */
 .aligntop, .row > *,
 .col, textarea {
@@ -295,7 +290,6 @@ label, #site-title {
   vertical-align: bottom;
 }
 
-/* == @section Grilles ==================== */
 /* == @section Grilles ==================== */
 [class*="grid"] > * {
   float: left;
@@ -382,7 +376,6 @@ label, #site-title {
 }
 
 /* == @section Largeurs ==================== */
-/* -- @subsection Largeurs en % -------------------- */
 .w-10 {
   width: 10%;
 }
@@ -440,9 +433,9 @@ label, #site-title {
 }
 
 /* == @section Espacements ====================
- * @note : p, m = padding, margin
- * @note : a, t, r, b, l = all, top, right, bottom, left
- * @note : Nous avons besoin des valeurs de 0 à 2 au minimum.
+ * @note p, m = padding, margin
+ * @note a, t, r, b, l = all, top, right, bottom, left
+ * @note Nous avons besoin des valeurs de 0 à 2 au minimum.
 */
 .ma0 {
   margin: 0em;
@@ -622,7 +615,7 @@ label, #site-title {
   display: block;
 }
 
-/* -- @subsection Remplacement d'image -------------------- */
+/* -- @subsection Remplacement d’image -------------------- */
 .ir {
   background-color: transparent;
   overflow: hidden;
@@ -635,7 +628,7 @@ label, #site-title {
 }
 
 /* == @section Orientation ====================
- * @note : Corrige un bug sur les font-size lors du changement d'orientation sur iOS
+ * @note Corrige un bug sur les font-size lors du changement d’orientation sur iOS
 */
 @media (orientation: landscape) and (max-device-width: 768px) {
   html,
@@ -694,7 +687,7 @@ textarea {
                 /* @bugfix
 @affected Supprime la scrollbar par défaut sur IE6/7/8/9 */
   resize: vertical;
-  /* Évite l'application d'une fonte monospace */
+  /* Évite l’application d’une fonte monospace */
   font-family: inherit;
 }
 
@@ -705,7 +698,7 @@ input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
                             /* @ bugfix
-@affected Types d'input cliquables sur iOS */
+@affected Types d’input cliquables sur iOS */
 }
 
 input[type="checkbox"],
@@ -718,7 +711,7 @@ input[type="radio"] {
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
   display: none;
                /* @bugfix
-@affected 'x' apparait à droite d'un champ de recherche lorsqu'un texte est entré. Ceci le retire */
+@affected 'x' apparait à droite d’un champ de recherche lorsqu’un texte est entré. Ceci le retire */
 }
 
 ::-webkit-input-placeholder {
@@ -761,7 +754,7 @@ input[type='submit']::-moz-focus-inner {
 */
 /* ----------------------------- */
 /* ==Typographie */
-/* @note : Cette feuille de stlye gère le rythme vertical, les corps et graisses de texte (niveaux de titres, texte courant, éléments particuliers..).
+/* @note Cette feuille de stlye gère le rythme vertical, les corps et graisses de texte (niveaux de titres, texte courant, éléments particuliers…).
 /* ----------------------------- */
 /* ----------------------------- */
 /* Sommaire */
@@ -773,8 +766,8 @@ input[type='submit']::-moz-focus-inner {
     -- Styles particuliers
 */
 /* == @section Typographie ====================
- * @see : http://www.codestyle.org/servlets/FontStack
- * @see : http://ffffallback.com/
+ * @see http://www.codestyle.org/servlets/FontStack
+ * @see http://ffffallback.com/
  * @see http://soqr.fr/vertical-rhythm/ @author : @eQRoeil
 */
 body {
@@ -879,7 +872,7 @@ small,
 /* -- @subsection Styles particuliers -------------------- */
 /*
  * @note Repris de http://tinytypo.tetue.net/
- * @author  Romy Duhem-Verdière @tetue
+ * @author Romy Duhem-Verdière @tetue
  * @author Nicolas Hoffmann
  * @see http://www.nicolas-hoffmann.net/
  * @see http://en.wikipedia.org/wiki/International_variation_in_quotation_marks
@@ -957,8 +950,8 @@ strong {
 }
 
 /* == @section Liens ====================
- * @note : signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
- * @note : ne surtout pas oublier le :focus, primordial pour l'#a11y
+ * @note Signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
+ * @note Ne surtout pas oublier le :focus, primordial pour l’accessibilité.
 */
 a, .js .ffeeeedd--controles button {
   transition: all .3s linear;
@@ -984,7 +977,7 @@ a[href$=".pdf"]::after {
   content: "\2935";
 }
 
-/* Les liens d'évitement sont de la même couleur que le fond. */
+/* Les liens d’évitement sont de la même couleur que le fond. */
 .skip,
 .skip:hover {
   color: #f2f2e2;
@@ -1135,7 +1128,7 @@ tbody tr > * + * {
 
 /* == @section WordPress ==================== */
 /*
- * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d'images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l'auteur d'un article himself.
+ * @note Classes utilisées par WordPress pour afficher les images avec leurs légendes, les galeries d’images, ainsi que pour distinguer les articles mis en avant et les commentaires ajoutés par l’auteur d’un article himself.
  */
 .wp-caption {
   border: 1px solid #054656;
@@ -1152,7 +1145,7 @@ tbody tr > * + * {
 */
 /* ----------------------------- */
 /* == Types */
-/* @note : Cette feuille de style gère les personnalisations spécifiques à certains types de contenus : les types d’articles, les catégories, les archives, etc.
+/* @note Cette feuille de style gère les personnalisations spécifiques à certains types de contenus : les types d’articles, les catégories, les archives, etc.
 /* ----------------------------- */
 /**
 * @author Gaël Poupard
@@ -1161,7 +1154,7 @@ tbody tr > * + * {
 */
 /* ----------------------------- */
 /* == Pages */
-/* @note : Cette feuille de style gère les personnalisations spécifiques à certaines pages.
+/* @note Cette feuille de style gère les personnalisations spécifiques à certaines pages.
 /* ----------------------------- */
 /* ----------------------------- */
 /* Sommaire */
@@ -1308,7 +1301,7 @@ tbody tr > * + * {
  */
 /* ----------------------------- */
 /* == Onglets et/ou Accordéons
- * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
+ * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons».
  * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
   ----------------------------- */
 .js [role="tab"]:focus {
@@ -1453,10 +1446,10 @@ tbody tr > * + * {
   * @see http://rocssti.nicolas-hoffmann.net/ @author : @Nico3333fr
 */
 /* ----------------------------- */
-/* ==Structure étendue // Design réactif */
-/* @note : utilisé pour étendre la structure d'origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em), etc....
- * @see : http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
- * @see : http://lanyrd.com/2013/parisweb/sckdfg/
+/* ==Structure étendue // Design réactif
+/* @note Utilisé pour étendre la structure d’origine : personnaliser la largeur du site, ajouter des tailles en px par exemple, personnaliser les versions responsive (MQ en em)…
+ * @see http://marieguillaumet.com/refonte-mon-portfolio-du-responsive-en-em-premiere-partie
+ * @see http://lanyrd.com/2013/parisweb/sckdfg/
 /* ----------------------------- */
 /* ----------------------------- */
 /* Sommaire */
@@ -1465,10 +1458,10 @@ tbody tr > * + * {
   == Largeur du contenu
   == Pansement pour le viewport
   == Modification des classes
-    -- Palier "large"
-    -- Palier "medium"
-    -- Palier "small"
-    -- Palier "tiny"
+    -- Palier «large»
+    -- Palier «medium»
+    -- Palier «small»
+    -- Palier «tiny»
 */
 /* == @section Largeur du contenu ==================== */
 .w--site {
@@ -1501,12 +1494,12 @@ tbody tr > * + * {
   zoom: 1.0;
 }
 /* == @section Modification des classes ====================
- * @note : premier palier :    "large"
- * @note : deuxième palier :   "medium"
- * @note : troisième palier :  "small"
- * @note : quatrième palier :  "tiny"
+ * @note Premier palier :    «large»
+ * @note Deuxième palier :   «medium»
+ * @note Troisième palier :  «small»
+ * @note Quatrième palier :  «tiny»
 */
-/* -- @subsection Palier "large" -------------------- */
+/* -- @subsection Palier «large» -------------------- */
 @media (min-width: 80em) {
   .large-hidden {
     display: none !important;
@@ -1520,7 +1513,7 @@ tbody tr > * + * {
     float: none;
   }
 }
-/* -- @subsection Palier "medium" -------------------- */
+/* -- @subsection Palier «medium» -------------------- */
 @media (max-width: 50em) {
   .medium-hidden {
     display: none !important;
@@ -1534,7 +1527,7 @@ tbody tr > * + * {
     float: none;
   }
 }
-/* -- @subsection Palier "small" -------------------- */
+/* -- @subsection Palier «small» -------------------- */
 @media (max-width: 30em) {
   .small-hidden {
     display: none !important;
@@ -1548,7 +1541,7 @@ tbody tr > * + * {
     float: none;
   }
 }
-/* -- @subsection Palier "tiny" -------------------- */
+/* -- @subsection Palier «tiny» -------------------- */
 @media (max-width: 20em) {
   .tiny-hidden {
     display: none !important;
