@@ -962,7 +962,6 @@ a {
 }
 a:focus, a:hover {
   color: #971c13;
-  text-decoration: underline;
 }
 a:active, a:visited {
   color: #e4382c;
