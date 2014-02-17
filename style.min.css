@@ -1406,9 +1406,9 @@ tbody tr > * + * {
   top: 0.8125em;
 }
 .js .ffeeeedd__accordeons [role="tabpanel"] {
-  display: none;
   border: 1px solid #04192f;
   border-top: 0;
+  display: none;
 }
 .js .ffeeeedd__accordeons [role="tabpanel"][aria-hidden="false"] {
   display: block;
