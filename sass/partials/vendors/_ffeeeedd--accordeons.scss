@@ -14,7 +14,7 @@
   .js .ffeeeedd__accordeons {
     margin-top: 1.5em;
 
-    [data-job="tab"] {
+    [role="tab"] {
       padding-left: em( 36 );
       position: relative;
 
@@ -38,21 +38,12 @@
       }
     }
 
-    [data-job="panel"] {
+    [role="tabpanel"] {
+      display:none;
       border: 1px solid $strong-color;
       border-top: 0;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      -webkit-transition: all .3s ease-in-out;
-      transition:         all .3s ease-in-out;
 
-      &[aria-expanded="true"] {
-        max-height: em( 800 );
-        opacity: 1;
-        -webkit-transition-delay: .3s;
-        transition-delay:         .3s;
-      }
+      &[aria-hidden="false"] { display: block; }
     }
   }
 }
