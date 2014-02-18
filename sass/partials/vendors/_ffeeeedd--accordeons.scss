@@ -41,9 +41,6 @@
     [role="tabpanel"] {
       border: 1px solid $strong-color;
       border-top: 0;
-      display: none;
-
-      &[aria-hidden="false"] { display: block; }
     }
   }
 }

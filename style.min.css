@@ -1300,7 +1300,7 @@ tbody tr > * + * {
  */
 /* ----------------------------- */
 /* == Onglets et/ou Accordéons
- * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons».
+ * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
  * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
   ----------------------------- */
 .js [role="tab"]:focus {
@@ -1321,26 +1321,21 @@ tbody tr > * + * {
   cursor: pointer;
   margin: 0;
   padding: .5em 1em;
-  -webkit-transition: color .3s linear;
-  transition: color .3s linear;
   z-index: 1;
-}
-.js [role="tab"]:hover, .js [role="tab"]:focus {
-  text-decoration: underline;
 }
 .js [role="tab"][aria-selected="true"] {
   border-color: #04192f;
   color: #04192f;
-  text-decoration: none;
   z-index: 2;
 }
-.js [role="tabpanel"] {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+.js [role="tab"] a {
+  color: inherit;
 }
-.js [role="tabpanel"][aria-expanded="true"] {
-  -webkit-transition-delay: .3s;
-  transition-delay: .3s;
+.js [role="tabpanel"] {
+  display: none;
+}
+.js [role="tabpanel"][aria-hidden="false"] {
+  display: block;
   z-index: 1;
 }
 
@@ -1365,10 +1360,6 @@ tbody tr > * + * {
 }
 .js .ffeeeedd__onglets [role="tabpanel"] {
   border: 1px solid #04192f;
-  display: none;
-}
-.js .ffeeeedd__onglets [role="tabpanel"][aria-hidden="false"] {
-  display: block;
 }
 
 /**
@@ -1408,10 +1399,6 @@ tbody tr > * + * {
 .js .ffeeeedd__accordeons [role="tabpanel"] {
   border: 1px solid #04192f;
   border-top: 0;
-  display: none;
-}
-.js .ffeeeedd__accordeons [role="tabpanel"][aria-hidden="false"] {
-  display: block;
 }
 
 /**

@@ -7,7 +7,7 @@
 
   /* ----------------------------- */
   /* == Onglets et/ou Accordéons
-   * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons».
+   * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
    * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
     ----------------------------- */
 
@@ -28,28 +28,22 @@
       cursor: pointer;
       margin: 0;
       padding: .5em 1em;
-      -webkit-transition: color .3s linear;
-      transition:         color .3s linear;
       z-index: 1;
-
-      &:hover,
-      &:focus { text-decoration: underline; }
 
       &[aria-selected="true"] {
         border-color: $strong-color;
         color: $strong-color;
-        text-decoration: none;
         z-index: 2;
       }
+
+      & a { color: inherit; }
     }
 
     [role="tabpanel"] {
-      -webkit-transition: all .3s ease-in-out;
-      transition:         all .3s ease-in-out;
+      display: none;
 
-      &[aria-expanded="true"] {
-        -webkit-transition-delay: .3s;
-        transition-delay:         .3s;
+      &[aria-hidden="false"] {
+        display: block;
         z-index: 1;
       }
     }

@@ -21,11 +21,6 @@
       &[aria-selected="true"] { border-bottom-color: $background-color; }
     }
 
-    [role="tabpanel"] {
-      border: 1px solid $strong-color;
-      display: none;
-
-      &[aria-hidden="false"] { display: block; }
-    }
+    [role="tabpanel"] { border: 1px solid $strong-color; }
   }
 }
