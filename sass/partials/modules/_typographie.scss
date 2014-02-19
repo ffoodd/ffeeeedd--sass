@@ -126,6 +126,7 @@ blockquote {
   font-style: italic;
   padding-left: 1em;
   position: relative;
+  z-index: 2;
 
   &:before {
     content: "\00AB";
