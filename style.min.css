@@ -1036,7 +1036,7 @@ form li {
 /* == @section Formulaires ==================== */
 form label {
   display: inline-block;
-  min-width: 200px;
+  min-width: 12.5em;
 }
 
 input,
@@ -1077,7 +1077,7 @@ textarea,
 button,
 input[type="button"],
 input[type="reset"] {
-  min-width: 100px;
+  min-width: 6.25em;
 }
 
 /* == @section Tableaux ==================== */

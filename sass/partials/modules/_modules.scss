@@ -94,7 +94,7 @@ form li { list-style: none; }
 /* == @section Formulaires ==================== */
 form label {
   display: inline-block;
-  min-width: 200px;
+  min-width: em( 200 );
 }
 
 input,
@@ -127,7 +127,7 @@ select,
 textarea,
 button,
 input[type="button"],
-input[type="reset"] { min-width: 100px; }
+input[type="reset"] { min-width: em( 100 ); }
 
 
 /* == @section Tableaux ==================== */
