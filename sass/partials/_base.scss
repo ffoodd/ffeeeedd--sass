@@ -25,10 +25,16 @@ ul,
 ol,
 blockquote { padding-left: 2em; }
 
+dd {
+  margin: 0;
+  padding: 0 0 1em 1em;
+}
+
 code,
 pre,
 samp { white-space: pre-wrap; }
 
+dt,
 mark { font-weight: bold; }
 
 code { line-height: 1em; }

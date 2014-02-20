@@ -35,12 +35,18 @@ blockquote {
   padding-left: 2em;
 }
 
+dd {
+  margin: 0;
+  padding: 0 0 1em 1em;
+}
+
 code,
 pre,
 samp {
   white-space: pre-wrap;
 }
 
+dt,
 mark {
   font-weight: bold;
 }
@@ -894,11 +900,11 @@ blockquote {
   z-index: 2;
 }
 blockquote:before {
+  color: #74ddf7;
   content: "\00AB";
   font-size: 10em;
   left: 0;
   line-height: 0;
-  opacity: .25;
   position: absolute;
   top: 0;
   z-index: -1;

@@ -129,11 +129,11 @@ blockquote {
   z-index: 2;
 
   &:before {
+    color: lighten( $primary-color, 60 );
     content: "\00AB";
     font-size: 10em;
     left: 0;
     line-height: 0;
-    opacity: .25;
     position: absolute;
     top: 0;
     z-index: -1;
