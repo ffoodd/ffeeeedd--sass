@@ -8,59 +8,76 @@
 @mixin ffeeeedd--font( $s, $m: true ) {
   // @note Gère l’échelle typographique
   // @see http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+  $everything-okay: true;
 
-  @if $s > $ratio {
-
-    font-size: em( $s );
-    line-height:  ceil( $s / $ratio ) * $ratio / $s;
-    @if $m == true {
-      $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
-      margin: $margin (0) $margin / 2 ;
-    }
-
-  } @else if $s == $ratio {
-
-    font-size: em( $s );
-    line-height: $unitless-line-height;
-    @if $m == true {
-      $margin: $unitless-line-height * 1em;
-      margin: $margin (0);
-    }
-
-  } @else if $s < $ratio {
-
-    font-size: em( $s );
-    line-height: $ratio / $s;
-    @if $m == true {
-      $margin: $ratio / $s * 1em;
-      margin: $margin (0) $margin / 2;
-    }
+  @if type-of( $s ) != number {
+    @warn "Biip ! `{$s}` is not a valid number.";
+    $everything-okay: false;
   }
 
+  @if $everything-okay == true {
+    @if $s > $ratio {
+
+      font-size: em( $s );
+      line-height:  ceil( $s / $ratio ) * $ratio / $s;
+      @if $m == true {
+        $margin: ceil( $s / $ratio ) * $ratio / $s * 1em;
+        margin: $margin (0) $margin / 2 ;
+      }
+
+    } @else if $s == $ratio {
+
+      font-size: em( $s );
+      line-height: $unitless-line-height;
+      @if $m == true {
+        $margin: $unitless-line-height * 1em;
+        margin: $margin (0);
+      }
+
+    } @else if $s < $ratio {
+
+      font-size: em( $s );
+      line-height: $ratio / $s;
+      @if $m == true {
+        $margin: $ratio / $s * 1em;
+        margin: $margin (0) $margin / 2;
+      }
+    }
+  }
 }
 
 
 @mixin ffeeeedd--action( $c1, $c2, $able: false ) {
-  // @note On étend le placeholder précédent pour adjoindre les styles communs
-  @extend %ffeeeedd--action;
-  // @note Personnalisation des zones d’action (boutons, navigation, etc.)
-  // @note On passe en paramètre la couleur désirée.
-  // @note Les éléments cliquables doivent avoir la classe «action--able» également.
-  background-color: $c2;
-  background-image: -webkit-linear-gradient( top, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
-  background-image: linear-gradient( to bottom, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
-  border: 1px solid darken( $c2, 20 );
+  $everything-okay: true;
 
-  @if $able == true {
-    &:hover,
-    &:focus {
-      background-color: darken( $c2, 5 );
-      background-position: 0 100%;
-    }
-    &:active,
-    &:visited {
-      background-color: lighten( $c2, 5 );
-      background-position: 0 0;
+  @if type-of( $c1 ) != color
+   or type-of( $c2 ) != color {
+    @warn "Either `#{$c1}` or `#{$c2}` is not a color.";
+    $everything-okay: false;
+  }
+
+  @if $everything-okay == true {
+    // @note On étend le placeholder précédent pour adjoindre les styles communs
+    @extend %ffeeeedd--action;
+    // @note Personnalisation des zones d’action (boutons, navigation, etc.)
+    // @note On passe en paramètre la couleur désirée.
+    // @note Les éléments cliquables doivent avoir la classe «action--able» également.
+    background-color: $c2;
+    background-image: -webkit-linear-gradient( top, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
+    background-image: linear-gradient( to bottom, lighten( $c1, 5 ) 0%, darken( $c2, 5 ) 100% );
+    border: 1px solid darken( $c2, 20 );
+
+    @if $able == true {
+      &:hover,
+      &:focus {
+        background-color: darken( $c2, 5 );
+        background-position: 0 100%;
+      }
+      &:active,
+      &:visited {
+        background-color: lighten( $c2, 5 );
+        background-position: 0 0;
+      }
     }
   }
 }

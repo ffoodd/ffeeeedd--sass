@@ -48,8 +48,17 @@ $a11y-css: false; // Si true, le contenu du fichier est compilé.
 
 // Fonctions
 @function em( $f, $base: $unitless-font-size ) {
-  @if $f == 0 { @return 0 }
-  @return $f / $base * 1em;
+  $everything-okay: true;
+
+  @if type-of( $f ) != number {
+    @warn "Biip ! `{$s}` is not a valid number.";
+    $everything-okay: false;
+  }
+
+  @if $everything-okay == true {
+    @if $f == 0 { @return 0 }
+    @return $f / $base * 1em;
+  }
 }
 
 // Imports
