@@ -880,6 +880,8 @@ small,
  * @author Nicolas Hoffmann
  * @see http://www.nicolas-hoffmann.net/
  * @see http://en.wikipedia.org/wiki/International_variation_in_quotation_marks
+ * @author Vincent De Oliveira
+ * @see http://iamvdo.me/blog/n-oubliez-pas-la-propriete-css-quotes
  */
 q {
   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
@@ -895,11 +897,12 @@ blockquote {
   font-style: italic;
   padding-left: 1em;
   position: relative;
+  quotes: "«\00A0" "\00A0»";
   z-index: 2;
 }
 blockquote:before {
   color: #74ddf7;
-  content: "\00AB";
+  content: open-quote;
   font-size: 10em;
   left: 0;
   line-height: 0;
