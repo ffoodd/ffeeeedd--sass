@@ -83,20 +83,34 @@
 /* == @section Alignements ( blocs et en ligne ) ==================== */
 
 /* -- @subsection Alignement horizontal -------------------- */
-/* À gauche */
-.left,
-.alignleft { float: left; }
+@if $direction == ltr {
 
-img.left,
-img.alignleft { margin-right: 2em; }
+  .start,
+  .alignleft { float: left; }
 
-/* À droite */
-.right,
-.alignright { float: right; }
+  .end,
+  .alignright { float: right; }
 
-img.right,
-img.alignright { margin-left: 2em; }
+  img.start,
+  img.alignleft { margin-right: 2em; }
 
+  img.end,
+  img.alignright { margin-left: 2em; }
+
+} @else if $direction == rtl {
+
+  .start,
+  .alignleft { float: right; }
+
+  .end,
+  .alignright { float: left; }
+
+  img.start,
+  img.alignleft { margin-left: 2em; }
+
+  img.end,
+  img.alignright { margin-right: 2em; }
+}
 
 /* Centré */
 .aligncenter {

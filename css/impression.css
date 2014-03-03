@@ -54,8 +54,8 @@
     /* Affiche les éléments .print */
   }
 
-  .left,
-  .right {
+  .start,
+  .end {
     display: block;
     float: none;
     /* Linéarise les contenus */

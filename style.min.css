@@ -232,24 +232,22 @@ a:focus img {
 
 /* == @section Alignements ( blocs et en ligne ) ==================== */
 /* -- @subsection Alignement horizontal -------------------- */
-/* À gauche */
-.left,
+.start,
 .alignleft {
   float: left;
 }
 
-img.left,
-img.alignleft {
-  margin-right: 2em;
-}
-
-/* À droite */
-.right,
+.end,
 .alignright {
   float: right;
 }
 
-img.right,
+img.start,
+img.alignleft {
+  margin-right: 2em;
+}
+
+img.end,
 img.alignright {
   margin-left: 2em;
 }

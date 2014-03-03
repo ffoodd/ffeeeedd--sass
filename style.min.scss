@@ -7,38 +7,35 @@
 // Variables
 
   // Typographie
-  // Compass attend des valeurs en px
-$base-line-height:     24px !default;
-$base-font-size:       16px !default;
-  // ffeeeedd se sert de valeurs sans unité
-$unitless-line-height:     1.5;
-  // Représente une valeur en px, mais uniquement pour faciliter le calcul du contexte en em
-$unitless-font-size:       16;
-  // Le ratio doit être dépourvu d’unité
-$ratio:                $unitless-font-size * $unitless-line-height;
-$regular-font-stack:   "Arial", "Helvetica", sans-serif;
-$monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace;
+$base-line-height:     24px !default; // Compass attend des valeurs en px
+$base-font-size:       16px !default; // Compass attend des valeurs en px
+$unitless-line-height:     1.5 !default; // ffeeeedd se sert de valeurs sans unité
+$unitless-font-size:       16 !default; // Représente une valeur en px, mais uniquement pour faciliter le calcul du contexte en em
+$ratio:                $unitless-font-size * $unitless-line-height !default; // Le ratio doit être dépourvu d’unité
+$regular-font-stack:   "Arial", "Helvetica", sans-serif !default;
+$monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace !default;
+$direction: ltr !default;
 
   // Grilles
-$base-width:           960; // Largeur maximum en px (sera convertie en em)
-$base-spacing:         3;   // Pour les espacements : padding, margin (en em)...
-$grid-cols:            6;   // Nombre de colonnes pour la grille */
-$gut:                  20;  // La gouttière en px, convertie en pourcentage à la ligne suivante
-$grid-guts:            round( $gut * 100 / $base-width ); // Et voilà la gouttière en pourcents
+$base-width:           960 !default; // Largeur maximum en px (sera convertie en em)
+$base-spacing:         3 !default;   // Pour les espacements : padding, margin (en em)...
+$grid-cols:            6 !default;   // Nombre de colonnes pour la grille */
+$gut:                  20 !default;  // La gouttière en px, convertie en pourcentage à la ligne suivante
+$grid-guts:            round( $gut * 100 / $base-width ) !default; // Et voilà la gouttière en pourcents
 
   // Couleurs
-$primary-color: #032c36; // Le texte courant
-$secondary-color: #c42419; // Les liens
-$strong-color: #04192f; // Les éléments importants : emphases, titres…
-$light-color: #054656; // Les éléments anecdotiques ou secondaires.
-$complementary-color: complement( $primary-color );
-$background-color: #f2f2e2;
+$primary-color: #032c36 !default; // Le texte courant
+$secondary-color: #c42419 !default; // Les liens
+$strong-color: #04192f !default; // Les éléments importants : emphases, titres…
+$light-color: #054656 !default; // Les éléments anecdotiques ou secondaires.
+$complementary-color: complement( $primary-color ) !default;
+$background-color: #f2f2e2 !default;
 
   // Responsive
-$tiny-width:   320;
-$small-width:  480;
-$medium-width: 800;
-$large-width:  1280;
+$tiny-width:   320 !default;
+$small-width:  480 !default;
+$medium-width: 800 !default;
+$large-width:  1280 !default;
 
   // Extensions
 $ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
