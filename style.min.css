@@ -1499,6 +1499,19 @@ tbody tr > * + * {
   .medium-no-float {
     float: none;
   }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    color: #6a130d;
+  }
+
+  strong {
+    color: black;
+  }
 }
 /* -- @subsection Palier «small» -------------------- */
 @media (max-width: 30em) {

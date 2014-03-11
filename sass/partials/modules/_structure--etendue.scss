@@ -86,6 +86,15 @@
     .medium-visible { display: block !important; }
 
     .medium-no-float {float: none; }
+
+    body {
+      background-color: lighten( $background-color, 20 );
+      color: darken( $primary-color, 20 );
+    }
+
+    a { color: darken( $secondary-color, 20 ); }
+
+    strong { color: darken( $strong-color, 20 ); }
 }
 
 /* -- @subsection Palier «small» -------------------- */
