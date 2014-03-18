@@ -1194,6 +1194,7 @@ tbody tr > * + * {
 }
 .ffeeeedd--diaporama .wp-caption {
   background: #04192f;
+  border: 0;
   bottom: 0;
   position: absolute;
 }
@@ -1213,20 +1214,21 @@ tbody tr > * + * {
   max-width: 9.375em;
 }
 .js .ffeeeedd--controles button {
-  background: none;
+  background: #04192f;
   border: 0;
+  color: #f2f2e2;
   line-height: 1;
   min-width: 0;
   opacity: .75;
   padding: 0.5em 0.25em;
 }
 .js .ffeeeedd--controles button:hover, .js .ffeeeedd--controles button:focus {
-  background: #ad2016;
-  background: rgba(173, 32, 22, 0.75);
+  background: black;
+  color: white;
   opacity: 1;
 }
 .js .ffeeeedd--controles button:focus, .js .ffeeeedd--controles button:active {
-  outline-color: #04192f;
+  outline-color: #c42419;
 }
 .js .ffeeeedd--controles button:active {
   opacity: .5;

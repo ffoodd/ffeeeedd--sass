@@ -24,6 +24,7 @@
 
     .wp-caption {
       background: $strong-color;
+      border: 0;
       bottom: 0;
       position: absolute;
     }
@@ -43,8 +44,9 @@
       max-width: em( 150 );
 
       button {
-        background: none;
+        background: $strong-color;
         border: 0;
+        color: $background-color;
         line-height: 1;
         min-width: 0;
         opacity: .75;
@@ -53,13 +55,13 @@
 
         &:hover,
         &:focus {
-          background: darken( $secondary-color, 5 );
-          background: transparentize( darken( $secondary-color, 5 ), .25 );
+          background: darken( $strong-color, 20 );
+          color: lighten( $background-color, 20 );
           opacity: 1;
         }
 
         &:focus,
-        &:active { outline-color: $strong-color; }
+        &:active { outline-color: $secondary-color; }
 
         &:active { opacity: .5; }
       }
