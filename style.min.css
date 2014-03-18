@@ -1194,12 +1194,11 @@ tbody tr > * + * {
 }
 .ffeeeedd--diaporama .wp-caption {
   background: #04192f;
-  background: rgba(4, 25, 47, 0.75);
   bottom: 0;
   position: absolute;
 }
 .ffeeeedd--diaporama .wp-caption-text {
-  color: #054656;
+  color: #f2f2e2;
 }
 .ffeeeedd--diaporama .entry-title {
   line-height: 1;

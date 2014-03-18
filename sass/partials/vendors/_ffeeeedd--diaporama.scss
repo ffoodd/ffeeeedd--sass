@@ -24,12 +24,11 @@
 
     .wp-caption {
       background: $strong-color;
-      background: transparentize( $strong-color, .25 );
       bottom: 0;
       position: absolute;
     }
 
-    .wp-caption-text { color: $light-color; }
+    .wp-caption-text { color: $background-color; }
 
     .entry-title { line-height: 1; }
   }
