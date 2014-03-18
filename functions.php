@@ -40,7 +40,7 @@
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );
   function ffeeeedd__script() {
     wp_register_style( 'all', get_stylesheet_directory_uri().'/style.min.css', false, filemtime( get_stylesheet_directory() . '/style.min.css' ), 'all' );
-    wp_register_style( 'print', get_stylesheet_directory_uri().'/css/impression.css', false, filemtime( get_stylesheet_directory() . '/css/impression.css', 'print' );
+    wp_register_style( 'print', get_stylesheet_directory_uri().'/css/impression.css', false, filemtime( get_stylesheet_directory() . '/css/impression.css' ), 'print' );
     wp_register_script( 'site', get_stylesheet_directory_uri() . '/script.min.js', false, filemtime( get_stylesheet_directory() . '/script.min.js' ), true );
     // On ajoute les fichiers à la queue
     wp_enqueue_style( 'all' );
