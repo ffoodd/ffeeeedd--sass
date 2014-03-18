@@ -39,9 +39,41 @@
    */
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );
   function ffeeeedd__script() {
-    wp_register_style( 'all', get_stylesheet_directory_uri().'/style.min.css', false, filemtime( get_stylesheet_directory() . '/style.min.css' ), 'all' );
-    wp_register_style( 'print', get_stylesheet_directory_uri().'/css/impression.css', false, filemtime( get_stylesheet_directory() . '/css/impression.css' ), 'print' );
-    wp_register_script( 'site', get_stylesheet_directory_uri() . '/script.min.js', false, filemtime( get_stylesheet_directory() . '/script.min.js' ), true );
+
+    // À décommenter si besoin de jquery
+    if( !is_admin() ) {
+      wp_deregister_script('jquery');
+      wp_register_script(
+        'jquery',
+        '/wp-includes/js/jquery/jquery.js',
+        false,
+        null,
+        true
+      );
+      wp_enqueue_script('jquery');
+    }
+
+    wp_register_style(
+      'all',
+      get_stylesheet_directory_uri().'/style.min.css',
+      false,
+      filemtime( get_stylesheet_directory() . '/style.min.css' ),
+      'all'
+    );
+    wp_register_style(
+      'print',
+      get_stylesheet_directory_uri().'/css/impression.css',
+      false,
+      filemtime( get_stylesheet_directory() . '/css/impression.css' ),
+      'print'
+    );
+    wp_register_script(
+      'site',
+      get_stylesheet_directory_uri() . '/script.min.js',
+      false,
+      filemtime( get_stylesheet_directory() . '/script.min.js' ),
+      true
+    );
     // On ajoute les fichiers à la queue
     wp_enqueue_style( 'all' );
     wp_enqueue_style( 'print' );

@@ -21,7 +21,6 @@
 /* ----------------------------- */
 /*
   == Largeur du contenu
-  == Pansement pour le viewport
   == Modification des classes
     -- Palier «large»
     -- Palier «medium»
@@ -34,33 +33,6 @@
 .w--site { width: em( $base-width ); }
 
 .mw--site { max-width: em( $base-width ); }
-
-
-/* == @section Pansement pour le viewport ==================== */
-@-webkit-viewport {
-  width: device-width;
-  zoom: 1.0;
-}
-
-@-moz-viewport {
-  width: device-width;
-  zoom: 1.0;
-}
-
-@-ms-viewport {
-  width: device-width;
-  zoom: 1.0;
-}
-
-@-o-viewport {
-  width: device-width;
-  zoom: 1.0;
-}
-
-@viewport {
-  width: device-width;
-  zoom: 1.0;
-}
 
 
 /* == @section Modification des classes ====================
