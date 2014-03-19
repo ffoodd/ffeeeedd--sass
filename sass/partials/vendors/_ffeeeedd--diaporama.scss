@@ -49,7 +49,6 @@
         color: $background-color;
         line-height: 1;
         min-width: 0;
-        opacity: .75;
         padding: em( 8 ) em( 4 );
         @extend %smooth;
 
@@ -57,13 +56,14 @@
         &:focus {
           background: darken( $strong-color, 20 );
           color: lighten( $background-color, 20 );
-          opacity: 1;
         }
 
-        &:focus,
-        &:active { outline-color: $secondary-color; }
+        &:focus { outline-color: $secondary-color; }
 
-        &:active { opacity: .5; }
+        &:active {
+          background: $secondary-color;
+          color: lighten( $background-color, 20 );
+        }
       }
     }
   }

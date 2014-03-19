@@ -60,13 +60,13 @@
     .medium-no-float { float: none; }
 
     body {
-      background-color: lighten( $background-color, 20 );
-      color: darken( $primary-color, 20 );
+      background-color: lighten( $background-color, 5 );
+      color: darken( $primary-color, 5 );
     }
 
-    a { color: darken( $secondary-color, 20 ); }
+    a { color: darken( $secondary-color, 5 ); }
 
-    strong { color: darken( $strong-color, 20 ); }
+    strong { color: darken( $strong-color, 5 ); }
 }
 
 /* -- @subsection Palier «small» -------------------- */
