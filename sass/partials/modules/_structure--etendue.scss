@@ -48,7 +48,7 @@
 
     .large-visible { display: block !important; }
 
-    .large-no-float {float: none; }
+    .large-no-float { float: none; }
 }
 
 /* -- @subsection Palier «medium» -------------------- */
@@ -57,7 +57,7 @@
 
     .medium-visible { display: block !important; }
 
-    .medium-no-float {float: none; }
+    .medium-no-float { float: none; }
 
     body {
       background-color: lighten( $background-color, 20 );
@@ -84,5 +84,5 @@
 
     .tiny-visible { display: block !important; }
 
-    .tiny-no-float {float: none; }
+    .tiny-no-float { float: none; }
 }
