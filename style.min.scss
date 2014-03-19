@@ -20,8 +20,8 @@ $direction: ltr !default;
 $base-width:           960 !default; // Largeur maximum en px (sera convertie en em)
 $base-spacing:         3 !default;   // Pour les espacements : padding, margin (en em)...
 $grid-cols:            6 !default;   // Nombre de colonnes pour la grille */
-$gut:                  20 !default;  // La gouttière en px, convertie en pourcentage à la ligne suivante
-$grid-guts:            round( $gut * 100 / $base-width ) !default; // Et voilà la gouttière en pourcents
+$grid-gut:                  20 !default;  // La gouttière en px, convertie en pourcentage à la ligne suivante
+$grid-guts:            round( $grid-gut * 100 / $base-width ) !default; // Et voilà la gouttière en pourcents
 
   // Couleurs
 $primary-color: #032c36 !default; // Le texte courant
