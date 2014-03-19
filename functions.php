@@ -15,6 +15,7 @@
 /*
   == Traduction
   == Injection des scripts et styles
+  == Compression du HTML
 */
 
 
@@ -79,3 +80,30 @@
     wp_enqueue_style( 'print' );
     wp_enqueue_script( 'site' );
   }
+
+
+  /* == @section Compression du HTML ==================== */
+  /**
+   * @author Gaël Poupard
+   * @see https://twitter.com/ffoodd_fr
+   * @author Jonathan Buttigieg
+   * @see https://twitter.com/GeekPressFR
+   * @see http://www.geekpress.fr/wordpress/astuce/minifier-html-sans-plugin-1566/
+   */
+  function ffeeeedd__minification__debut() {
+      ob_start( 'ffeeeedd__minification__fin' );
+  }
+
+  function ffeeeedd__minification__fin( $html ) {
+     // Suppression des commentaires HTML, sauf les commentaires conditionnels pour IE
+     $html = preg_replace( '/<!--(?!s*(?:[if [^]]+]|!|>))(?:(?!-->).)*-->/s', '', $html );
+
+     // Suppression des espaces vides
+     $html = str_replace( array( "\r\n", "\r", "\n", "\t" ), '', $html );
+     while( stristr( $html, '  ' ) ) {
+         $html = str_replace( '  ', ' ', $html );
+     }
+     return $html;
+  }
+
+  add_action( 'get_header', 'ffeeeedd__minification__debut' );
