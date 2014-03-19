@@ -11,14 +11,13 @@
     ----------------------------- */
 
   .ffeeeedd--diaporamas {
-    max-width: em( 980 );
     position: relative;
     z-index: 4;
   }
 
   .ffeeeedd--diaporama {
     height: em( 430 );
-    width: em( 980 );
+    max-width: 100%;
 
     .wp-post-image { max-height: em( 430 ); }
 

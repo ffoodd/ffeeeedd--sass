@@ -127,5 +127,6 @@ img {
   }
 
   a & { @extend .b-reset; }
+
   a:focus & { outline: 4px solid; }
 }
