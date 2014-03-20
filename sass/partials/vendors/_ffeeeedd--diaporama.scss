@@ -10,11 +10,15 @@
    * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__diaporama sert à ça.
     ----------------------------- */
 
+  .section--diaporamas {}
+
   .ffeeeedd--diaporamas {
+    height: em( 430 );
+    overflow: hidden;
     position: relative;
-    z-index: 4;
   }
 
+  // On gère la mise en forme du contenu.
   .ffeeeedd--diaporama {
     height: em( 430 );
     max-width: 100%;
@@ -33,36 +37,58 @@
     .entry-title { line-height: 1; }
   }
 
+  // Sans javascript, pas de diaporama.
   .no-js .ffeeeedd--diaporama + .ffeeeedd--diaporama { display: none; }
 
-
-
   .js {
-    .ffeeeedd--controles {
-      max-height: em( 50 );
-      max-width: em( 150 );
+    // On homogénéise le placement et on initie les transitions.
+    .ffeeeedd--diaporama {
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      -webkit-transition: all .3s ease-in-out;
+      transition:         all .3s ease-in-out;
+      top: 0;
+    }
 
-      button {
-        background: $strong-color;
-        border: 0;
-        color: $background-color;
-        line-height: 1;
-        min-width: 0;
-        padding: em( 8 ) em( 4 );
-        @extend %smooth;
+    // Le diaporama actif est visible.
+    .ffeeeedd--actif {
+      background: $background-color;
+      opacity: 1;
+    }
 
-        &:hover,
-        &:focus {
-          background: darken( $strong-color, 20 );
-          color: lighten( $background-color, 20 );
-        }
+    // Le diaporama inactif est déplacé à gauche.
+    .ffeeeedd--inactif {
+      -webkit-transform: translate3d( -100%, 0, 0 );
+      transform:         translate3d( -100%, 0, 0 );
+    }
 
-        &:focus { outline-color: $secondary-color; }
+    // Les diaporamas dans la file d’attente sont superposés à droite.
+    .ffeeeedd--attente {
+      -webkit-transform: translate3d( 100%, 0, 0 );
+      transform:         translate3d( 100%, 0, 0 );
+    }
 
-        &:active {
-          background: $secondary-color;
-          color: lighten( $background-color, 20 );
-        }
+    .ffeeeedd--controles button {
+      background: $strong-color;
+      border: 0;
+      color: $background-color;
+      line-height: 1;
+      min-width: 0;
+      padding: em( 8 ) em( 4 );
+      @extend %smooth;
+
+      &:hover,
+      &:focus {
+        background: darken( $strong-color, 20 );
+        color: lighten( $background-color, 20 );
+      }
+
+      &:focus { outline-color: $secondary-color; }
+
+      &:active {
+        background: $secondary-color;
+        color: lighten( $background-color, 20 );
       }
     }
   }
