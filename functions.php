@@ -42,7 +42,7 @@
   function ffeeeedd__script() {
 
     // À décommenter si besoin de jquery
-    if( !is_admin() ) {
+    if ( !is_admin() ) {
       wp_deregister_script('jquery');
       wp_register_script(
         'jquery',
@@ -100,7 +100,7 @@
 
      // Suppression des espaces vides
      $html = str_replace( array( "\r\n", "\r", "\n", "\t" ), '', $html );
-     while( stristr( $html, '  ' ) ) {
+     while ( stristr( $html, '  ' ) ) {
          $html = str_replace( '  ', ' ', $html );
      }
      return $html;
