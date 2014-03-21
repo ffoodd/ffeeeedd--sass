@@ -59,14 +59,20 @@
 
     // Le diaporama inactif est déplacé à gauche.
     .ffeeeedd--inactif {
+      -ms-transform: translateX( -100% ); // @affected IE9
       -webkit-transform: translate3d( -100%, 0, 0 );
       transform:         translate3d( -100%, 0, 0 );
+
+      .ie8 & { right: 100%; }
     }
 
     // Les diaporamas dans la file d’attente sont superposés à droite.
     .ffeeeedd--attente {
+      -ms-transform: translateX( 100% ); // @affected IE9
       -webkit-transform: translate3d( 100%, 0, 0 );
       transform:         translate3d( 100%, 0, 0 );
+
+      .ie8 & { left: 100%; }
     }
 
     .ffeeeedd--controles button {
