@@ -58,21 +58,21 @@
       'all',
       get_stylesheet_directory_uri().'/style.min.css',
       false,
-      filemtime( get_stylesheet_directory() . '/style.min.css' ),
+      null,
       'all'
     );
     wp_register_style(
       'print',
       get_stylesheet_directory_uri().'/css/impression.css',
       false,
-      filemtime( get_stylesheet_directory() . '/css/impression.css' ),
+      null,
       'print'
     );
     wp_register_script(
       'site',
       get_stylesheet_directory_uri() . '/script.min.js',
       false,
-      filemtime( get_stylesheet_directory() . '/script.min.js' ),
+      null,
       true
     );
     // On ajoute les fichiers à la queue
