@@ -63,11 +63,11 @@
     }
   }
 
+  /**
+    * @note On utilise des flèches en CSS afin de ne pas générer de contenu.
+    * @note Le contenu généré via « content » peut poser des problèmes d’accessibilité.
+    */
   .ffeeeedd--fleches {
-    /**
-      * @note On utilise des flèches en CSS afin de ne pas générer de contenu.
-      * @note Le contenu généré via « content » peut poser des problèmes d’accessibilité.
-      */
     .ffeeeedd--sous-menu::after {
       border-style: solid;
       border-width: em( 10 ) em( 6 ) 0;

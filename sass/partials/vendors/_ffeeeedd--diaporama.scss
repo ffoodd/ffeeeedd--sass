@@ -84,15 +84,15 @@
       padding: em( 8 ) em( 4 );
       @extend %smooth;
 
-      &:hover,
-      &:focus {
+      &:hover {
         background: darken( $strong-color, 20 );
         color: lighten( $background-color, 20 );
       }
 
       &:focus { outline-color: $secondary-color; }
 
-      &:active {
+      &:active,
+      &:focus {
         background: $secondary-color;
         color: lighten( $background-color, 20 );
       }
