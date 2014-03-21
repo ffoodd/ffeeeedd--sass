@@ -17,7 +17,7 @@ $monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace !default;
 $direction: ltr !default;
 
   // Grilles
-$base-width:           960 !default; // Largeur maximum en px (sera convertie en em)
+$base-width:           980 !default; // Largeur maximum en px (sera convertie en em)
 $base-spacing:         3 !default;   // Pour les espacements : padding, margin (en em)...
 $grid-cols:            6 !default;   // Nombre de colonnes pour la grille */
 $grid-gut:                  20 !default;  // La gouttière en px, convertie en pourcentage à la ligne suivante
