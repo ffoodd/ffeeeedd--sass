@@ -113,7 +113,7 @@
 
 /* Centré */
 .aligncenter {
-  @extend .clear;
+  clear: both;
   display: block;
 }
 
