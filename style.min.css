@@ -29,12 +29,6 @@ label {
   padding: 0;
 }
 
-ul,
-ol,
-blockquote {
-  padding-left: 2em;
-}
-
 dd {
   margin: 0;
   padding: 0 0 1em 1em;
@@ -55,19 +49,17 @@ code {
   line-height: 1em;
 }
 
-table {
-  margin-bottom: 1em;
-}
-
 .m-reset {
   margin: 0 !important;
 }
 
-.p-reset {
+.p-reset, input[type="checkbox"],
+input[type="radio"] {
   padding: 0 !important;
 }
 
-.b-reset, a img, .ir {
+.b-reset, a img, .ir, form,
+fieldset {
   border: 0 !important;
 }
 
@@ -213,6 +205,7 @@ a:focus img {
 .row > *,
 .col {
   display: table-cell;
+  padding: 1em;
 }
 
 /* Blocs qui peuvent suivre des flottants */
@@ -223,8 +216,7 @@ a:focus img {
 /* Blocs qui peuvent contenir des flottants */
 .clearfix:after,
 .line:after,
-[class*="grid"]:after,
-.mod:after {
+[class*="grid"]:after {
   clear: both;
   content: "";
   display: table;
@@ -240,16 +232,6 @@ a:focus img {
 .end,
 .alignright {
   float: right;
-}
-
-img.start,
-img.alignleft {
-  margin-right: 2em;
-}
-
-img.end,
-img.alignright {
-  margin-left: 2em;
 }
 
 /* Centré */
@@ -493,7 +475,7 @@ label, #site-title {
   margin-right: 1em;
 }
 
-.mb1 {
+.mb1, table {
   margin-bottom: 1em;
 }
 
@@ -501,8 +483,7 @@ label, #site-title {
   margin-left: 1em;
 }
 
-.pa1, .row > *,
-.col {
+.pa1 {
   padding: 1em;
 }
 
@@ -530,7 +511,8 @@ label, #site-title {
   margin-top: 2em;
 }
 
-.mr2 {
+.mr2, img.start,
+img.alignleft {
   margin-right: 2em;
 }
 
@@ -538,7 +520,8 @@ label, #site-title {
   margin-bottom: 2em;
 }
 
-.ml2 {
+.ml2, img.end,
+img.alignright {
   margin-left: 2em;
 }
 
@@ -558,7 +541,9 @@ label, #site-title {
   padding-bottom: 2em;
 }
 
-.pl2 {
+.pl2, ul,
+ol,
+blockquote {
   padding-left: 2em;
 }
 
@@ -655,18 +640,6 @@ label, #site-title {
 /* ==Formulaires */
 /* @note : Aucun de ces éléments ne doit être modifié.
 /* ----------------------------- */
-form,
-fieldset {
-  border: 0;
-}
-
-input,
-button,
-select,
-label {
-  /* @bugfix alignement */
-}
-
 /* Éléments de formulaires */
 label {
   cursor: pointer;
@@ -703,13 +676,6 @@ input[type="submit"] {
   -webkit-appearance: button;
                             /* @ bugfix
 @affected Types d’input cliquables sur iOS */
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  padding: 0;
-            /* @bugfix
-@affected Corrige un espace excessif sur IE8/9 */
 }
 
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
@@ -775,6 +741,7 @@ input[type='submit']::-moz-focus-inner {
 */
 body {
   font-family: "Arial", "Helvetica", sans-serif;
+  font-size-adjust: auto;
 }
 
 /*

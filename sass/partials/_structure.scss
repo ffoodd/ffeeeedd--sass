@@ -63,7 +63,7 @@
 .row > *,
 .col {
   display: table-cell;
-  @extend .pa1;
+  padding: 1em;
   @extend .aligntop;
 }
 
@@ -72,8 +72,7 @@
 
 /* Blocs qui peuvent contenir des flottants */
 .clearfix:after,
-.line:after,
-.mod:after {
+.line:after {
   clear: both;
   content: "";
   display: table;
@@ -92,10 +91,10 @@
   .alignright { float: right; }
 
   img.start,
-  img.alignleft { margin-right: 2em; }
+  img.alignleft { @extend .mr2; }
 
   img.end,
-  img.alignright { margin-left: 2em; }
+  img.alignright { @extend .ml2; }
 
 } @else if $direction == rtl {
 
@@ -106,10 +105,10 @@
   .alignright { float: left; }
 
   img.start,
-  img.alignleft { margin-left: 2em; }
+  img.alignleft { @extend .ml2; }
 
   img.end,
-  img.alignright { margin-right: 2em; }
+  img.alignright { @extend .mr2; }
 }
 
 /* Centré */

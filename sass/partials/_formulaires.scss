@@ -17,12 +17,15 @@
 /* ----------------------------- */
 
 form,
-fieldset { border: 0; }
+fieldset { @extend .b-reset; }
 
 input,
 button,
 select,
-label { @extend .alignmiddle; /* @bugfix alignement */ }
+label {
+  @extend .alignmiddle;
+  // @bugfix alignement
+}
 
 /* Éléments de formulaires */
 label { cursor: pointer; }
@@ -61,8 +64,8 @@ input[type="submit"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-  padding: 0; /* @bugfix
-  @affected Corrige un espace excessif sur IE8/9 */
+  @extend .p-reset // @bugfix
+  // @affected Corrige un espace excessif sur IE8/9 */
 }
 
 input[type="search"] {

@@ -23,7 +23,7 @@ label {
 
 ul,
 ol,
-blockquote { padding-left: 2em; }
+blockquote { @extend .pl2; }
 
 dd {
   margin: 0;
@@ -39,7 +39,7 @@ mark { font-weight: bold; }
 
 code { line-height: 1em; }
 
-table { margin-bottom: 1em; }
+table { @extend .mb1; }
 
 .m-reset { margin: 0 !important; }
 
