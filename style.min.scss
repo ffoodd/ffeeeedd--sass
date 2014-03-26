@@ -7,20 +7,20 @@
 // Variables
 
   // Typographie
-$base-line-height:     24px !default; // Compass attend des valeurs en px
-$base-font-size:       16px !default; // Compass attend des valeurs en px
+$base-line-height:     24px !default; // Inutile, mais Compass attend des valeurs en PX
+$base-font-size:       16px !default; // Inutile, mais Compass attend des valeurs en PX
 $unitless-line-height:     1.5 !default; // ffeeeedd se sert de valeurs sans unité
-$unitless-font-size:       16 !default; // Représente une valeur en px, mais uniquement pour faciliter le calcul du contexte en em
+$unitless-font-size:       16 !default; // Représente une valeur en PX, mais uniquement pour faciliter le calcul du contexte en EM
 $ratio:                $unitless-font-size * $unitless-line-height !default; // Le ratio doit être dépourvu d’unité
 $regular-font-stack:   "Arial", "Helvetica", sans-serif !default;
 $monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace !default;
 $direction: ltr !default;
 
   // Grilles
-$base-width:           980 !default; // Largeur maximum en px (sera convertie en em)
-$base-spacing:         3 !default;   // Pour les espacements : padding, margin (en em)...
+$base-width:           980 !default; // Largeur maximum en PX (sera convertie en EM)
+$base-spacing:         3 !default;   // Pour les espacements : padding, margin (en EM)…
 $grid-cols:            6 !default;   // Nombre de colonnes pour la grille */
-$grid-gut:                  20 !default;  // La gouttière en px, convertie en pourcentage à la ligne suivante
+$grid-gut:                  20 !default;  // La gouttière en PX, convertie en pourcentage à la ligne suivante
 $grid-guts:            round( $grid-gut * 100 / $base-width ) !default; // Et voilà la gouttière en pourcents
 
   // Couleurs
@@ -46,35 +46,19 @@ $ffeeeedd__accordeons: true;
   // Audits
 $a11y-css: false; // Si true, le contenu du fichier est compilé.
 
-// Fonctions
-@function em( $f, $base: $unitless-font-size ) {
-  $everything-okay: true;
-
-  @if type-of( $f ) != number {
-    @warn "Biip ! `{$s}` is not a valid number.";
-    $everything-okay: false;
-  }
-
-  @if $everything-okay == true {
-    @if $f == 0 { @return 0 }
-    @return $f / $base * 1em;
-  }
-}
-
 // Imports
   // Compass
 @import "compass/utilities/sprites";
 
-  // Mixins
-@import "sass/mixins/mixins";
+  // Utilitaires
+@import "sass/utils/mixins";
+@import "sass/utils/functions";
+@import "sass/utils/placeholders";
 
   // Fichiers de base : ne devraient pas être modifiés
 @import "sass/partials/base";
 @import "sass/partials/structure";
 @import "sass/partials/formulaires";
-
-  // Placeholders
-@import "sass/mixins/placeholders";
 
   // Fichiers personnalisables
 @import "sass/partials/modules/typographie";

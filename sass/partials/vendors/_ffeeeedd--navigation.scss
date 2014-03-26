@@ -11,8 +11,6 @@
     a { position: relative; }
 
     li {
-      display: inline-block;
-      position: relative;
       white-space: nowrap;
 
       &:hover > ul,
