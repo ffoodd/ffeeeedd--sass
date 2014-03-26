@@ -37,7 +37,10 @@
 
 
 /* == @section Modèle de boîte ==================== */
-* {
+/* @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing:    border-box;
   box-sizing:         border-box;
