@@ -43,7 +43,7 @@
 */
 
 /* -- @subsection Palier «large» -------------------- */
-@media ( min-width: em( $large-width ) ) {
+@media ( min-width: em( $ffeeeeeeeedd-width ) ) {
     .large-hidden { display: none !important; }
 
     .large-visible { display: block !important; }
@@ -52,7 +52,7 @@
 }
 
 /* -- @subsection Palier «medium» -------------------- */
-@media ( max-width: em( $medium-width ) ) {
+@media ( max-width: em( $ffeeeeeedd-width ) ) {
     .medium-hidden { display: none !important; }
 
     .medium-visible { display: block !important; }
@@ -88,7 +88,7 @@
 }
 
 /* -- @subsection Palier «small» -------------------- */
-@media ( max-width: em( $small-width ) ) {
+@media ( max-width: em( $ffeeeedd-width ) ) {
     .small-hidden { display: none !important; }
 
     .small-visible { display: block !important; }
@@ -97,7 +97,7 @@
 }
 
 /* -- @subsection Palier «tiny» -------------------- */
-@media ( max-width: em( $tiny-width ) ) {
+@media ( max-width: em( $ffeedd-width ) ) {
     .tiny-hidden { display: none !important; }
 
     .tiny-visible { display: block !important; }
