@@ -63,7 +63,7 @@ $a11y-css: false; // Si true, le contenu du fichier est compilé.
   // Fichiers personnalisables
 @import "sass/partials/modules/typographie";
 @import "sass/partials/modules/modules";
-// @import "sass/partials/modules/sprites";
+@import "sass/partials/modules/sprites";
     // Spécifiques aux contenus
   @import "sass/partials/contenus/types";
   @import "sass/partials/contenus/pages";

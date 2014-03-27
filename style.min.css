@@ -144,7 +144,7 @@ input[type="radio"] {
   padding: 0 !important;
 }
 
-.b-reset, a img, .ir, form,
+.b-reset, a img, .ir, .ffeeeedd--sprite, form,
 fieldset {
   border: 0 !important;
 }
@@ -693,11 +693,11 @@ blockquote {
 }
 
 /* -- @subsection Remplacement d’image -------------------- */
-.ir {
+.ir, .ffeeeedd--sprite {
   background-color: transparent;
   overflow: hidden;
 }
-.ir:before {
+.ir:before, .ffeeeedd--sprite:before {
   content: "";
   display: block;
   height: 100%;
@@ -1184,6 +1184,108 @@ tbody tr > * + * {
   color: #054656;
 }
 
+/**
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-06-26
+*/
+/* ----------------------------- */
+/* ==Sprites */
+/* @note Cette feuille de style gère les sprites.
+/* ----------------------------- */
+/* -- @subsection Import des images -------------------- */
+/*
+ * @note Compass va chercher toutes les images dans le répertoire spécifié;
+ * @note Générer un sprite en PNG et mettre à disposition différents outils :
+ * @see http://compass-style.org/reference/compass/helpers/sprites/
+*/
+.ffeeeedd--sprite {
+  background-image: url('img/ffeeeedd--sce7ce0222f.png');
+  background-repeat: no-repeat;
+}
+
+/* -- @subsection Styles communs -------------------- */
+/*
+ * @note Le sprite devrait être utilisé dans le cadre d’un remplacement d’image.
+*/
+.ffeeeedd--sprite {
+  display: inline-block;
+}
+.ffeeeedd--sprite:hover {
+  cursor: pointer;
+}
+
+/* -- @subsection Styles spécifiques à chaque image -------------------- */
+/*
+ * @note On liste en premier lieu le nom des images utilisées dans le sprite.
+ * @note Puis une boucle génère les styles spécifiques à chaque image, à savoir :
+ ** @note Les dimensions en EM;
+ ** @note La position de l’arrière-plan en EM.
+*/
+.ffeeeedd--sprite__behance {
+  background-position: 0 0;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__dribble {
+  background-position: 0 -2.25em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__github {
+  background-position: 0 -4.5em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__google {
+  background-position: 0 -6.75em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__linkedin {
+  background-position: 0 -9em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__mail {
+  background-position: 0 -11.25em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__rss {
+  background-position: 0 -13.5em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+.ffeeeedd--sprite__twitter {
+  background-position: 0 -15.75em;
+  height: 2.25em;
+  width: 2.25em;
+}
+
+/* -- @subsection Un peu de SVG, ça vous dit ? -------------------- */
+/*
+ * @note On ouvre une « media query » pour que IE8 ne charge pas inutilement cette portion.
+ * @note Puis on applique les styles spécifiques :
+  * Le fichier SVGZ (compressé) est chargé :
+   * Il doit être basé sur le sprite généré par Compass en PNG;
+   * doit avoir les mêmes dimensions;
+   * les icônes doivent être aux mêmes positions.
+  * On spécifié un background-size en EM afin de conserver les proportions intiales de l’image.
+*/
+@media screen {
+  .ffeeeedd--sprite {
+    background-image: url('img/ffeeeedd--sprite.svgz');
+    background-size: 2.25em 18em;
+  }
+}
 /**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
