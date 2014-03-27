@@ -41,8 +41,12 @@
   add_action( 'wp_enqueue_scripts', 'ffeeeedd__script' );
   function ffeeeedd__script() {
 
-    // À décommenter si besoin de jquery
-    if ( !is_admin() ) {
+    /*
+     * @note Sert à charger jQuery en fin de document.
+     * @note WordPress le charge dans le <head> par défaut.
+     * @note À décommenter si besoin de jquery.
+     */
+    /* if ( !is_admin() ) {
       wp_deregister_script('jquery');
       wp_register_script(
         'jquery',
@@ -52,7 +56,7 @@
         true
       );
       wp_enqueue_script('jquery');
-    }
+    } */
 
     wp_register_style(
       'all',
@@ -61,6 +65,7 @@
       null,
       'all'
     );
+
     wp_register_style(
       'print',
       get_stylesheet_directory_uri().'/css/impression.css',
@@ -68,6 +73,7 @@
       null,
       'print'
     );
+
     wp_register_script(
       'site',
       get_stylesheet_directory_uri() . '/script.min.js',
@@ -75,6 +81,7 @@
       null,
       true
     );
+
     // On ajoute les fichiers à la queue
     wp_enqueue_style( 'all' );
     wp_enqueue_style( 'print' );
