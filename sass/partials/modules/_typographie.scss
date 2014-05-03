@@ -28,6 +28,7 @@
 */
 body {
   font-family: $regular-font-stack;
+  font-size: em( $unitless-font-size, 16 );
   font-size-adjust: auto;
 }
 

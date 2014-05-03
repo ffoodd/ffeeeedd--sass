@@ -10,7 +10,7 @@
 $base-line-height:     24px !default; // Inutile, mais Compass attend des valeurs en PX
 $base-font-size:       16px !default; // Inutile, mais Compass attend des valeurs en PX
 $unitless-line-height:     1.5 !default; // ffeeeedd se sert de valeurs sans unité
-$unitless-font-size:       16 !default; // Représente une valeur en PX, mais uniquement pour faciliter le calcul du contexte en EM
+$unitless-font-size:       18 !default; // Représente une valeur en PX, mais uniquement pour faciliter le calcul du contexte en EM
 $ratio:                $unitless-font-size * $unitless-line-height !default; // Le ratio doit être dépourvu d’unité
 $regular-font-stack:   "Arial", "Helvetica", sans-serif !default;
 $monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace !default;
