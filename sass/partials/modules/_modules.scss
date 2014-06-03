@@ -77,11 +77,11 @@ a {
 }
 
 /* Zones d’action */
-.action--primary { @include ffeeeedd--action( #8dabcd, #032c36 ); }
+.action--primary { @include ffeeeedd--action( #8dabcd, #032c36, true ); }
 
-.action--secondary { @include ffeeeedd--action( lighten( #c42419, 10 ), darken( #c42419, 10 ) ); }
+.action--secondary { @include ffeeeedd--action( lighten( #c42419, 10 ), darken( #c42419, 10 ), true ); }
 
-.action--extra { @include ffeeeedd--action( #032c36, #04192f ); }
+.action--extra { @include ffeeeedd--action( #032c36, #04192f, true ); }
 
 
 /* == @section Modules ==================== */

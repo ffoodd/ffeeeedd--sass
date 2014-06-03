@@ -9,8 +9,8 @@
   // Typographie
 $base-line-height:     24px !default; // Inutile, mais Compass attend des valeurs en PX
 $base-font-size:       16px !default; // Inutile, mais Compass attend des valeurs en PX
-$unitless-line-height:     1.5 !default; // ffeeeedd se sert de valeurs sans unité
-$unitless-font-size:       18 !default; // Représente une valeur en PX, mais uniquement pour faciliter le calcul du contexte en EM
+$unitless-line-height: 1.5 !default; // ffeeeedd se sert de valeurs sans unité
+$unitless-font-size:   16 !default; // Représente une valeur en PX, mais uniquement pour faciliter le calcul du contexte en EM
 $ratio:                $unitless-font-size * $unitless-line-height !default; // Le ratio doit être dépourvu d’unité
 $regular-font-stack:   "Arial", "Helvetica", sans-serif !default;
 $monospace-font-stack: "Consolas", "Monaco", "Andale Mono", monospace !default;
@@ -20,7 +20,7 @@ $direction: ltr !default;
 $base-width:           980 !default; // Largeur maximum en PX (sera convertie en EM)
 $base-spacing:         3 !default;   // Pour les espacements : padding, margin (en EM)…
 $grid-cols:            6 !default;   // Nombre de colonnes pour la grille */
-$grid-gut:                  20 !default;  // La gouttière en PX, convertie en pourcentage à la ligne suivante
+$grid-gut:             20 !default;  // La gouttière en PX, convertie en pourcentage à la ligne suivante
 $grid-guts:            round( $grid-gut * 100 / $base-width ) !default; // Et voilà la gouttière en pourcents
 
   // Couleurs
@@ -38,10 +38,10 @@ $ffeeeeeedd-width:    800 !default;
 $ffeeeeeeeedd-width:  1280 !default;
 
   // Extensions
-$ffeeeedd__diaporama: true; // Si true, le contenu du fichier est compilé.
-$ffeeeedd__navigation: true;
-$ffeeeedd__onglets: true;
-$ffeeeedd__accordeons: true;
+$ffeeeedd__diaporama: false; // Si true, le contenu du fichier est compilé.
+$ffeeeedd__navigation: false;
+$ffeeeedd__onglets: false;
+$ffeeeedd__accordeons: false;
 
   // Audits
 $a11y-css: false; // Si true, le contenu du fichier est compilé.

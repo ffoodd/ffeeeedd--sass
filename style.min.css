@@ -815,7 +815,7 @@ input[type='submit']::-moz-focus-inner {
 */
 body {
   font-family: "Arial", "Helvetica", sans-serif;
-  font-size: 1.125em;
+  font-size: 1em;
   font-size-adjust: auto;
 }
 
@@ -833,9 +833,9 @@ td,
 th,
 label,
 textarea {
-  font-size: 0.88889em;
-  line-height: 1.6875;
-  margin: 1.6875em 0 0.84375em;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 1.5em 0 0.75em;
 }
 
 /* -- @subsection Niveaux de titres -------------------- */
@@ -861,56 +861,56 @@ textarea {
 
 h1,
 .h1-like {
-  font-size: 5.33333em;
-  line-height: 1.125;
-  margin: 1.125em 0 0.5625em;
+  font-size: 6em;
+  line-height: 1;
+  margin: 1em 0 0.5em;
 }
 
 h2,
 .h2-like {
-  font-size: 3.55556em;
-  line-height: 1.26563;
-  margin: 1.26563em 0 0.63281em;
-}
-
-h3,
-.h3-like {
-  font-size: 2.33333em;
-  line-height: 1.28571;
-  margin: 1.28571em 0 0.64286em;
-}
-
-h4,
-.h4-like {
-  font-size: 2em;
-  line-height: 1.5;
-  margin: 1.5em 0 0.75em;
-}
-
-h5,
-.h5-like {
-  font-size: 1.33333em;
+  font-size: 4em;
   line-height: 1.125;
   margin: 1.125em 0 0.5625em;
 }
 
+h3,
+.h3-like {
+  font-size: 2.625em;
+  line-height: 1.14286;
+  margin: 1.14286em 0 0.57143em;
+}
+
+h4,
+.h4-like {
+  font-size: 2.25em;
+  line-height: 1.33333;
+  margin: 1.33333em 0 0.66667em;
+}
+
+h5,
+.h5-like {
+  font-size: 1.5em;
+  line-height: 1.5;
+  margin: 1.5em 0;
+}
+
 h6,
 .h6-like {
-  font-size: 1em;
-  line-height: 1.5;
-  margin: 1.5em 0 0.75em;
+  font-size: 1.125em;
+  line-height: 1.33333;
+  margin: 1.33333em 0 0.66667em;
 }
 
 /* -- @subsection Corps alternatifs -------------------- */
 small,
 .small {
-  font-size: 0.66667em;
-  line-height: 2.25;
+  font-size: 0.75em;
+  line-height: 2;
 }
 
 .big {
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 1.125em;
+  line-height: 1.33333;
 }
 
 /* -- @subsection Styles particuliers -------------------- */
@@ -1001,7 +1001,7 @@ strong {
  * @note Signaler les liens visités, survolés, actifs, externes, vers un mail ou un pdf;
  * @note Ne surtout pas oublier le :focus, primordial pour l’accessibilité.
 */
-a, .js .ffeeeedd--controles button {
+a {
   transition: all .3s linear;
 }
 
@@ -1049,6 +1049,14 @@ a[href$=".pdf"]::after {
   background-image: linear-gradient(to bottom, #9fb8d5 0%, #02181e 100%);
   border: 1px solid black;
 }
+.action--primary:hover, .action--primary:focus {
+  background-color: #02181e;
+  background-position: 0 100%;
+}
+.action--primary:active, .action--primary:visited {
+  background-color: #04404e;
+  background-position: 0 0;
+}
 
 .action--secondary {
   background-color: #971c13;
@@ -1056,12 +1064,28 @@ a[href$=".pdf"]::after {
   background-image: linear-gradient(to bottom, #e74d43 0%, #801810 100%);
   border: 1px solid #3c0b08;
 }
+.action--secondary:hover, .action--secondary:focus {
+  background-color: #801810;
+  background-position: 0 100%;
+}
+.action--secondary:active, .action--secondary:visited {
+  background-color: #ad2016;
+  background-position: 0 0;
+}
 
 .action--extra {
   background-color: #04192f;
   background-image: -webkit-linear-gradient(top, #04404e 0%, #020c18 100%);
   background-image: linear-gradient(to bottom, #04404e 0%, #020c18 100%);
   border: 1px solid black;
+}
+.action--extra:hover, .action--extra:focus {
+  background-color: #020c18;
+  background-position: 0 100%;
+}
+.action--extra:active, .action--extra:visited {
+  background-color: #062547;
+  background-position: 0 0;
 }
 
 /* == @section Modules ==================== */
@@ -1077,7 +1101,7 @@ form li {
 /* == @section Formulaires ==================== */
 form label {
   display: inline-block;
-  min-width: 11.11111em;
+  min-width: 12.5em;
 }
 
 input,
@@ -1118,7 +1142,7 @@ textarea,
 button,
 input[type="button"],
 input[type="reset"] {
-  min-width: 5.55556em;
+  min-width: 6.25em;
 }
 
 /* == @section Tableaux ==================== */
@@ -1168,7 +1192,7 @@ tbody tr > * + * {
 }
 
 [id="nav"] {
-  min-height: 3.33333em;
+  min-height: 3.75em;
   position: relative;
   z-index: 5;
 }
@@ -1225,50 +1249,50 @@ tbody tr > * + * {
 */
 .ffeeeedd--sprite__behance {
   background-position: 0 0;
-  height: 2em;
-  width: 2em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__dribble {
-  background-position: 0 -2em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -2.25em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__github {
-  background-position: 0 -4em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -4.5em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__google {
-  background-position: 0 -6em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -6.75em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__linkedin {
-  background-position: 0 -8em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -9em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__mail {
-  background-position: 0 -10em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -11.25em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__rss {
-  background-position: 0 -12em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -13.5em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 .ffeeeedd--sprite__twitter {
-  background-position: 0 -14em;
-  height: 2em;
-  width: 2em;
+  background-position: 0 -15.75em;
+  height: 2.25em;
+  width: 2.25em;
 }
 
 /* -- @subsection Un peu de SVG, ça vous dit ? -------------------- */
@@ -1284,7 +1308,7 @@ tbody tr > * + * {
 @media screen {
   .ffeeeedd--sprite {
     background-image: url('img/ffeeeedd--sprite.svgz');
-    background-size: 2em 16em;
+    background-size: 2.25em 18em;
   }
 }
 /**
@@ -1313,273 +1337,6 @@ tbody tr > * + * {
 */
 /* == @section Accueil ==================== */
 /**
- * @author Gaël Poupard
- * @see http://www.ffoodd.fr
- */
-/* ----------------------------- */
-/* == Diaporama
- * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__diaporama».
- * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__diaporama sert à ça.
-  ----------------------------- */
-.ffeeeedd--diaporamas {
-  height: 23.88889em;
-  overflow: hidden;
-  position: relative;
-}
-
-.ffeeeedd--diaporama {
-  height: 23.88889em;
-  max-width: 100%;
-}
-.ffeeeedd--diaporama .wp-post-image {
-  max-height: 23.88889em;
-}
-.ffeeeedd--diaporama .wp-caption {
-  background: #04192f;
-  border: 0;
-  bottom: 0;
-  position: absolute;
-}
-.ffeeeedd--diaporama .wp-caption-text {
-  color: #f2f2e2;
-}
-.ffeeeedd--diaporama .entry-title {
-  line-height: 1;
-}
-
-.no-js .ffeeeedd--diaporama + .ffeeeedd--diaporama {
-  display: none;
-}
-
-.js .ffeeeedd--diaporama {
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  top: 0;
-}
-.js .ffeeeedd--actif {
-  background: #f2f2e2;
-  opacity: 1;
-}
-.js .ffeeeedd--inactif {
-  -ms-transform: translateX(-100%);
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-}
-.ie8 .js .ffeeeedd--inactif {
-  right: 100%;
-}
-.js .ffeeeedd--attente {
-  -ms-transform: translateX(100%);
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-}
-.ie8 .js .ffeeeedd--attente {
-  left: 100%;
-}
-.js .ffeeeedd--controles button {
-  background: #04192f;
-  border: 0;
-  color: #f2f2e2;
-  line-height: 1;
-  min-width: 0;
-  padding: 0.44444em 0.22222em;
-}
-.js .ffeeeedd--controles button:hover {
-  background: black;
-  color: white;
-}
-.js .ffeeeedd--controles button:focus {
-  outline-color: #c42419;
-}
-.js .ffeeeedd--controles button:active, .js .ffeeeedd--controles button:focus {
-  background: #c42419;
-  color: white;
-}
-
-/**
- * @author Joel Birch
- * @see http://users.tpg.com.au/j_birch/plugins/superfish/
- * @note Modifié par mes soins (Gaël Poupard)
- */
-[id="nav"] a {
-  position: relative;
-}
-[id="nav"] li {
-  white-space: nowrap;
-}
-[id="nav"] li:hover > ul, [id="nav"] li.ffeeeedd--survol > ul {
-  display: block;
-}
-[id="nav"] .sub-menu {
-  background-color: #032c36;
-  display: none;
-  left: 0;
-  min-width: 100%;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  z-index: 6;
-}
-[id="nav"] .sub-menu li {
-  border: 0;
-  display: block;
-}
-[id="nav"] .sub-menu .sub-menu {
-  top: 0;
-  left: 100%;
-}
-
-/**
-  * @note Si javascript est désactivé, on affiche tous les sous-menus.
-  */
-.no-js [id="nav"] .sub-menu {
-  display: block;
-  max-width: 100%;
-}
-.no-js [id="nav"] .sub-menu li {
-  white-space: normal;
-}
-.no-js [id="nav"] .sub-menu a {
-  font-size: .9em;
-  word-wrap: break-word;
-}
-.no-js [id="nav"] .sub-menu .sub-menu {
-  font-size: .9em;
-  left: 0;
-  padding-left: 1em;
-  position: relative;
-}
-
-/**
-  * @note On utilise des flèches en CSS afin de ne pas générer de contenu.
-  * @note Le contenu généré via « content » peut poser des problèmes d’accessibilité.
-  */
-.ffeeeedd--fleches .ffeeeedd--sous-menu::after {
-  border-style: solid;
-  border-width: 0.55556em 0.33333em 0;
-  border-color: #c42419 transparent transparent transparent;
-  content: '';
-  display: inline-block;
-  margin-left: 0.44444em;
-  height: 0;
-  width: 0;
-}
-.ffeeeedd--fleches ul .ffeeeedd--sous-menu::after {
-  border-width: 0.33333em 0 0.33333em 0.55556em;
-  border-color: transparent transparent transparent #c42419;
-}
-
-/**
- * @author Gaël Poupard
- * @see http://www.ffoodd.fr
- */
-/* ----------------------------- */
-/* == Onglets et/ou Accordéons
- * @note Cette feuille de style est conçue pour styler les extensions «ffeeeedd__onglets» et «ffeeeedd__accordeons.
- * @note Elle contient les parties communes aux deux extensions, en s’appuyant sur les rôles ARIA.
-  ----------------------------- */
-.js [role="tab"]:focus {
-  outline: 0;
-}
-.js .ffeeeedd__onglets,
-.js .tabpanel {
-  position: relative;
-}
-.js .ffeeeedd__onglets p:empty,
-.js .tabpanel p:empty {
-  display: none;
-}
-.js [role="tab"] {
-  border: 1px solid #c42419;
-  bottom: -1px;
-  color: #c42419;
-  cursor: pointer;
-  margin: 0;
-  padding: .5em 1em;
-  z-index: 1;
-}
-.js [role="tab"][aria-selected="true"] {
-  border-color: #04192f;
-  color: #04192f;
-  z-index: 2;
-}
-.js [role="tab"] a {
-  color: inherit;
-}
-.js [role="tabpanel"] {
-  display: none;
-}
-.js [role="tabpanel"][aria-hidden="false"] {
-  display: block;
-  z-index: 1;
-}
-
-/**
- * @author Gaël Poupard
- * @see http://www.ffoodd.fr
- */
-/* ----------------------------- */
-/* == Onglets
- * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__onglets».
- * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__onglets sert à ça.
-  ----------------------------- */
-.js .ffeeeedd__onglets [role="tab"] {
-  border-bottom-color: #04192f;
-  position: relative;
-}
-.js .ffeeeedd__onglets [role="tab"] + [role="tab"] {
-  margin-left: 0.33333em;
-}
-.js .ffeeeedd__onglets [role="tab"][aria-selected="true"] {
-  border-bottom-color: #f2f2e2;
-}
-.js .ffeeeedd__onglets [role="tabpanel"] {
-  border: 1px solid #04192f;
-}
-
-/**
- * @author Gaël Poupard
- * @see http://www.ffoodd.fr
- */
-/* ----------------------------- */
-/* == Onglets
- * @note Cette feuille de style est conçue pour styler l’extension «ffeeeedd__accordeons».
- * @note Elle n’est donc chargée que conditionnellement : la variable $ffeeeedd__accordeons sert à ça.
-  ----------------------------- */
-.js .ffeeeedd__accordeons {
-  margin-top: 1.5em;
-}
-.js .ffeeeedd__accordeons [role="tab"] {
-  padding-left: 2em;
-  position: relative;
-}
-.js .ffeeeedd__accordeons [role="tab"]::before {
-  border: 5px solid transparent;
-  border-top-color: inherit;
-  content: '';
-  height: 0;
-  left: 1em;
-  position: absolute;
-  top: 1em;
-  width: 0;
-}
-.js .ffeeeedd__accordeons [role="tab"][aria-selected="true"] {
-  border-bottom: 0;
-}
-.js .ffeeeedd__accordeons [role="tab"][aria-selected="true"]::before {
-  border-bottom-color: inherit;
-  border-top-color: transparent;
-  top: 0.72222em;
-}
-.js .ffeeeedd__accordeons [role="tabpanel"] {
-  border: 1px solid #04192f;
-  border-top: 0;
-}
-
-/**
 * @author Gaël Poupard
 * @site Thème ffeeeedd
 * @lastmodified 2013-11-06
@@ -1607,11 +1364,11 @@ tbody tr > * + * {
 */
 /* == @section Largeur du contenu ==================== */
 .w--site {
-  width: 54.44444em;
+  width: 61.25em;
 }
 
 .mw--site {
-  max-width: 54.44444em;
+  max-width: 61.25em;
 }
 
 /* == @section Modification des classes ====================
@@ -1621,7 +1378,7 @@ tbody tr > * + * {
  * @note Quatrième palier :  «tiny»
 */
 /* -- @subsection Palier «large» -------------------- */
-@media (min-width: 71.11111em) {
+@media (min-width: 80em) {
   .large-hidden {
     display: none !important;
   }
@@ -1635,7 +1392,7 @@ tbody tr > * + * {
   }
 }
 /* -- @subsection Palier «medium» -------------------- */
-@media (max-width: 44.44444em) {
+@media (max-width: 50em) {
   .medium-hidden {
     display: none !important;
   }
@@ -1680,7 +1437,7 @@ tbody tr > * + * {
   }
 }
 /* -- @subsection Palier «small» -------------------- */
-@media (max-width: 26.66667em) {
+@media (max-width: 30em) {
   .small-hidden {
     display: none !important;
   }
@@ -1694,7 +1451,7 @@ tbody tr > * + * {
   }
 }
 /* -- @subsection Palier «tiny» -------------------- */
-@media (max-width: 17.77778em) {
+@media (max-width: 20em) {
   .tiny-hidden {
     display: none !important;
   }
