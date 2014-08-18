@@ -1,26 +1,25 @@
 @charset "UTF-8";
-/**
-* @author Gaël Poupard
-* @site Thème ffeeeedd
-* @lastmodified 2014-03-26
-*/
+//
+// @author Gaël Poupard
+// @site Thème ffeeeedd
+// @lastmodified 2014-03-26
 
-/* ----------------------------- */
-/* ==Mixins */
-/* ----------------------------- */
+// ----------------------------- */
+// ==Mixins */
+// ----------------------------- */
 
-/* -- @subsection Gestion de l’échelle typographique -------------------- */
-/*
- * @note Inspiré de plusieurs outils et techniques :
- ** @author Pascal C
- ** @see https://twitter.com/eQRoeil
- ** @see http://soqr.fr/vertical-rhythm/
- ** @author Emmanuel Georjon
- ** @see https://twitter.com/emmanuelgeorjon/
- ** @see http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
- * @note Le premier paramètre est obligatoire : c’est le corps cible, en PX — et ce doit être un nombre, évidemment.
- * @note Le second paramètre est optionnel (« true » par défaut) : il active le calcul des marges externes.
-*/
+// -- @subsection Gestion de l’échelle typographique -------------------- */
+//
+// @note Inspiré de plusieurs outils et techniques :
+ // @author Pascal C
+ // @see https://twitter.com/eQRoeil
+ // @see http://soqr.fr/vertical-rhythm/
+ // @author Emmanuel Georjon
+ // @see https://twitter.com/emmanuelgeorjon/
+ // @see http://www.emmanuelgeorjon.com/grille-typographique-la-theorie-5001/
+// @note Le premier paramètre est obligatoire : c’est le corps cible, en PX — et ce doit être un nombre, évidemment.
+// @note Le second paramètre est optionnel (« true » par défaut) : il active le calcul des marges externes.
+
 @mixin ffeeeedd--font( $s, $m: true ) {
   $everything-okay: true;
 
@@ -60,14 +59,14 @@
   }
 }
 
-/* -- @subsection Gestion de l’échelle typographique -------------------- */
-/*
- * @note Défini un style standard pour les boutons d’actions et éléments avec un dégradé.
- * @note Trois paramtères existent :
- ** @note Les deux premiers sont les couleurs de début et de fin du dégradé de base.
- ** @note Elles doivent être dans un format de couleurs valide, et sont obligatoires.
- ** @note La dernière est facultative (« false » par défaut) et active les interactions (survol, focus…).
-*/
+// -- @subsection Gestion de l’échelle typographique -------------------- */
+//
+// @note Défini un style standard pour les boutons d’actions et éléments avec un dégradé.
+// @note Trois paramtères existent :
+ // @note Les deux premiers sont les couleurs de début et de fin du dégradé de base.
+ // @note Elles doivent être dans un format de couleurs valide, et sont obligatoires.
+ // @note La dernière est facultative (« false » par défaut) et active les interactions (survol, focus…).
+
 @mixin ffeeeedd--action( $c1, $c2, $able: false ) {
   $everything-okay: true;
 
@@ -103,17 +102,17 @@
   }
 }
 
-/* -- @subsection Récupérer la position des sprites en EM -------------------- */
-/**
- * @note Une seule modification apportée : retirer l’unité PX de la position du sprite.
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see http://marieguillaumet.com/
- ** @see https://gist.github.com/kReEsTaL/7222348
- ** @author Mehdi Kabab
- ** @see https://twitter.com/piouPiouM
- ** @see http://pioupioum.fr/
- */
+// -- @subsection Récupérer la position des sprites en EM -------------------- */
+//
+// @note Une seule modification apportée : retirer l’unité PX de la position du sprite.
+ // @author Marie Guillaumet
+ // @see https://twitter.com/kReEsTaL
+ // @see http://marieguillaumet.com/
+ // @see https://gist.github.com/kReEsTaL/7222348
+ // @author Mehdi Kabab
+ // @see https://twitter.com/piouPiouM
+ // @see http://pioupioum.fr/
+
 @mixin ffeeeedd--em--position( $map, $sprite, $context: $unitless-font-size, $offset-x: 0, $offset-y: 0) {
 
   $position: sprite-position( $map, $sprite, $offset-x, $offset-x );
@@ -129,14 +128,14 @@
   }
 }
 
-/* -- @subsection Récupérer les dimensions du sprite en EM -------------------- */
-/**
- * @note Une seule modification apportée : retirer l’unité PX des dimensions du sprite.
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see http://marieguillaumet.com/
- ** @see https://gist.github.com/kReEsTaL/6997139
- */
+// -- @subsection Récupérer les dimensions du sprite en EM -------------------- */
+//
+// @note Une seule modification apportée : retirer l’unité PX des dimensions du sprite.
+ // @author Marie Guillaumet
+ // @see https://twitter.com/kReEsTaL
+ // @see http://marieguillaumet.com/
+ // @see https://gist.github.com/kReEsTaL/6997139
+
 @mixin ffeeeedd--em--size( $image, $context: $unitless-font-size, $sprite-map: false ) {
   @if $sprite-map == true {
     $image-width:  ffeeeedd--unit( image-width( sprite-path( $image ) ) );
@@ -148,5 +147,3 @@
     background-size: em( $image-width, $context ) em( $image-height, $context );
   }
 }
-
-

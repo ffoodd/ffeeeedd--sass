@@ -1,18 +1,17 @@
-/**
- * @author Gaël Poupard
- * @lastmodified 2014-03-26
- */
+//
+// @author Gaël Poupard
+// @lastmodified 2014-03-26
 
-/* ----------------------------- */
-/* ==Fonctions */
-/* ----------------------------- */
+// ----------------------------- */
+// ==Fonctions */
+// ----------------------------- */
 
-/* -- @subsection Supprimer l’unité d’une valeur -------------------- */
-/*
- * @note Inspiré directement des « helpers » de Foundation
- * @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L39
- * @note Le seul paramètre est obligatoire et doit être un nombre.
-*/
+// -- @subsection Supprimer l’unité d’une valeur -------------------- */
+//
+// @note Inspiré directement des « helpers » de Foundation
+// @see https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L39
+// @note Le seul paramètre est obligatoire et doit être un nombre.
+
 @function ffeeeedd--unit( $num ) {
   $everything-okay: true;
 
@@ -26,14 +25,14 @@
   }
 }
 
-/* -- @subsection Conversion en em -------------------- */
-/*
- * @note Référence trouvée grâce aux Gists de Marie Guillaumet
- ** @author Marie Guillaumet
- ** @see https://twitter.com/kReEsTaL
- ** @see http://marieguillaumet.com/
- * @see https://gist.github.com/ijy/1441967
-*/
+// -- @subsection Conversion en em -------------------- */
+//
+// @note Référence trouvée grâce aux Gists de Marie Guillaumet
+ // @author Marie Guillaumet
+ // @see https://twitter.com/kReEsTaL
+ // @see http://marieguillaumet.com/
+// @see https://gist.github.com/ijy/1441967
+
 @function em( $f, $base: $unitless-font-size ) {
   $everything-okay: true;
 

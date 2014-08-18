@@ -8,14 +8,15 @@
   // @see https://github.com/karlgroves/diagnostic.css
   // @see http://www.w3.org/TR/html5/obsolete.html#obsolete
   // @see https://github.com/nternetinspired/debug-css
-  // @see Mémento «Sites web - Les bonnes pratiques» aux éditions Eyrolles
-  // @author Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
-  // @see «Intégration Web, les bonnes pratiques», pages 335/336.
-  // @author Corinne Schillinger, Inseo - @schillinger
+  // @see Mémento «Sites web — Les bonnes pratiques» aux éditions Eyrolles
+  // @author Elie Sloïm, Temesis, Opquast, Openweb — @ElieSl
+  // @see "Intégration Web, les bonnes pratiques", pages 335/336.
+  // @author Corinne Schillinger, Inseo — @schillinger
 // @note On utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
 // @note Le rouge dénonce une erreur, un code invalide ou un attribut manquant.
 // @note Le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
 // @note Le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
+// @note Le vert informe d’une amélioration éventuelle.
 //
 
 
@@ -97,7 +98,7 @@ $advice-ico: \2665\00A0;
   // On s’assure que le message ne capte pas le survol.
   pointer-events: none !important;
   position: fixed !important;
-  // On fait en sorte de ne pas hériter des mises en formes spéciales : les messages doivent être homogènes.
+  // On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes.
   text-align: center !important;
   text-decoration: none !important;
   text-shadow: none !important;
@@ -138,47 +139,46 @@ $advice-ico: \2665\00A0;
 
 // == @section Détection ====================
 
-@if $a11y-css == true {
-  // -- @subsection Conseils --------------------
-  %a11y-advice {
-    @include a11y-outline( $advice );
-    @extend %a11y-message;
-  }
+// -- @subsection Conseils --------------------
+%a11y-advice {
+  @include a11y-outline( $advice );
+  @extend %a11y-message;
+}
 
-  // -- @subsection Éléments & attributs obsolètes --------------------
-  %a11y-obsolete {
-    @include a11y-outline( $obsolete );
-    @extend %a11y-message;
+// -- @subsection Éléments & attributs obsolètes --------------------
+%a11y-obsolete {
+  @include a11y-outline( $obsolete );
+  @extend %a11y-message;
 
-    &::after {
-      content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
-    }
-  }
-
-  // -- @subsection Alertes --------------------
-  %a11y-warning {
-    @include a11y-outline( $warning );
-    @extend %a11y-message;
-  }
-
-  // -- @subsection Erreurs --------------------
-  %a11y-error {
-    @include a11y-outline( $error );
-    @extend %a11y-message;
-  }
-
-
-  // == @section Self-closing ====================
-  %a11y-self-closing {
-    & ~ *::after {
-      @extend %a11y-after;
-    }
-
-    &:hover ~ *::after {
-      @extend %a11y-hover;
-    }
+  &::after {
+    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
 }
+
+// -- @subsection Alertes --------------------
+%a11y-warning {
+  @include a11y-outline( $warning );
+  @extend %a11y-message;
+}
+
+// -- @subsection Erreurs --------------------
+%a11y-error {
+  @include a11y-outline( $error );
+  @extend %a11y-message;
+}
+
+
+// == @section Self-closing ====================
+%a11y-self-closing {
+  & ~ *::after {
+    @extend %a11y-after;
+  }
+
+  &:hover ~ *::after {
+    @extend %a11y-hover;
+  }
+}
+
 
 // == @section Contenu des messages ====================
 @import "messages/advice";
